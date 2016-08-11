@@ -231,7 +231,7 @@
     <Compile Include="Common\StatusBox.cs" />
     <Compile Include="Common\ToolManager.cs" />
     <Compile Include="Controllers\alipayController.cs" />
-    <Compile Include="Controllers\AppManage\AppMController.cs" />
+    <Compile Include="Controllers\AppM\AppMController.cs" />
     <Compile Include="Controllers\ExpressController.cs" />
     <Compile Include="Controllers\gradeController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
@@ -1924,6 +1924,15 @@
     <Content Include="ExportXlsToDownLoad\说明.txt" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\appm\basket_train.js" />
+    <Content Include="Scripts\Layer\layer.js" />
+    <Content Include="Scripts\Layer\mobile\layer.js" />
+    <Content Include="Scripts\Layer\mobile\need\layer.css" />
+    <Content Include="Scripts\Layer\skin\default\icon-ext.png" />
+    <Content Include="Scripts\Layer\skin\default\icon.png" />
+    <Content Include="Scripts\Layer\skin\default\loading-0.gif" />
+    <Content Include="Scripts\Layer\skin\default\loading-1.gif" />
+    <Content Include="Scripts\Layer\skin\default\loading-2.gif" />
+    <Content Include="Scripts\Layer\skin\layer.css" />
     <Content Include="Scripts\user\index.js" />
     <Content Include="Scripts\goodstype\index.js" />
     <Content Include="Scripts\app\index.js" />
@@ -2060,6 +2069,8 @@
     <Content Include="Views\neworder\Other.cshtml" />
     <Content Include="Views\upfeedbackinfo\index.cshtml" />
     <Content Include="Views\Express\index.cshtml" />
+    <Content Include="Scripts\Layer\mobile\README.md" />
+    <Content Include="Scripts\Layer\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2080,6 +2091,7 @@
     <Folder Include="fileupload\tx\Thumbnail\" />
     <Folder Include="Other\" />
     <Folder Include="Scripts\train\" />
+    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

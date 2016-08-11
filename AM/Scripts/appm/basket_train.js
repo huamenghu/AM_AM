@@ -75,6 +75,9 @@ function submit() {
     var objArr = $("input[type=text]")
     debugger;
     var checkitem = $("input[name=checkbox_name]:checked");
+    var radios = $("input[name=sex]:checked");
+    var xb = $(radios[0]).next("label").text();
+    var textareas = $("textarea");
     var pxd = "";
     for (var i = 0; i < checkitem.length; i++) {
         
@@ -89,7 +92,7 @@ function submit() {
             "CreateDate": "",
             "userid": userid,
             "xm": $(objArr[0]).val(),
-            "xb": "",
+            "xb": xb,
             "whcd": $(objArr[1]).val(),
             "lxdh": $(objArr[2]).val(),
             "zygl": $(objArr[3]).val(),
@@ -100,21 +103,22 @@ function submit() {
             "yx": $(objArr[8]).val(),
             "brqz": $(objArr[9]).val(),
             "pxd": pxd,
-            "gzjl": "",
-            "szdwyj": ""
+            "gzjl": $(textareas[0]).val(),
+            "szdwyj": $(textareas[1]).val()
         }]
     };
-    //$.ajax({
-    //    type: "post",
-    //    url: "/AppM/addbasket_train",
-    //    data: { obj: JSON.stringify(json) },
-    //    success: function (data) {
-    //        alert("哈哈" + data);
-    //        debugger;
-    //        data = eval('(' + data + ')');
+    $.ajax({
+        type: "post",
+        url: "/AppM/addbasket_train",
+        data: { obj: JSON.stringify(json) },
+        success: function (data) {
+            layer.msg("提交成功");
+            //alert("哈哈" + data);
+            //debugger;
+            //data = eval('(' + data + ')');
 
-    //    }
-    //})
+        }
+    })
     //$.ajax({
     //    type: "POST",     
     //    contentType: "application/json; charset=utf-8",  
