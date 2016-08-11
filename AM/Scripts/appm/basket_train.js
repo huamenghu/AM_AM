@@ -74,12 +74,12 @@ function submit() {
     var userid = $("#userid").val();
     var objArr = $("input[type=text]")
     debugger;
-    var aa = $("input[name=checkbox_name]:checked");
+    var checkitem = $("input[name=checkbox_name]:checked");
     var pxd = "";
-    for (var i = 0; i < aa.length; i++) {
+    for (var i = 0; i < checkitem.length; i++) {
         
-        pxd += $(aa[i]).parent("label").text().trim();
-        if (i < aa.length) {
+        pxd += $(checkitem[i]).parent("label").text().trim();
+        if (i < checkitem.length) {
             pxd += ","
         }
     }
