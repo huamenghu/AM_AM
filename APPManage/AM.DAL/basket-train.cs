@@ -227,7 +227,7 @@ namespace AM.DAL
             strSql.Append("select Guid,userid,CreateDate,xm,xb,whcd,lxdh,zygl,stzk,sfzh,gzdw,yb,yx,brqz,pxd,gzjl,szdwyj from basket_train ");
             strSql.Append(" where Guid=@Guid ");
             MySqlParameter[] parameters = {
-					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)			};
+					new MySqlParameter("@Guid", MySqlDbType.VarChar,255)			};
             parameters[0].Value = Guid;
 
             basket_train model = new basket_train();
@@ -287,23 +287,39 @@ namespace AM.DAL
         public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT * FROM ( ");
-            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            //strSql.Append("SELECT * FROM ( ");
+            //strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            //if (!string.IsNullOrEmpty(orderby.Trim()))
+            //{
+            //    strSql.Append("order by T." + orderby);
+            //}
+            //else
+            //{
+            //    strSql.Append("order by T.Guid desc");
+            //}
+            //strSql.Append(")AS Row, T.*  from basket_train T ");
+            //if (!string.IsNullOrEmpty(strWhere.Trim()))
+            //{
+            //    strSql.Append(" WHERE " + strWhere);
+            //}
+            //strSql.Append(" ) TT");
+            //strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            strSql.Append("SELECT * FROM basket_train TT  ");
+            strSql.Append(" WHERE ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                strSql.Append(strWhere +" and ");
+            }
+            strSql.AppendFormat(" TT.Guid  between {0} and {1} ", startIndex, endIndex);
             if (!string.IsNullOrEmpty(orderby.Trim()))
             {
-                strSql.Append("order by T." + orderby);
+                strSql.Append("order by TT." + orderby);
             }
             else
             {
-                strSql.Append("order by T.Guid desc");
+                strSql.Append("order by TT.Guid desc");
             }
-            strSql.Append(")AS Row, T.*  from basket_train T ");
-            if (!string.IsNullOrEmpty(strWhere.Trim()))
-            {
-                strSql.Append(" WHERE " + strWhere);
-            }
-            strSql.Append(" ) TT");
-            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            strSql.Append(";SELECT count(Guid) as count FROM basket_train TT  ");
             return DbHelperMySQL.Query(strSql.ToString());
         }
 
@@ -345,6 +361,9 @@ namespace AM.DAL
                 if (row["Guid"] == null)
                 {
                     model.Guid = Guid.NewGuid().ToString();
+                }
+                else {
+                    model.Guid = row["Guid"].ToString();
                 }
                 if (row["userid"] != null)
                 {

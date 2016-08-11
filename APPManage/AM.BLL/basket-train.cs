@@ -156,13 +156,7 @@ namespace AM.BLL
         {
             return dal.GetRecordCount(strWhere);
         }
-        /// <summary>
-        /// 分页获取数据列表
-        /// </summary>
-        public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
-        {
-            return dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
-        }
+
         /// <summary>
         /// 分页获取数据列表
         /// </summary>
@@ -189,6 +183,15 @@ namespace AM.BLL
                 return dal.Add(model);
             else
                 return false;
+        }
+        /// <summary>
+        /// 分页获取数据列表
+        /// </summary>
+        public List<basket_train> GetListByPage(string strWhere, string orderby, int startIndex, int endIndex,out int count)
+        {
+            DataSet ds = dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
+            count =Convert.ToInt32(ds.Tables[1].Rows[0]["count"]);
+            return DataTableToList(ds.Tables[0]); ;
         }
 		#endregion  ExtensionMethod
 	}

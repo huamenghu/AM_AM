@@ -159,16 +159,13 @@
 @section scripts{
     <script>
         var tableName = "basket_train";
-        var sortName = "GUID";
-        var idField = "GUID";
+        var sortName = "Guid";
+        var idField = "Guid";
         var sortOrder = "asc";
 
         var columns = [[
-                             { field: 'trainname', title: '姓名1', width: 100, sortable: true },
-                             { field: 'traintel', title: '电话', width: 150, sortable: true },
-                             { field: 'traintypeid', title: '培训工种', width: 120, sortable: true },
-                             { field: 'ispay', title: '是否支付', width: 150, sortable: true },
-                             { field: 'state', title: '处理状态', width: 200, sortable: true }
+                        { field: 'xm', title: '姓名', width: 100, sortable: true },
+
         ]];
         function toExcel() {
 

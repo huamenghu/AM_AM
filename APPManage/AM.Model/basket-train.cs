@@ -25,14 +25,12 @@ namespace AM.Model
 	{
         public basket_train()
 		{
-            if(_guid=="")
-                System.Guid.NewGuid();
-
+           
         }
 		#region Model
-        private string _guid =  System.Guid.NewGuid().ToString();
+        private string _guid;
 		private string _userid;
-		private DateTime? _createdate = DateTime.Now;
+		private DateTime? _createdate;
 		private string _xm;
 		private string _xb;
 		private string _whcd;
