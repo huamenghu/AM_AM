@@ -1,4 +1,4 @@
-﻿    @{
+﻿@{
     Layout = "~/Views/Shared/_LayoutGrid.cshtml";
 }
 <div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
@@ -6,113 +6,129 @@
         <form method="post">
             <table>
                 <tr>
-                    <td class="right">申请人：
+                    <td class="right">
+                        申请人：
                     </td>
                     <td>
                         <input type="text" name="trainname" class="easyui-validatebox editInput" required='true' />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">性别：
+                    <td class="right">
+                        性别：
                     </td>
                     <td>
                         <input name="trainsex" type="radio" value="m" />男
-                        <input name="trainsex" type="radio" value="f" />女                         
+                        <input name="trainsex" type="radio" value="f" />女
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">文化程度：
+                    <td class="right">
+                        文化程度：
                     </td>
                     <td>
                         <input type="text" name="trainculturaldegree" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">出生日期：
+                    <td class="right">
+                        出生日期：
                     </td>
                     <td>
                         <input type="text" name="trainbirthdate" editable="false" class="easyui-datebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">工龄：
+                    <td class="right">
+                        工龄：
                     </td>
                     <td>
                         <input type="text" name="trainservicelength" class="easyui-numberbox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">身体状况：
+                    <td class="right">
+                        身体状况：
                     </td>
                     <td>
                         <input type="text" name="trainphysicalcondition" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">工种：
+                    <td class="right">
+                        工种：
                     </td>
                     <td>
                         <input name="traintypeid" id="traintypeid" required="true" class="easyui-combobox editInput" data-options="textField:'Name',valueField:'ID',url:'/Tools/GetTrainType'" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">身份证号：
+                    <td class="right">
+                        身份证号：
                     </td>
                     <td>
                         <input type="text" name="trainID" required="true" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">工作单位：
+                    <td class="right">
+                        工作单位：
                     </td>
                     <td>
                         <input type="text" name="traincompany" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">邮政编码：
+                    <td class="right">
+                        邮政编码：
                     </td>
                     <td>
                         <input type="text" name="trainpostcode" class="easyui-numberbox editInput" maxlength='6' />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">单位地址：
+                    <td class="right">
+                        单位地址：
                     </td>
                     <td>
                         <input type="text" name="traincompanyaddr" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">联系人姓名：
+                    <td class="right">
+                        联系人姓名：
                     </td>
                     <td>
-                        <input type="text" name="trainlinkname" class="easyui-validatebox editInput"  />
+                        <input type="text" name="trainlinkname" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">联系电话：
+                    <td class="right">
+                        联系电话：
                     </td>
                     <td>
-                        <input type="text" name="traintel" class="easyui-validatebox editInput"  />
+                        <input type="text" name="traintel" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">邮箱：
+                    <td class="right">
+                        邮箱：
                     </td>
                     <td>
                         <input type="text" name="trainemail" class="easyui-validatebox editInput" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">状态：
+                    <td class="right">
+                        状态：
                     </td>
                     <td>
                         <input name="state" id="state" class="easyui-combobox editInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState'" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="right">是否支付：
+                    <td class="right">
+                        是否支付：
                     </td>
                     <td>
                         <input name="ispay" type="radio" value="true" />已支付
@@ -123,32 +139,32 @@
         </form>
     </div>
 </div>
- 
+
 <div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
     <div style="vertical-align: middle">
         姓名：
-         <input name="s_trainname" id="s_trainname" class="easyui-validatebox searchInput" />
+        <input name="s_trainname" id="s_trainname" class="easyui-validatebox searchInput" />
         电话：
-         <input name="s_traintel" id="s_traintel" class="easyui-validatebox searchInput" />
+        <input name="s_traintel" id="s_traintel" class="easyui-validatebox searchInput" />
         身份证号：
         <input name="s_trainID" id="s_trainID" class="easyui-validatebox searchInput" />
         培训工种：
         <input name="s_traintypeid" id="s_traintypeid" class="easyui-combobox" data-options="textField:'Name',valueField:'ID',url:'/Tools/GetTrainType2'" />
         处理状态：
-       <input name="s_state" id="s_state" class="easyui-combobox" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />
+        <input name="s_state" id="s_state" class="easyui-combobox" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />
         <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
     </div>
 </div>
- 
+
 @section scripts{
     <script>
-        var tableName = "train";
+        var tableName = "basket_train";
         var sortName = "GUID";
         var idField = "GUID";
         var sortOrder = "asc";
-     
+
         var columns = [[
-                             { field: 'trainname', title: '姓名', width: 100, sortable: true },
+                             { field: 'trainname', title: '姓名1', width: 100, sortable: true },
                              { field: 'traintel', title: '电话', width: 150, sortable: true },
                              { field: 'traintypeid', title: '培训工种', width: 120, sortable: true },
                              { field: 'ispay', title: '是否支付', width: 150, sortable: true },
@@ -157,7 +173,7 @@
         function toExcel() {
 
         }
-         
+
         function returnQueryParams() {
             var obj = {
                 trainname: $("#s_trainname").val(),
@@ -167,8 +183,11 @@
                 state: $("#s_state").combobox("getValue"),
             };
             return obj;
-        }        
+        }
     </script>
 }
+
+
+
 
 

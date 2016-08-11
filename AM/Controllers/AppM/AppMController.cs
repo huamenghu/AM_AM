@@ -16,6 +16,7 @@ using System.Text;
 using System.Web.Http;
 using System.Web.Script.Serialization;
 using AM.Common;
+using System.Web.Mvc;
 
 namespace AM.Controllers
 {
@@ -28,6 +29,9 @@ namespace AM.Controllers
             basket_train model = bll.DataRowToModel(ds.Tables[0].Rows[0]);
             bll.AddAndCheck(model);
         }
-
+        public ActionResult basket_train()
+        {
+            return View();
+        }
     }
 }

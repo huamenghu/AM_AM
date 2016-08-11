@@ -232,6 +232,7 @@
     <Compile Include="Common\ToolManager.cs" />
     <Compile Include="Controllers\alipayController.cs" />
     <Compile Include="Controllers\AppM\AppMController.cs" />
+    <Compile Include="Controllers\AppM\basket_trainController.cs" />
     <Compile Include="Controllers\ExpressController.cs" />
     <Compile Include="Controllers\gradeController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
@@ -2071,6 +2072,7 @@
     <Content Include="Views\Express\index.cshtml" />
     <Content Include="Scripts\Layer\mobile\README.md" />
     <Content Include="Scripts\Layer\README.md" />
+    <Content Include="Views\AppM\basket_train.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
