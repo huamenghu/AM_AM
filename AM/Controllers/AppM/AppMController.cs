@@ -21,7 +21,7 @@ using System.Web.Mvc;
 namespace AM.Controllers
 {
     public class AppMController : BaseController
-    {
+    { 
         public void addbasket_train(string obj)
         {
             DataSet ds = ToolManager.JsonToDataSet(obj);

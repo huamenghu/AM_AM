@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Text;
 using MFXinY.Common;
 using System.Data;
+using AM.Model;
 namespace AM.Controllers
 {
     public class basket_trainController : BaseController
@@ -69,12 +70,17 @@ namespace AM.Controllers
                 int pageIndex = int.Parse(Request["page"].ToString()); //当前页码
                 if (pageIndex < 1) pageIndex = 1;
                 string trainname = Request["trainname"] == null ? string.Empty : Request["trainname"].ToString();
-                string traintel = Request["traintel"] == null ? string.Empty : Request["traintel"].ToString();
-                string trainID = Request["trainID"] == null ? string.Empty : Request["trainID"].ToString();
-                string traintypeid = Request["traintypeid"] == null ? string.Empty : Request["traintypeid"].ToString();
-                string state = Request["state"] == null ? string.Empty : Request["state"].ToString();
+                //string traintel = Request["traintel"] == null ? string.Empty : Request["traintel"].ToString();
+                //string trainID = Request["trainID"] == null ? string.Empty : Request["trainID"].ToString();
+                //string traintypeid = Request["traintypeid"] == null ? string.Empty : Request["traintypeid"].ToString();
+                //string state = Request["state"] == null ? string.Empty : Request["state"].ToString();
+                var whereStr = string.Empty;
+                if (!string.IsNullOrEmpty(trainname))
+                {
+                    whereStr = " xm like '%"+trainname+"%' ";
+                }
                 int count = 0;
-                var list = btBLL.GetListByPage(string.Empty, string.Empty, (pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize,out count);
+                var list = btBLL.GetListByPage(whereStr, string.Empty, (pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize, out count);
 
                 result.Add("rows", list);
                 result.Add("total", count);
@@ -86,50 +92,21 @@ namespace AM.Controllers
 
         public JsonResult FillForm(String id)
         {
-            var data = DB.Instant.TrainManager.Where(a => a.GUID == id).ToList().Select(a => new
-            {
-                a.trainname,
-                a.trainsex,
-                a.trainculturaldegree,
-                trainbirthdate = a.trainbirthdate == null ? "" : a.trainbirthdate.Value.ToString("yyyy-MM-dd"),
-                a.trainservicelength,
-                a.trainphysicalcondition,
-                a.traintypeid,
-                a.trainID,
-                a.traincompany,
-                a.trainpostcode,
-                a.traincompanyaddr,
-                a.trainlinkname,
-                a.traintel,
-                a.trainemail,
-                a.state,
-                a.ispay,
-            }).FirstOrDefault();
+            var data = btBLL.GetModel(id);
             return Json(data);
         }
         #region 更新 add update delete
         [HttpPost]
         public JsonResult Add(FormCollection form)
         {
-            var t = new train();
+            var t = new basket_train();
             MVCTools.SetValueFormToModel(t, form);
-            t.operatetime = DateTime.Now;
-            t.@operator = UserName;
-            t.GUID = Guid.NewGuid().ToString();
+            t.Guid =Guid.NewGuid().ToString();
+            t.userid = "admin";
+            t.CreateDate = DateTime.Now;
             t.userid = UserName;
-            if (t.trainsex == null)
-            {
-                return Json(new AOPResult(-1, "性别不能为空"), "text/html");
-            }
-            if (string.IsNullOrEmpty(t.state))
-            {
-                t.state = "未处理";
-            }
-            if (t.ispay == null)
-            {
-                t.ispay = false;
-            }
-            var r = DB.Instant.TrainManager.Add(t);
+
+            AOPResult r = new AOPResult(0, (btBLL.Add(t).ToString()));
             return Json(r, "text/html");
         }
 
@@ -142,20 +119,14 @@ namespace AM.Controllers
         [HttpPost]
         public JsonResult Update(string id, FormCollection form)
         {
-            var t = DB.Instant.TrainManager.Find(id);
+            var t = btBLL.GetModel(id);
             MVCTools.SetValueFormToModel(t, form);
-            var r = DB.Instant.TrainManager.Update(t);
+            AOPResult r = new AOPResult(0,(btBLL.Update(t).ToString()));
             return Json(r, "text/html");
         }
         public JsonResult Delete(string id)
         {
-            List<train> us = new List<train>();
-            var ids = id.Split(',');
-            foreach (var item in ids)
-            {
-                us.Add(new train() { GUID = item });
-            }
-            var r = DB.Instant.TrainManager.Delete(us);
+            AOPResult r = new AOPResult(0, (btBLL.Delete(id).ToString()));
             return Json(r, "text/html");
         }
 

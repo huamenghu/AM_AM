@@ -305,12 +305,11 @@ namespace AM.DAL
             //strSql.Append(" ) TT");
             //strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
             strSql.Append("SELECT * FROM basket_train TT  ");
-            strSql.Append(" WHERE ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
-                strSql.Append(strWhere +" and ");
+                strSql.Append(" WHERE "+strWhere) ;
             }
-            strSql.AppendFormat(" TT.Guid  between {0} and {1} ", startIndex, endIndex);
+           
             if (!string.IsNullOrEmpty(orderby.Trim()))
             {
                 strSql.Append("order by TT." + orderby);
@@ -319,6 +318,7 @@ namespace AM.DAL
             {
                 strSql.Append("order by TT.Guid desc");
             }
+            strSql.AppendFormat(" LIMIT {0} , {1} ", startIndex, endIndex);
             strSql.Append(";SELECT count(Guid) as count FROM basket_train TT  ");
             return DbHelperMySQL.Query(strSql.ToString());
         }
