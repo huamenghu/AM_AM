@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">用户id：
+                    </td>
+                    <td>
+                        <input name="userid" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+               
+                <tr>
+                    <td class="right">时间：
+                    </td>
+                    <td>
+                        <input name="dt" class="easyui-datetimebox editInput" editable=false required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">描述：
+                    </td>
+                    <td>
+                        <input name="description" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        内容：
+                    </td>
+                    <td>
+                        <textarea name="content" class="easyui-validatebox editInput" required='true' >
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+       
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "upfeedbackinfo";
+        var sortName = "dt";
+        var idField = "guid";
+        var sortOrder = "desc";
+
+        var columns = [[
+    {
+        field: 'userid', title: '会员名', width: 80, sortable: true
+    }, {
+        field: 'content', title: '内容', width: 400, sortable: true
+    }, {
+        field: 'dt', title: '时间', width: 100, sortable: true
+    }, {
+        field: 'description', title: '描述', width: 120, sortable: true
+   
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                
+            };
+            return obj;
+        }
+    </script>
+}
+@section scripts2{
+    toolbar = [{
+   
+    }, '-', {
+    text: '查看',
+    iconCls: 'icon-edit',
+    handler: view
+  
+ 
+    }, '-', {
+    text: '删除',
+    iconCls: 'icon-remove',
+    handler: del
+    }];
+}

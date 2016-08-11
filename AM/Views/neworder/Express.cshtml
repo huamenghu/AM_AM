@@ -1,0 +1,89 @@
+﻿@{
+
+}
+
+<div style="padding: 20px   " region="center">
+    <form method="post">
+        <table>
+            <tr>
+                <td class="right">
+                    快递公司：
+                </td>
+                <td>
+                    <input name="fh_expresscompanyid" id="fh_expresscompanyid" class="editInput"   />
+                </td>
+
+                <td class="right">
+                    快递单号：
+                </td>
+                <td>
+                    <input name="fh_ordersendgoodsexpressnumber" id="fh_ordersendgoodsexpressnumber" class="easyui-validatebox editInput" />
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="Query()">查询</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div style="padding:0px">
+        <p>查询结果：</p>
+        <div id="divResult">
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#fh_expresscompanyid").combogrid({
+                panelWidth: 250,
+                url: '/Order/GetExpressCode',
+                idField: 'Code',
+                required: false,
+                textField: 'Name',
+                mode: 'remote',
+                fitColumns: true,
+                columns: [[
+                { field: 'Code', title: '公司代码', width: 80 },
+                { field: 'Name', title: '快递公司', width: 80 }
+                ]]
+            });
+        });
+        function Query() {
+            var code = $("#fh_expresscompanyid").combogrid("getValue");
+            var num = $("#fh_ordersendgoodsexpressnumber").val();
+            if (code == '' || num == '') {
+                msgAlert("错误", "请选择快递公司，填写正确的快递单号");
+                return;
+            }
+            $.post("/order/SearchExpress", { code: code, num: num }, function (d) {
+                $("#divResult").html(d);
+            });
+        }
+
+        function saveData2() {
+            fh_form.form('submit', {
+                url: fh_form.url,
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (result) {
+                    var result = eval('(' + result + ')'); //处理Json
+                    var desc = filterDesc(result.ResultDescription);
+                    if (result.IsSuccess) {
+                        msgFade("操作成功：" + desc);
+                        datagrid.datagrid('reload'); //grid变量要与其他文件中的一致
+                        dialog_fh.dialog('close');
+                    } else {
+                        msgShow('操作失败:' + desc);
+                    }
+                }
+            });
+        }
+
+
+    </script>
+}
+

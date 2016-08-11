@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+@section head{
+    <style>
+        .img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+}
+<div id="Dlg-Edit" title="窗口" style="width: 600px; height: 300px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td class="right">
+                        用户名：
+                    </td>
+                    <td>
+                        <input name="username" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        密码：
+                    </td>
+                    <td>
+                        <input type="password" name="password" id="password" class="easyui-validatebox editInput" style="" />(不修改请留空)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        确认密码：
+                    </td>
+                    <td>
+                        <input type="password" name="password2" class="easyui-validatebox editInput" validtype="equalTo['#password']" maxlength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        用户昵称：
+                    </td>
+                    <td>
+                        <input name="usernickname" class="easyui-validatebox editInput" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        用户Logo：
+                    </td>
+                    <td>
+                        <input type="file" name="userlogo" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        联系方式：
+                    </td>
+                    <td>
+                        <input name="userphone" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        性别：
+                    </td>
+                    <td>
+                        <input name="usersex" type="radio" value="m" />男
+                        <input name="usersex" type="radio" value="f" />女
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        用户积分：
+                    </td>
+                    <td>
+                        <input type="text" name="userpoints" class="easyui-numberbox" />
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        用户名：
+        <input id="s_username" class="easyui-validatebox searchInput" />
+        用户昵称：
+        <input id="s_usernickname" class="easyui-validatebox searchInput" />
+        联系方式：
+        <input id="s_userphone" class="easyui-validatebox searchInput" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "user";
+        var sortName = "userid";
+        var idField = "userid";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'username', title: '用户名', width: 100, sortable: true
+    }, {
+        field: 'usernickname', title: '用户昵称', width: 100, sortable: true
+    }, {
+        field: 'userphone', title: '联系方式', width: 100, sortable: true
+    }, {
+        field: 'usersex', title: '性别', width: 100, sortable: true
+    }, {
+        field: 'userpoints', title: '积分', width: 100, sortable: true
+    }, {
+        field: 'gradename', title: '会员等级', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                username: $("#s_username").val(),
+                usernickname: $("#s_usernickname").val(),
+                userphone: $("#s_userphone").val(),
+            };
+            return obj;
+        }
+    </script>
+}

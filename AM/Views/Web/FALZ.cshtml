@@ -1,0 +1,139 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    ViewBag.Title = "专家非标方案论证";
+}
+<!--表格申请-->
+<div class="apply-out">
+    <!--您的位置-->
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/FALZ#1">专家非标方案论证</a></li>
+    </ul>
+
+    <!--表格-->
+    <div class="apply-box">
+        <ul class="apply-but apply-but2">
+            <li><a href="/web/FASJ#1">专家非标方案设计</a></li>
+            <li class="apply-but1"><a href="/web/FALZ#1">专家非标方案论证</a></li>
+            <li><a href="/web/CPJD#1">产品鉴定申请表</a></li>
+            <li><a href="/web/SGJD#1">事故鉴定申请表</a></li>
+        </ul>
+
+        <div class="apply-sm-box">
+            <h3>
+                高空机械工程技术研究院
+                <br />非标高空机械专项施工方案专家论证申请表
+            </h3>
+            <form id="form1" onsubmit="return false">
+                <div class="apply-table">
+                    <h4>公司名称<span>COMPANY NAME</span></h4>
+                    <div>
+                        <input type="text" name="proofcompanyname" placeholder="请输入公司名称" class="width1" />
+                        <input type="hidden" name="userid" value="@ViewBag.UserID" />
+                    </div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>公司地址<span>COMPANY ADDRESS</span></h4>
+                    <div><input type="text" name="proofcompanyaddr" placeholder="请输入公司地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>工程名称<span>PROJIET NAME</span></h4>
+                    <div><input type="text" name="proofnenginename" placeholder="请输入工程名称" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>工程地址<span>PROJIET ADDRESS</span></h4>
+                    <div><input type="text" name="proofnengineaddr" placeholder="请输入工程地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>方案设计单位<span>SCHEME DESIGN UNIT</span></h4>
+                    <div><input type="text" name="proofdesigncompany" placeholder="请输入方案设计单位名称" class="width1" /></div>
+                </div>
+
+
+                <div class="apply-table cl">
+                    <h4>产品名称<span>PRODUCT NAME</span></h4>
+                    <div><input type="text" name="proofgoodsname" placeholder="请输入产品名称" class="width4" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">产品型号<span>PRODUCT MODEL</span></h4>
+                    <div><input type="text" name="proofgoodstype" placeholder="请输入产品名称" class="width3" /></div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="apply-table test-content">
+                    <h4>方案类型<span>APPLICATION TYPE</span></h4>
+                    <div>
+                        <label><input type="checkbox" name="prooftype" value="文字"><span>文字</span></label>
+                        <label><input type="checkbox" name="prooftype" value="图书"><span>图片</span></label>
+                        <label><input type="checkbox" name="prooftype" value="计算书"><span>计算书</span></label>
+                        <label><input type="checkbox" name="prooftype" value="说明书"><span>说明书</span></label>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="apply-table">
+                    <h4>计划论证时间<span>PLAN IDENTIFICATION TIME</span></h4>
+                    <div><input type="text" name="proofplandate" placeholder="请输入计划论证时间" class="width2" onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>申请时间<span>APPLICATION TIME</span></h4>
+                    <div><input type="text" name="proofapplicationdate" placeholder="请输入申请时间" class="width2" onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table cl">
+                    <h4 class="title-width">联系人<span>CONTACT PERSON</span></h4>
+                    <div><input type="text" name="prooflinkname" placeholder="请输入姓名" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">联系电话<span>CONTACT PHONE</span></h4>
+                    <div><input type="text" name="prooflinktel" placeholder="请输入电话/手机" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">邮箱<span>ECONOMIC TYPE</span></h4>
+                    <div><input type="text" name="proofemail" placeholder="请输邮箱" class="width3" /></div>
+                </div>
+
+                <div class="apply-table-but cl">
+                    <input type="submit" value="提交" id="btnOK" class="submit" /> <input type="reset" value="重置" class="reset" onclick="reset()" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+   <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+<script>
+    $(function () {
+        $("#li_js").addClass("index");
+        //提交表单
+        $("#btnOK").click(function () {
+            var data = $('#form1').serialize();
+            $.post("/Client/postupexpertsproofinfo", data, function (d) {
+                //var result = eval('(' + d + ')'); //处理Json
+                //alert("x" + d.message+d.code);
+                if (d.code == 1) {
+                    alert("提交成功！申请费用：" + d.price);
+                } else {
+                    alert("提交失败！原因：" + d.message);
+                }
+            });
+        });
+    })
+    function reset() {
+        $("input").each(function (e) {
+            $(this).val("");
+        });
+    }
+</script>
+ 
+}

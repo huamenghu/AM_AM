@@ -1,0 +1,306 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="/Content/ZTree/css/zTreeStyle/zTreeStyle.css"
+    type="text/css">
+<div region="center" style="width: 500px; height: 300px; padding: 1px; overflow-y: hidden">
+    <div id="grid">
+    </div>
+</div>
+<div id="Dlg-setUser" title="设置用户" style="width: 700px; height: 500px; padding: 2px" buttons="#buttons1">
+    <div id="usergrid">
+    </div>
+</div>
+<div id="buttons1">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveRole()">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#Dlg-setUser').dialog('close')">关闭</a>
+</div>
+<div id="Dlg-setPermission" title="设置权限" style="width: 500px; height: 350px; padding: 10px" buttons="#buttons2">
+    <ul id="tree" class="ztree">
+    </ul>
+</div>
+<div id="buttons2">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="savePermission()">确定</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#Dlg-setPermission').dialog('close')">关闭</a>
+</div>
+<div id="Dlg-Edit" title="窗口" style="width: 500px; height: 280px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" id="Form1">
+            <table>
+                <tr>
+                    <td class="itemtxt">角色代码：
+                    </td>
+                    <td>
+                        <input type="text" name="RoleName" id="RoleName" class="easyui-validatebox" required="true" style="width: 200px;" maxlength="20" />
+                        注：角色名添加后不能修改
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">角色名称：
+                    </td>
+                    <td>
+                        <input type="text" name="Title" class="easyui-validatebox" required="true" style="width: 200px;" maxlength="50" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">说明：
+                    </td>
+                    <td>
+                        <input type="text" name="Description" class="easyui-validatebox" style="width: 200px;" maxlength="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">排序：
+                    </td>
+                    <td>
+                        <input type="text" name="Sequence" class="easyui-numberbox" style="width: 200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">优先级：
+                    </td>
+                    <td>
+                        <input type="text" name="Priority" class="easyui-numberbox" style="width: 200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">是否正常：
+                    </td>
+                    <td>
+                        <input name="IsAvailable" type="radio" value="true" />正常
+                        <input name="IsAvailable" type="radio" value="false" />停用
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveData()">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#Dlg-Edit').dialog('close')">关闭</a>
+</div>
+<div id="search-window" title="搜索" style="width: 350px; height: 200px; padding: 10px 20px">
+    <div style="padding: 20px 20px 40px 40px;">
+        <form method="post" id="Form2">
+            <table>
+                <tr>
+                    <td class="itemtxt">关键字：
+                    </td>
+                    <td>
+                        <input name="Keyword" id="Keyword" class="easyui-validatebox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="itemtxt">状态：
+                    </td>
+                    <td>
+                        <input name="IsAvailable" type="radio" value="true" checked="checked" />正常
+                        <input name="IsAvailable" type="radio" value="false" />停用
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div style="text-align: center; padding: 5px;">
+        <a href="javascript:void(0)" onclick="SearchOK()" id="btn-search" icon="icon-ok">确定</a>
+        <a href="javascript:void(0)" onclick="closeSearchWin()" id="btn-search-cancel" icon="icon-cancel">取消</a>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.core-3.5.min.js"></script>
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.excheck-3.5.min.js"></script>
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.exedit-3.5.min.js"></script>
+    <script src="~/Content/managerBase.js"></script>
+    <script type="text/javascript">
+        // 全局变量
+        var grid;
+        var dlg_Edit;
+        var dlg_Edit_form;
+        var searchWin;
+        var searchForm;
+        var virpath = ""; //网站的虚拟目录 如：/ShopManager
+        var table = "Role";
+        var updateTitleField = "RoleName";
+        //datagrid
+        var title = '';
+        var icon = 'icon-save';
+        var sortName = 'RoleName';
+        var sortOrder = 'asc';
+        var idField = 'RoleName';
+        var pageSize = 20;
+        var addTitle = "添加角色";
+        var dlg_setUser;
+        var dlg_setPermission;
+        var toolbar = [{
+            text: '新增',
+            iconCls: 'icon-add',
+            handler: add
+        }, '-', {
+            text: '修改',
+            iconCls: 'icon-edit',
+            handler: edit
+        }, '-', {
+            text: '删除',
+            iconCls: 'icon-remove',
+            handler: del
+        }, '-', {
+            text: '设置用户',
+            iconCls: 'icon-sum',
+            handler: setUser
+        }, '-', {
+            text: '设置权限',
+            iconCls: 'icon-sum',
+            handler: setPermission
+        }, '-', {
+            text: '查找',
+            iconCls: 'icon-search',
+            handler: openSearchWin
+        }, '-', {
+            text: '所有',
+            iconCls: 'icon-search',
+            handler: showAll
+        }];
+        var columns = [[
+                            { field: 'RoleName', title: '角色代码', width: 100, sortable: true },
+                            { field: 'Title', title: '角色名', width: 250, sortable: true },
+                            { field: 'Description', title: '说明', width: 150, sortable: true },
+                            { field: 'IsAvailable', title: '状态', width: 60, sortable: true },
+                            { field: 'IsInner', title: '是否内置', width: 60, sortable: true },
+                            { field: 'Priority', title: '优先级', width: 60, sortable: true },
+                            { field: 'Sequence', title: '排序', width: 60, sortable: true }
+
+        ]];
+        var usergrid = $('#usergrid').datagrid({
+            title: "",
+            iconCls: 'icon-sum',
+            methord: 'post',
+            url: virpath + "/role/LoadUser/",
+            sortName: 'UserName',
+            sortOrder: 'asc',
+            idField: 'UserName',
+            striped: true,
+            frozenColumns: [[
+                        { field: 'ck', checkbox: true }
+            ]],
+            columns: [[
+                            { field: 'UserName', title: '用户名', width: 100, sortable: true },
+                            { field: 'RealName', title: '姓名', width: 150, sortable: true }
+            ]],
+            fit: true,
+            pagination: false,
+            rownumbers: true,
+            fitColumns: true,
+            singleSelect: false
+        });
+        var tree_setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                key: {
+                    title: "title"
+                },
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+        function SearchOK() {
+            var Keyword = $("#Keyword").val();
+            var IsAvailable = $('input:radio[name="IsAvailable"]:checked').val();
+            searchWin.window('close');
+            grid.datagrid({ url: virpath + '/Role/Search/', queryParams: { Keyword: Keyword, IsAvailable: IsAvailable } });
+        }
+        function setPermission() {
+            var rows = grid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgFade('您选择了多条记录,只能选择一个用户进行角色设置!');
+                return;
+            }
+            else {
+                if (rows[0][idField] == "@AM.BLL.DataStore.AdminRole") {
+                    msgAlert("温馨提示","超级管理员不用设置权限");
+                } else {
+                    dlg_setPermission.dialog('open');
+                    //设置用户选择
+                    $.post(virpath + "/Role/getPermission", { id: rows[0][idField] }, function (data) {
+                        $.fn.zTree.init($("#tree"), tree_setting, data);
+                    });
+                }
+            }
+        }
+        function savePermission() {
+            var rows = grid.datagrid('getSelections');
+            var nodes = $.fn.zTree.getZTreeObj("tree").getCheckedNodes(true); //获取所有选中状态的节点
+            var ids = [];
+            if (nodes.length > 0) {
+                for (var i = 0; i < nodes.length; i++) {
+                    ids.push(nodes[i].id);
+                }
+            }
+            var myid = ids.join(',');
+            $.post(virpath + "/Role/setPermission", { id: rows[0][idField], ids: myid }, function (data) {
+                var data = eval('(' + data + ')');
+                if (data.IsSuccess) {
+                    msgShow("设置权限成功");
+                    dlg_setPermission.dialog('close');
+                } else {
+                    msgAlert('操作失败', '设置用权限失败：' + data.ResultDescription.replace('\'', ''), 'error');
+                }
+            });
+        }
+        function setUser() {
+            var rows = grid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgFade('您选择了多条记录,只能选择一个用户进行角色设置!');
+                return;
+            }
+            else {
+                dlg_setUser.dialog('open');
+                //设置用户选择
+                $.post(virpath + "/Role/GetUser", { id: rows[0][idField] }, function (data) {
+                    var len = data.length;
+                    usergrid.datagrid("unselectAll");
+                    for (var i = 0; i < len; i++) {
+                        usergrid.datagrid("selectRecord", data[i]);
+                    }
+                });
+            }
+        }
+        function saveRole() {
+            var rows = grid.datagrid('getSelections');
+            var ids = getSelectedID(usergrid, "UserName");
+            $.post(virpath + "/Role/setUser", { id: rows[0][idField], users: ids }, function (data) {
+                var data = eval('(' + data + ')');
+                if (data.IsSuccess) {
+                    msgShow("设置用户成功");
+                    dlg_setUser.dialog('close');
+                } else {
+                    msgAlert('操作失败', '设置用户失败：' + data.ResultDescription.replace('\'', ''), 'error');
+                }
+            });
+        }
+        $(function () {
+            dlg_setUser = $('#Dlg-setUser').dialog({
+                closed: true,
+                maxed: true,
+                modal: true
+            });
+            dlg_setPermission = $('#Dlg-setPermission').dialog({
+                closed: true,
+                maxed: true,
+                modal: true
+            });
+        });
+    </script>
+}

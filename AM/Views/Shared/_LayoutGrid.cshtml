@@ -1,0 +1,225 @@
+﻿@{
+    ViewBag.Title = "_LayoutGrid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    @RenderSection("head", false)
+}
+<div region="center" style="padding: 1px; overflow-y: hidden">
+    <div id="datagrid"></div>
+</div>
+@RenderBody()
+<div id="buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveData()">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#Dlg-Edit').dialog('close')">关闭</a>
+</div>
+
+<div id="view-window" title="查看" buttons="#viewButtons">
+    <div id="divview"></div>
+</div>
+<div id="viewButtons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="closeview()" icon="icon-cancel">关闭</a>
+</div>
+@section scripts{
+    @RenderSection("scripts", false)
+    <script>
+        var datagrid;
+        var dlg_Edit;
+        var dlg_Edit_form;
+        var view;
+         @if (!string.IsNullOrEmpty(ViewBag.pid))
+         {
+             bool? isPinPai = ViewBag.isPinPai;
+             if(isPinPai==true){
+                 @: var url_ = "/@ViewBag.pid?isPinPai=true";
+             }else{
+           @: var url_ = "/@ViewBag.pid";
+           }
+        }
+         else
+         {
+            @: var url_ = "";
+                         }
+
+        @if (string.IsNullOrEmpty(ViewBag.toolbar))
+        {
+       <text> var toolbar = [{
+            text: '新增',
+            iconCls: 'icon-add',
+            handler: add
+        }, '-', {
+            text: '查看',
+            iconCls: 'icon-edit',
+            handler: view
+        }, '-', {
+            text: '修改',
+            iconCls: 'icon-edit',
+            handler: edit
+        }, '-', {
+            text: '删除',
+            iconCls: 'icon-remove',
+            handler: del
+        }, '-', {
+            text: '批量导出',
+            iconCls: 'icon-search',
+            handler: toExcel
+        }];</text>
+        }
+         @RenderSection("scripts2", false)
+        $(function () {
+             $('body').layout();
+            var queryParams = returnQueryParams();
+            datagrid = $("#datagrid").datagrid({
+                title: "",
+                iconCls: 'icon-sum',
+                method: 'post',
+                sortName: sortName,
+                sortOrder: sortOrder,
+                idField: idField,
+                pageSize: 20,
+                striped: true,
+                pageList: [10, 20, 50, 100, 200],
+                autoRowHeight: false,
+                url: "/" + tableName + "/GetData/" + url_,
+                queryParams: queryParams,
+                toolbar: toolbar,
+                loadMsg: '正在加载数据，请稍等…',
+                frozenColumns: [[
+                      { field: 'ck', checkbox: true }
+                ]],
+                columns: columns,
+                fit: true,
+                pagination: true,
+                rownumbers: true,
+                fitColumns: true,
+                singleSelect: false,
+                onDblClickRow: function (rowIndex, rowData) {  //双击事件             
+                    myview(rowData);
+                },
+            });
+            $(".datagrid-toolbar").append($("#tb"));
+
+            dlg_Edit = $('#Dlg-Edit').dialog({
+                closed: true,
+                modal: true
+            });
+            dlg_Edit_form = dlg_Edit.find("form");
+            view = $('#view-window').dialog({
+                closed: true,
+                maxed: true,
+                modal: true,
+                width: 550,
+                height: 380
+            });
+        });
+
+        function view() {
+            var rows = datagrid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+                return;
+            }
+            myview(rows[0])
+        }
+
+        function add() {
+            dlg_Edit_form.form('clear');
+            dlg_Edit.dialog('open');
+            dlg_Edit.dialog('setTitle', '添加');
+            dlg_Edit_form.url = "/" + tableName + "/Add/" + url_;
+        }
+        function edit() {
+            var rows = datagrid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+                return;
+            }
+            dlg_Edit_form.form('clear');
+            dlg_Edit.dialog('open');
+            dlg_Edit.dialog('setTitle', '修改');
+            $.post("/" + tableName + "/FillForm/", { id: rows[0][idField] }, function (result) {
+                dlg_Edit_form.form('load', result);
+            });
+            dlg_Edit_form.url = "/" + tableName + "/update/" + rows[0][idField];
+        }
+        function del() {
+            var arr = getSelectedArr(datagrid, idField);
+            if (arr.length > 0) {
+                $.messager.confirm('提示信息', '您确认要删除选中的所有记录吗?', function (data) {
+                    if (data) {
+                        $.ajax({
+                            url: "/" + tableName + "/delete/" + arr.join(','),
+                            type: 'post',
+                            error: function () {
+                                msgAlert('错误', '删除失败!', 'error');
+                                datagridr.datagrid('clearSelections');
+                            },
+                            success: function (data) {
+                                var data = eval('(' + data + ')'); //处理Json
+                                var desc = filterDesc(data.ResultDescription);
+                                if (data.IsSuccess) {
+                                    msgFade(arr.length + "条记录成功删除!"); //提示消息
+                                    datagrid.datagrid('reload');
+                                    datagrid.datagrid('clearSelections');
+                                } else {
+                                    msgShow('删除失败：' + desc.replace("'", ''));
+                                }
+                            }
+                        });
+                    }
+                });
+            } else {
+                msgShow('请先选择要删除的记录。');
+            }
+        }
+        function saveData() {
+            //alert(dlg_Edit_form.url);
+            dlg_Edit_form.form('submit', {
+                url: dlg_Edit_form.url,
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (result) {
+                    var result = eval('(' + result + ')'); //处理Json
+                    var desc = filterDesc(result.ResultDescription);
+                    if (result.IsSuccess) {
+                        msgFade("操作成功：" + desc);
+                        datagrid.datagrid('reload'); //grid变量要与其他文件中的一致
+                        dlg_Edit.dialog('close');
+                    } else {
+                        msgShow('操作失败:' + desc);
+                    }
+                }
+            });
+        }
+
+        function findData() {
+            var queryParams = returnQueryParams();
+            datagrid.datagrid('reload', queryParams);
+        }
+
+
+        function myview(rowData) {
+            $.post("/" + tableName + "/ViewResult", { id: rowData[idField] }, function (data) {
+                view.dialog("open");
+                $("#divview").html(data);
+            });
+        }
+        function closeview() {
+            view.dialog('close');
+        }
+    </script>
+}
+
+
+

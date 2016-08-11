@@ -1,0 +1,147 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+    bool? isPinPai = ViewBag.isPinPai;
+    var typename = "类别";
+    if(isPinPai==true){
+        typename = "品牌";
+    }
+}
+@section head{
+    <style>
+        .img {
+            width:50px;
+            height:50px;
+        }
+    </style>
+}
+<div id="Dlg-Edit" title="窗口" style="width: 500px; height: 200px;" buttons="#buttons">
+    <div style="padding: 10px 20px">
+        <form method="post"  enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td class="right">@(typename)名称：
+                    </td>
+                    <td>
+                        <input name="typename" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">@(typename)logo：
+                    </td>
+                    <td>
+                        @*<input name="typelogo" class="easyui-validatebox editInput" />*@
+                        <input type="file" name="typelogo" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">排序：
+                    </td>
+                    <td>
+                        <input type="text" name="sort" class="easyui-numberbox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">描述：
+                    </td>
+                    <td>
+                        <input name="description" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        类别名称：
+                        <input id="s_typename" class="easyui-validatebox searchInput" />
+        描述：
+                        <input id="s_description" class="easyui-validatebox searchInput" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts2{
+    var toolbar = [{
+            text: '新增',
+            iconCls: 'icon-add',
+            handler: add
+        }, '-', {
+            text: '查看',
+            iconCls: 'icon-edit',
+            handler: view
+       }, '-', {
+           text: '修改',
+           iconCls: 'icon-edit',
+           handler: edit
+       }, '-', {
+           text: '删除',
+           iconCls: 'icon-remove',
+           handler: del
+    @*@if (string.IsNullOrEmpty(ViewBag.pid))
+{
+    <text>  }, '-', {
+        text: '二级类别', 
+        iconCls: 'icon-search',
+        handler: type2
+    </text>
+}*@
+}];
+}
+@section scripts{
+    <script>
+
+        var tableName = "faulttype";
+        var sortName = "typeid";
+        var idField = "typeid";
+        var sortOrder = "asc";
+
+
+        var columns = [[
+    {
+        @if (!string.IsNullOrEmpty(ViewBag.pid))
+        {
+         @:     field: 'pid', title: '一级类别', width: 100, sortable: true
+@:}, {   
+        }
+    field: 'typename', title: '@(typename)名称', width: 100, sortable: true
+        }, {
+            field: 'sort', title: '排序', width: 100, sortable: true
+        }, {
+            field: 'description', title: '描述', width: 300, sortable: true
+        }]];
+        function type2() {
+            var rows = datagrid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+                return;
+            }
+            parent.addTab("二级类别：" + rows[0]["typename"], "/faulttype/index/" + rows[0]["typeid"], "");
+        }
+        function pinpai() {
+            var rows = datagrid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+                return;
+            }
+            parent.addTab("品牌：" + rows[0]["typename"], "/faulttype/index/" + rows[0]["typeid"] + "?isPinPai=true", "");
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                typename: $("#s_typename").val(),
+                description: $("#s_description").val()
+            };
+            return obj;
+        }
+    </script>
+}

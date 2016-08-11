@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/easyui14/themes/default/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/easyui14/themes/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/easyui14/default.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+
+<body class="easyui-layout">
+    @RenderBody()
+    <script type="text/javascript" src="@Url.Content("~/Content/easyui/jquery-1.8.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/easyui14/jquery.easyui.min.js")"></script>
+    <script type="text/javascript" src='@Url.Content("~/Content/easyui14/locale/easyui-lang-zh_CN.js")'> </script>
+    <script type="text/javascript" src="@Url.Content("~/Content/easyui/easyuiExtend.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

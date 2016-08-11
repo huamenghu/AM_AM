@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">单位名称：
+                    </td>
+                    <td>
+                        <input name="applicompanyname" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">单位地址：
+                    </td>
+                    <td>
+                        <input name="applicompanyaddr" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">营业执照号：
+                    </td>
+                    <td>
+                        <input name="applibusinessregistnumber" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">组织机构代码：
+                    </td>
+                    <td>
+                        <input name="appliorganizationcode" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">注册资金：
+                    </td>
+                    <td>
+                        <input name="appliregistercapital" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">工作单位：
+                    </td>
+                    <td>
+                        <input name="appliemployer" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">注册日期：
+                    </td>
+                    <td>
+                        <input type="text" name="appliregistrationdate" editable="false" class="easyui-datebox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">经济类型：
+                    </td>
+                    <td>
+                        <input name="applieconomytype" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">资质类别：
+                    </td>
+                    <td>
+                        <input name="appliqualificationtypeid" class="easyui-combobox editInput" data-options="textField:'Name',valueField:'ID',url:'/Tools/GetQualificationType'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系人：
+                    </td>
+                    <td>
+                        <input name="applilinkname" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系电话：
+                    </td>
+                    <td>
+                        <input name="applilinktel" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">邮箱：
+                    </td>
+                    <td>
+                        <input name="appliemail" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">状态：
+                    </td>
+                    <td>
+                        <input name="state" id="state" class="easyui-combobox editInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">是否支付：
+                    </td>
+                    <td>
+                        <input name="ispay" type="radio" value="true" />已支付
+                        <input name="ispay" type="radio" value="false" />未支付
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        单位名称：
+                        <input id="s_applicompanyname" class="easyui-validatebox searchInput" />
+        电话：
+                        <input id="s_applilinktel" class="easyui-validatebox searchInput" />
+        组织机构代码：
+                        <input id="s_appliorganizationcode" class="easyui-validatebox searchInput" />
+        资质类型：
+                    <input id="s_appliqualificationtypeid" class="easyui-combobox searchInput" data-options="textField:'Name',valueField:'ID',url:'/Tools/GetQualificationType2'" />
+        处理状态：
+                    <input id="s_state" class="easyui-combobox searchInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "applicationinfo";
+        var sortName = "GUID";
+        var idField = "GUID";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'applilinkname', title: '联系人', width: 100, sortable: true
+    }, {
+        field: 'applilinktel', title: '联系电话', width: 100, sortable: true
+    }, {
+        field: 'applicompanyname', title: '单位名称', width: 100, sortable: true
+    }, {
+        field: 'appliqualificationtypeid', title: '资质类别', width: 150, sortable: true
+    }, {
+        field: 'ispay', title: '是否支付', width: 100, sortable: true
+    }, {
+        field: 'state', title: '处理状态', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                applicompanyname: $("#s_applicompanyname").val(),
+                applilinktel: $("#s_applilinktel").val(),
+                appliorganizationcode: $("#s_appliorganizationcode").val(),
+                appliqualificationtypeid: $("#s_appliqualificationtypeid").combobox("getValue"),
+                state: $("#s_state").combobox("getValue"),
+            };
+            return obj;
+        }
+    </script>
+}

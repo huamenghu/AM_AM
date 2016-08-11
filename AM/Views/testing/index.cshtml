@@ -1,0 +1,199 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">委托单位名称：
+                    </td>
+                    <td>
+                        <input name="testingclientcompanyname" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">委托单位地址：
+                    </td>
+                    <td>
+                        <input name="testingclientcompanyaddr" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系人姓名：
+                    </td>
+                    <td>
+                        <input name="testinglinkname" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系人电话：
+                    </td>
+                    <td>
+                        <input name="testingtel" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">工程名称：
+                    </td>
+                    <td>
+                        <input name="testingengineeringname" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">工程地址：
+                    </td>
+                    <td>
+                        <input name="testingengineeringaddr" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">安装单位：
+                    </td>
+                    <td>
+                        <input name="testingbuildercompany" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">施工单位：
+                    </td>
+                    <td>
+                        <input name="testingconstructioncompany" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">检测内容：
+                    </td>
+                    <td>
+                        <input name="testingcontent" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">检测数量：
+                    </td>
+                    <td>
+                        <input type="text" name="testingsize" class="easyui-numberbox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">检验设备概括：
+                    </td>
+                    <td>
+                        <input name="testingepitome" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">生产厂家：
+                    </td>
+                    <td>
+                        <input name="testingmanufacturer" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">设备编号：
+                    </td>
+                    <td>
+                        <input name="testingequipmentnumber" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">设备型号：
+                    </td>
+                    <td>
+                        <input name="testingequipmenttype" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">安装高度：
+                    </td>
+                    <td>
+                        <input name="testingmountheight" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">其他：
+                    </td>
+                    <td>
+                        <input name="testingother" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">取报告方式：
+                    </td>
+                    <td>
+                        <input name="testingtheway" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">报告投递至：
+                    </td>
+                    <td>
+                        <input name="testingmailing" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">状态：
+                    </td>
+                    <td>
+                        <input name="state" id="state" class="easyui-combobox editInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">是否支付：
+                    </td>
+                    <td>
+                        <input name="ispay" type="radio" value="true" />已支付
+                        <input name="ispay" type="radio" value="false" />未支付
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        联系人：
+                        <input id="s_testinglinkname" class="easyui-validatebox searchInput" />
+        联系电话：
+                        <input id="s_testingtel" class="easyui-validatebox searchInput" />
+        检验内容：
+                        <input id="s_testingcontent" class="easyui-validatebox searchInput" />
+        处理状态：
+                    <input id="s_state" class="easyui-combobox searchInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "testing";
+        var sortName = "GUID";
+        var idField = "GUID";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'testinglinkname', title: '联系人', width: 100, sortable: true
+    }, {
+        field: 'testingtel', title: '联系电话', width: 100, sortable: true
+    }, {
+        field: 'testingcontent', title: '检测内容', width: 300, sortable: true
+    }, {
+        field: 'ispay', title: '是否支付', width: 100, sortable: true
+    }, {
+        field: 'state', title: '处理状态', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                testinglinkname: $("#s_testinglinkname").val(),
+                testingtel: $("#s_testingtel").val(),
+                testingcontent: $("#s_testingcontent").val(),
+                state: $("#s_state").combobox("getValue"),
+            };
+            return obj;
+        }
+    </script>
+}

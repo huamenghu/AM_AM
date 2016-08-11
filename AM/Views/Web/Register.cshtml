@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+
+}
+<!--注册-->
+<a name="reg" id="reg">&nbsp;</a>
+<div class="registered-out">
+    <img src="/Content/Web/images/registered-01.png" />
+    <h3>无忧注册</h3>
+    <div class="registered-box">
+        <form action="/web/register2#reg" method="post" onsubmit="return btnnext()">
+            <table class="registered-main">
+                <tr>
+                    <td width="100" align="right">手机：</td>
+                    <td colspan="2" class="iphone"><input type="text" id="phone" name="phone" placeholder="请输入手机号" /></td>
+                </tr>
+
+                <tr>
+                    <td width="100" align="right">验证码：</td>
+                    <td class="verification" width="160">
+                        <input type="text" id="mycode" name="smscode" placeholder="请输入验证码" />
+                        <input type="hidden" id="hidcode" value="" />
+                    </td>
+                    <td class="obtain"><input type="button" onclick="getcode()" value="获取验证码" /></td>
+                </tr>
+
+                <tr>
+                    <td width="100" align="right"></td>
+                    <td colspan="2" class="next-registered">
+
+                        <input type="submit" value="下一步" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_index").addClass("index");
+
+        })
+        function getcode() {
+            var phone = $("#phone").val();
+            $.post("/client/postsendsms", { phone: phone }, function (d) {
+                if (d.code == 1) {
+                    alert("验证码已通过短信方式发出，请查收！");
+                    $("#hidcode").val(d.smscode);
+                } else {
+                    alert(d.message);
+                }
+            })
+        }
+        function btnnext() {
+            var smscode = $("#hidcode").val();
+            if (smscode == '') {
+                alert("请重新获取验证码！");
+            } else {
+                var mycode = $("#mycode").val();
+                if (mycode == smscode) {
+                    return true;
+                } else {
+                    alert("验证码不正确！");
+                }
+            }
+            return false;
+        }
+    </script>
+}

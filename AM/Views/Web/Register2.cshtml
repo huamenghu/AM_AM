@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+
+}
+<!--注册-->
+<a name="reg" id="reg">&nbsp;</a>
+<div class="registered-out" >
+    <img src="/Content/Web/images/registered-02.png" />
+    <h3>无忧注册</h3>
+    <div class="registered-box">
+        <form action="/web/register3#reg" method="post" onsubmit="return register()">
+            <table class="registered-main">
+                <tr>
+                    <td width="100" align="right">手机：</td>
+                    <td class="iphone">@ViewBag.phone</td>
+                </tr>
+
+                <tr>
+                    <td width="100" align="right">请设置密码：</td>
+                    <td class="set-password"><input type="password" id="password1" placeholder="请设置密码" /></td>
+                </tr>
+
+                <tr>
+                    <td width="100" align="right">请确认密码：</td>
+                    <td class="set-password"><input type="password" id="password2" placeholder="请确认密码" /></td>
+                </tr>
+
+                <tr>
+                    <td width="100" align="right"></td>
+                    <td class="next-registered">
+                        <input type="submit" value="立即注册" />
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_index").addClass("index");
+
+        })
+        function register() {
+            var r = false;
+            var password = $("#password1").val();
+            var password2 = $("#password2").val();
+            if (password == '') {
+                alert("请输入密码！");
+            } else if (password != password2) {
+                alert("两次输入密码不一致，请检查！"+password+password2);
+            } else {
+                $.post("/client/postregistered", { phone: '@ViewBag.phone', pwd: password }, function (d) {
+                    if (d.code == 1) {
+                        r = true;
+                        location.href = "/web/register3#reg";
+                        return true;
+                    } else {
+                        alert(d.message);
+                        r = false;
+                        return false;
+                    }
+                })                 
+            }
+            return r;
+        }
+    </script>
+}

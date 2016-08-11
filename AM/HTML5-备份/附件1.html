@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>培训考核-附件1-吊篮操作培训考核</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/wap.css"/>
+    <link rel="stylesheet" href="css/jiance.css"/>
+    <script src="js/test1.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+<!--客户填写-->
+<div class="top">
+    	吊篮操作培训申请表
+    <a href="#" class="back">返回</a>
+</div>
+
+<div class="wrapper">
+    <form  action="post.aspx" method="post" id="form"  >
+        <!--基本信息-->
+        <!--<p class="sign-tip">
+            	个人基本信息
+        </p>-->
+        <div class="form-group">
+            <label>姓名</label>
+            <input type="text" id="tes1" class="form-control" placeholder="姓名">
+            <label id="test1" ></label>
+        </div>
+        <div class="form-group">
+            <label style="margin-right: 10px;">性别</label>
+            <input type="radio" name="sex" id="boy" checked="checked"><label for="boy"style="margin-right: 5px;">男</label>
+            <input type="radio" name="sex" id="girl"><label for="girl">女</label><br />
+            <label id="test11" ></label>
+        </div>
+        <div class="form-group">
+            <label>文化程度</label>
+            <input type="text" id="tes2" class="form-control" placeholder="文化程度">
+            <label id="test2" ></label>
+        </div>
+        <div class="form-group">
+            <label>联系电话</label>
+            <input type="text" id="tes3" class="form-control" placeholder="联系电话">
+            <label id="test3" ></label>
+        </div>
+        <div class="form-group">
+            <label>专业工龄</label>
+            <input type="text" id="tes4" class="form-control" placeholder="专业工龄">
+            <label id="test4" ></label>
+        </div>
+        <div class="form-group">
+            <label>身体状况</label>
+            <input type="text" id="tes5" class="form-control" placeholder="身体状况">
+            <label id="test5" ></label>
+        </div>
+        <div class="form-group">
+            <label>身份证号</label>
+            <input type="text" id="tes6" class="form-control" placeholder="身份证号">
+            <label id="test6" ></label>
+        </div>
+        <div class="form-group">
+            <label>工作单位</label>
+            <input type="text" id="tes7" class="form-control" placeholder="工作单位">
+            <label id="test7" ></label>
+        </div>
+        <div class="form-group">
+            <label>邮编</label>
+            <input type="text" id="tes8" class="form-control" placeholder="邮编">
+            <label id="test8" ></label>
+        </div>
+        <div class="form-group">
+            <label>邮箱</label>
+            <input type="text" id="tes9" class="form-control" placeholder="邮箱">
+            <label id="test9" ></label>
+        </div>
+        <div class="form-group">
+            <label>本人签字</label>
+            <input type="text" id="tes10" class="form-control" placeholder="本人签字">
+            <label id="test10" ></label>
+        </div>
+        <div class="form-group">
+            <label>选择培训点</label>
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name">小天鹅
+                    </label>
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name">高研院
+                    </label>
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name">雄宇
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>工作经历</label>
+            <textarea class="form-control" placeholder="工作经历"></textarea>
+        </div>
+        <div class="form-group">
+            <label>所在单位意见</label>
+            <textarea class="form-control" placeholder="所在单位意见"></textarea>
+            
+        </div>
+        <p><input type="submit" name="register" value="Submit" onclick=""/></p>
+    </form>
+
+</div>
+<!--提交-->
+<div class="h-50">
+</div>
+<div class="footer">
+    <a href="post.aspx"   class="btn-submit"  onclick="frm.submit()">
+        提交
+    </a>
+</div>
+</body>
+</html>

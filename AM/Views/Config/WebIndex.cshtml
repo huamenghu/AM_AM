@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@section head{
+    <style>
+        input {
+            width: 240px;
+        }
+    </style>
+}
+<div region="center" style="padding: 20px">
+    <form action="/" id="form1" method="post">
+        <table>
+            <tr>
+                <td colspan="4">1.以下是网站设置 </td>
+            </tr>
+            <tr>
+                <td>首页标题：</td>
+                <td>
+                    <input type="text" name="IndexTitle" value="@ViewBag.IndexTitle" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>首页关键字：</td>
+                <td>
+                    <input type="text" name="IndexKeyword" value="@ViewBag.IndexKeyword" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>首页描述：</td>
+                <td>
+                    <input type="text" name="IndexDescription" value="@ViewBag.IndexDescription" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>客服热线：</td>
+                <td>
+                    <input type="text" name="Tel" value="@ViewBag.Tel" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>公司地址：</td>
+                <td>
+                    <input type="text" name="Address" value="@ViewBag.Address" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email：</td>
+                <td>
+                    <input type="text" name="Email" value="@ViewBag.Email" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>版权信息：</td>
+                <td>
+                    <input type="text" name="Copyright" value="@ViewBag.Copyright" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>ICP备案号：</td>
+                <td>
+                    <input type="text" name="ICP" value="@ViewBag.ICP" class="easyui-textbox" />
+                </td>
+            </tr>
+            <tr>
+                <td>快递100Key：</td>
+                <td>
+                    <input type="text" name="ExpressKey" value="@ViewBag.ExpressKey" class="easyui-textbox" />
+                </td>
+            </tr>
+        </table>
+        <div>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="saveData()">保存</a>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script>
+        function saveData() {
+            $("#form1").form('submit', {
+                url: "/Config/SetWebConfig",
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (data) {
+                    try {
+                        var result = eval('(' + data + ')'); //处理Json
+                        var desc = filterDesc(result.ResultDescription);
+                        if (result.IsSuccess) {
+                            msgFade("操作成功：" + desc);                            
+                        } else {
+                            msgShow('操作失败，' + "请重试或重新登录");
+                        }
+                    } catch (err) {
+                        msgShow('操作失败！' + "请重试或重新登录");
+                    }
+                }
+            });
+        }
+    </script>
+}

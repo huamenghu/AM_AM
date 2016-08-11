@@ -1,0 +1,197 @@
+﻿body {
+}
+ .button1 {
+            background: url(/content/images/button1.png);
+            width: 201px;
+            height: 44px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+
+        .button2 {
+            background: url(/content/images/button2.png);
+            width: 201px;
+            height: 44px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .buttonReturn {
+            background: url(/content/images/return.png);
+            width: 204px;
+            height: 84px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+         .btnSearch {
+            background: url(/content/images/search.png);
+            width: 32px;
+            height: 32px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .btnpre {
+            background: url(/content/images/pre.png);
+            width: 88px;
+            height: 56px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .btnnext {
+            background: url(/content/images/next.png);
+            width: 88px;
+            height: 56px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .btndetail {
+            background: url(/content/images/detail.png);
+            width: 143px;
+            height: 65px;
+            border: 0;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+
+
+
+        .b1, .b2, .b3, .b4, .b1b, .b2b, .b3b, .b4b, .b {
+            display: block;
+            overflow: hidden;
+        }
+
+        .b1, .b2, .b3, .b1b, .b2b, .b3b {
+            height: 1px;
+        }
+
+        .b2, .b3, .b4, .b2b, .b3b, .b4b, .b {
+            border-left: 1px solid #2b7fab;
+            border-right: 1px solid #2b7fab;
+        }
+
+        .b1, .b1b {
+            margin: 0 5px;
+            background: #2b7fab;
+        }
+
+        .b2, .b2b {
+            margin: 0 3px;
+            border-width: 2px;
+        }
+
+        .b3, .b3b {
+            margin: 0 2px;
+        }
+
+        .b4, .b4b {
+            height: 2px;
+            margin: 0 1px;
+        }
+
+        .d1 {
+            background: #F4F9Fc;
+        }
+
+        .k {
+            height: 420px;
+        }
+/*********分页*******/
+.pager a,.pager a span,.pager strong,.pager strong span,.pager a:hover,.pager a:hover span {
+	background:url(../images/fang-list-sprites.png?v=020628) no-repeat;
+}
+.pager {
+	padding:10px 0;
+	clear:both;
+	text-align:center;
+	line-height:22px;
+	font-family:Arial,'宋体';
+	font-size:12px;
+	zoom:1;
+}
+.pager a,.pager strong,.hotarea dt {
+	margin:0 1px;
+	padding:0 0 0 1px;
+	display:inline-block;
+	background-position:0 -200px;
+	vertical-align:middle;
+	color:#808080!important;
+	cursor:pointer;
+}
+.pager a span,.pager strong span,.hotarea dt span {
+	display:inline-block;
+	padding:0 8px 0 7px;
+	background-position:right -200px;
+}
+.pager a.prv {
+	background-position:0 -244px;
+	padding-left:12px;
+}
+.pager a.next span {
+	background-position:right -244px;
+	padding-right:19px;
+}
+.pager a:hover,.pager strong {
+	background-position:0 -156px;
+	color:#fff!important;
+	text-decoration:none;
+}
+.pager a:hover span,.pager strong span {
+	background-position:right -156px;
+}
+.pager a.prv:hover {
+	background-position:0 -267px;
+}
+.pager a.next:hover span {
+	background-position:right -267px;
+}
+.pager strong {
+	font-weight:700;
+}
+.pager .recently {
+	background-position:0 -178px;
+	color:#f00!important;
+}
+.pager .recently span {
+	background-position:right -178px;
+}

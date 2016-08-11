@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>create</title>
+    <script src="~/Content/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+    <div>
+        <form>
+            方法名：
+            <input type="text" id="name" value="" />（前面不带get或post）<br />
+            描述：
+            <input type="text" id="remark" value="" style="width:400px" />(region后的内容)<br />
+            参数列表：<textarea  id="txtp" value="" style="width:700px; height:80px"></textarea>（多个参数以 , 号分隔）
+            <input type="button" name="btnOK" value="生成Get" onClick="click1()" /><br />
+            <textarea id="txtR" style="width:700px; height:300px"></textarea>
+            <br />
+            <textarea id="txtR2" style="width:700px; height:300px"></textarea>
+            <div id="divR">
+            </div>
+        </form>
+    </div>
+    <script>
+        function click1() {
+            var remark = $("#remark").val();
+            var txtp = $("#txtp").val();
+            var name = $("#name").val();// alert(name);
+            $.post("/Create/ToGet", { remark: remark, txtp: txtp,name:name }, function (d) {
+                $("#txtR").val(d);
+            });
+            $.post("/Create/ToGet2", { remark: remark, txtp: txtp, name: name }, function (d) {
+                $("#txtR2").val(d);
+            });
+        }
+    </script>
+</body>
+</html>

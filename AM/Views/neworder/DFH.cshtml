@@ -1,0 +1,218 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid0.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">
+                        用户：
+                    </td>
+                    <td>
+                        <input name="userid" id="userid" class="easyui-combobox editInput" editable="true" required="true" data-options="textField:'username',valueField:'userid',url:'/user/getList'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        订单单号：
+                    </td>
+                    <td>
+                        <input name="ordernumber" id="ordernumber" class="easyui-validatebox editInput" required='true' />
+                        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="getordernumber()">模拟生成订单单号</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        订单状态：
+                    </td>
+                    <td>
+                        <input name="orderstruts" id="orderstruts" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'Value',valueField:'Key',url:'/order/getorderstruts'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        订单总价格：
+                    </td>
+                    <td>
+                        <input type="text" name="ordercountprice" class="easyui-numberbox" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        下单时间：
+                    </td>
+                    <td>
+                        <input type="text" name="orderdate" class="easyui-datebox" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        快递公司：
+                    </td>
+                    <td>
+                        <input name="expresscompanyid" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        快递单号：
+                    </td>
+                    <td>
+                        <input name="ordersendgoodsexpressnumber" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="Dlg-FH" title="窗口" style="width: 500px; height: 200px;" buttons="#buttonsfh">
+    <div style="padding: 20px 10px;  ">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">
+                        快递公司：
+                    </td>
+                    <td>
+                        <input name="fh_expresscompanyid" id="fh_expresscompanyid" class="editInput" required="true" />输入部分关键字可缩小范围
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        快递单号：
+                    </td>
+                    <td>
+                        <input name="fh_ordersendgoodsexpressnumber" id="fh_ordersendgoodsexpressnumber" class="easyui-validatebox editInput" required="true" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="buttonsfh">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveData2()">发货</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#Dlg-FH').dialog('close')">关闭</a>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        订单单号：
+        <input id="s_ordernumber" class="easyui-validatebox searchInput" />
+        会员手机号：
+        <input id="s_userphone" class="easyui-validatebox searchInput" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "neworder";
+        var sortName = "orderid";
+        var idField = "orderid";
+        var sortOrder = "asc";
+        var url_ = "?state=2";
+
+        var toolbar = [{
+            text: '查看',
+            iconCls: 'icon-edit',
+            handler: view
+        }, {
+            text: '发货',
+            iconCls: 'icon-edit',
+            handler: fahuo
+        }];
+        var columns = [[
+    {
+        field: 'ordernumber', title: '订单单号', width: 100, sortable: true
+    }, {
+        field: 'orderstruts', title: '订单状态', width: 100, sortable: true
+    }, {
+        field: 'userid', title: '会员名', width: 100, sortable: true
+    }, {
+        field: 'ordercountprice', title: '订单总价格', width: 100, sortable: true
+    }, {
+        field: 'orderdate', title: '下单时间', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function getordernumber() {
+            $.post("/order/getordernumber", {}, function (d) {
+                $("#ordernumber").val(d);
+            });
+        }
+        function returnQueryParams() {
+            var obj = {
+                ordernumber: $("#s_ordernumber").val(),
+                userphone: $("#s_userphone").val(),
+                //orderstruts: $("#s_orderstruts").combobox("getValue"),
+            };
+            return obj;
+        }
+
+
+        function saveData2() {
+            fh_form.form('submit', {
+                url: fh_form.url,
+                onSubmit: function () {
+                    return $(this).form('validate');
+                },
+                success: function (result) {
+                    var result = eval('(' + result + ')'); //处理Json
+                    var desc = filterDesc(result.ResultDescription);
+                    if (result.IsSuccess) {
+                        msgFade("操作成功：" + desc);
+                        datagrid.datagrid('reload'); //grid变量要与其他文件中的一致
+                        dialog_fh.dialog('close');
+                    } else {
+                        msgShow('操作失败:' + desc);
+                    }
+                }
+            });
+        }
+        function fahuo() {
+            fh_form.form('clear');
+            dialog_fh.dialog("open");
+            dialog_fh.dialog('setTitle', '发货');
+            var rows = datagrid.datagrid('getSelections');
+            var num = rows.length;
+            if (num == 0) {
+                msgShow('请选择一条记录进行操作!');
+                return;
+            }
+            else if (num > 1) {
+                msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+                return;
+            }
+            $.post("/" + tableName + "/FillFormFH/", { id: rows[0][idField] }, function (result) {
+                fh_form.form('load', result);
+            });
+            fh_form.url = "/order/fahuo/" + rows[0]["orderid"];
+        }
+        $(function () {
+            dialog_fh = $('#Dlg-FH').dialog({
+                closed: true,
+                modal: true
+            });
+            fh_form = dialog_fh.find("form");
+            $("#fh_expresscompanyid").combogrid({
+                panelWidth: 250,
+                url: '/Order/GetExpressCode',
+                idField: 'Code',
+                required: false,
+                textField: 'Name',
+                mode: 'remote',
+                fitColumns: true,
+                columns: [[
+                       { field: 'Code', title: '公司代码', width: 80 },
+                       { field: 'Name', title: '快递公司', width: 80 }
+                ]]
+            });
+        });
+    </script>
+}
+

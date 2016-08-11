@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>检测业务-起重机械委托检验协议</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/wap.css"/>
+    <link rel="stylesheet" href="css/jiance.css"/>
+    <script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/test5.js"></script>
+</head>
+<body>
+<!--客户填写-->
+<div class="top">
+    起重机械委托检验协议
+    <a href="list_check.html" class="back">返回</a>
+</div>
+
+<div class="wrapper">
+    <form>
+        <!--基本信息-->
+        <!--<p class="sign-tip">
+            基本信息
+        </p>-->
+        <div class="form-group">
+            <label>委托单位</label>
+            <input type="text" id="wtcompany" class="form-control" placeholder="委托单位">
+        </div>
+        <div class="form-group">
+            <label>委托日期</label>
+            <input type="text" id="wtdate" class="form-control" placeholder="委托日期">
+        </div>
+        <div class="form-group">
+            <label>使用单位</label>
+            <input type="text" id="sycompany" class="form-control" placeholder="使用单位">
+        </div>
+        <div class="form-group">
+            <label>委托联系人/电话</label>
+            <input type="text" id="wttel" class="form-control" placeholder="委托联系人/电话">
+        </div>
+        <div class="form-group">
+            <label>工程名称</label>
+            <input type="text" id="gcname" class="form-control" placeholder="工程名称">
+        </div>
+        <div class="form-group">
+            <label>安装负责人/电话</label>
+            <input type="text"id="aztel" class="form-control" placeholder="安装负责人/电话">
+        </div>
+        <div class="form-group">
+            <label>施工地点</label>
+            <input type="text" id="sgaddress" class="form-control" placeholder="施工地点">
+        </div>
+        <div class="form-group">
+            <label>安装日期</label>
+            <input type="text" id="azdate" class="form-control" placeholder="安装日期">
+        </div>
+        <div class="form-group">
+            <label>安装单位</label>
+            <input type="text" id="azcompany" class="form-control" placeholder="安装单位">
+        </div>
+        <div class="form-group">
+            <label>备案编号</label>
+            <input type="text" id="bacode" class="form-control" placeholder="备案编号">
+        </div>
+        <div class="form-group">
+            <label>生产厂家</label>
+            <input type="text" id="scstore" class="form-control" placeholder="生产厂家">
+        </div>
+        <div class="form-group">
+            <label>规格型号</label>
+            <input type="text" id="type" class="form-control" placeholder="规格型号">
+        </div>
+        <div class="form-group">
+            <label>设备名称</label>
+            <input type="text" id="sbname" class="form-control" placeholder="设备名称">
+        </div>
+        <div class="form-group">
+            <label>出厂编号</label>
+            <input type="text" id="cccode" class="form-control" placeholder="出厂编号">
+        </div>
+        <div class="form-group">
+            <label>监理单位</label>
+            <input type="text" id="jlcompany" class="form-control" placeholder="监理单位">
+        </div>
+        <div class="form-group">
+            <label>检验时附着道数</label>
+            <input type="text" id="ctnumber" class="form-control" placeholder="检验时附着道数">
+        </div>
+        <div class="form-group">
+            <label>检验时安装高度</label>
+            <input type="text" id="checkheight" class="form-control" placeholder="检验时安装高度">
+        </div>
+        <div class="form-group">
+            <label>检验数量</label>
+            <input type="text" id="checknumber" class="form-control" placeholder="检验数量">
+        </div>
+        <div class="form-group">
+            <label>检验类别</label>
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name">安装检验
+                    </label>
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name">移装检验
+                    </label>
+                    <label class="mt10 mr10">
+                       <input type="checkbox"name="checkbox_name">定期检验
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>检验依据</label>
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name2">《建筑施工升降设备设施检验标准》  JGJ 305-2013
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name2">《起重机械定期检验规则》 TSG Q7015-2008
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name2">《起重机械安装改造重大维修监督检验规则》      TSG Q7016-2008
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name2">《起重设备安装工程施工及验收规范》            GB50278-2010
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name2">《建筑起重机械安全监督管理规定》              建设部166号令
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>委托单位提交技术资料</label>
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">1、安装单位拆装资质证书及（副本）等级
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">2、安装单位安全生产许可证
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">3、生产厂家特种设备制造（生产）许可证
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">4、产品出厂合格证
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">5、安装告知书
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">6、安装合同及安全协议
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">7、专项施工方案
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">8、地基承载力勘察报告(塔式起重机、桥式及门式起重机)
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">9、基础验收报告及其隐蔽工程资料
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">10、基础混凝土试压强度报告
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">11、预埋件或底脚螺栓产品合格证(塔式起重机)
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">12、安装前检查表（塔式起重机、施工升降机）
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">13、安装自检记录
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">14、安装人员操作上岗证及司机上岗证
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">15、安装方案（含附着方案）
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">16、更换液压油记录
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">17、备案证明
+                    </label><br />
+                     <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">18、基础施工图
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">19、吊笼坠落试验报告（施工升降机）
+                    </label><br />
+                    <label class="mt10 mr10">
+                        <input type="checkbox"name="checkbox_name3">20、防坠安全器标定检测报告（施工升降机）
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label style="margin-right: 10px;">服务类型</label>
+            <input type="radio" name="sex" id="urgent"><label for="urgent" style="margin-right: 5px;">加急</label>
+            <input type="radio" name="sex" id="normal" checked="checked"><label for="normal">正常</label>
+        </div>
+        <div class="form-group">
+            <label>年 月 日</label>
+            <input type="text" id="date" class="form-control" placeholder="输入年 月 日">
+        </div>
+        <div class="form-group">
+            <label>检测费用</label>
+            <input type="text" id="checkmoney" class="form-control" placeholder="检测费用">
+        </div>
+    </form>
+
+</div>
+<!--提交-->
+<div class="h-50">
+</div>
+<div class="footer">
+    <a href="#" class="btn-submit" onclick="test()">
+        提交
+    </a>
+</div>
+</body>
+</html>

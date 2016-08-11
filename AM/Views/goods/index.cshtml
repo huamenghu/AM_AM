@@ -1,0 +1,244 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+@section head{
+    <style>
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        .divlogo {
+            vertical-align: top;
+        }
+
+        .editInput {
+            width: 180px;
+        }
+    </style>
+}
+<div id="Dlg-Edit" title="窗口" style="width: 800px; height: 450px;" buttons="#buttons">
+    <div style="padding: 10px 20px">
+        <form method="post" enctype="multipart/form-data">
+            <table style="width:100%">
+                <tr>
+                    <td class="right">
+                        商品标题：
+                    </td>
+                    <td colspan="3">
+                        <input name="goodsname" class="easyui-validatebox " style="width:80%" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        一级分类：
+                    </td>
+                    <td>
+                        <input name="goodstype" id="goodstype" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'typename',valueField:'typeid',url:'/Tools/GetGoodsType',onSelect:function(){selectType();}" />
+                    </td>
+
+                    <td class="right">
+                        二级分类：
+                    </td>
+                    <td>
+                        <input name="goodsType2" id="goodsType2" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'typename',valueField:'typeid'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        品牌：
+                    </td>
+                    <td>
+                        <input name="goodsPinPai" id="goodsPinPai" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'typename',valueField:'typeid'" />
+                    </td>
+                    <td class="right">
+                        是否推荐：
+                    </td>
+                    <td>
+                        <input name="istj" id="istj" type="checkbox" value="true" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="right">
+                        商品价格：
+                    </td>
+                    <td colspan="3">
+                        <input type="text" name="goodsprice" class="easyui-textbox editInput" required="true" />元
+                    </td>
+
+                    @*<td class="right">
+                        折后价格：
+                    </td>
+                    <td>
+                        <input type="text" name="goodsdiscountprice" class="easyui-numberbox editInput" />元
+                    </td>*@
+                </tr>
+                <tr>
+                    <td class="right">
+                        商品logo：
+                    </td>
+                    <td>
+                        @*<input class="easyui-filebox" name="goodslogo"  data-options="prompt:'选择Logo'">*@
+                        <input type="file" name="goodslogo" />
+                    </td>
+
+                    <td class="right">
+                        商品数量：
+                    </td>
+                    <td>
+                        <input type="text" name="goodscount" class="easyui-numberbox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        描述：
+                    </td>
+                    <td colspan="3">
+                        <textarea class="easyui-kindeditor" style="width: 550px; height: 250px" name="goodscontent" id="goodscontent"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        商品名称：
+        <input id="s_goodsname" class="easyui-validatebox searchInput" />
+        一级类别：
+        <input id="s_goodstype" class="easyui-combobox searchInput" data-options="textField:'typename',valueField:'typeid',url:'/Tools/GetGoodsType_',onSelect:function(){selectType2();}" />
+        二级类别：
+        <input id="s_goodsType2" class="easyui-combobox searchInput" data-options="textField:'typename',valueField:'typeid'" />
+        品牌：
+        <input id="s_goodsPinPai" class="easyui-combobox searchInput" data-options="textField:'typename',valueField:'typeid'" />
+        是否推荐：<select name="s_istj" id="s_istj">
+            <option value="">不限</option>
+            <option value="true">是</option>
+            <option value="false">否</option>
+        </select>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts2{
+    toolbar = [{
+    text: '新增',
+    iconCls: 'icon-add',
+    handler: add2
+    }, '-', {
+    text: '查看',
+    iconCls: 'icon-edit',
+    handler: view
+    }, '-', {
+    text: '修改',
+    iconCls: 'icon-edit',
+    handler: edit2
+    }, '-', {
+    text: '删除',
+    iconCls: 'icon-remove',
+    handler: del
+    }, '-', {
+    text: '批量导出',
+    iconCls: 'icon-search',
+    handler: toExcel
+    }];
+ 
+     function add2() {
+            dlg_Edit_form.form('clear');
+       kindeditor.html('');
+            dlg_Edit.dialog('open');
+            dlg_Edit.dialog('setTitle', '添加');
+            dlg_Edit_form.url = "/" + tableName + "/Add/" + url_;
+        }
+
+    function edit2() {
+    var rows = datagrid.datagrid('getSelections');
+    var num = rows.length;
+    if (num == 0) {
+    msgShow('请选择一条记录进行操作!');
+    return;
+    }
+    else if (num > 1) {
+    msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+    return;
+    }
+    dlg_Edit_form.form('clear');
+    dlg_Edit.dialog('open');
+    dlg_Edit.dialog('setTitle', '修改');
+    $.post("/" + tableName + "/FillForm/", { id: rows[0][idField] }, function (result) {
+    dlg_Edit_form.form('load', result);
+    selectType();
+    $("#goodsType2").combobox('setValue',result.goodsType2);
+    $("#goodsPinPai").combobox('setValue',result.goodsPinPai);
+    kindeditor.html(result.goodscontent);
+    });
+    dlg_Edit_form.url = "/" + tableName + "/update/" + rows[0][idField];
+    }
+}
+@section scripts{
+
+    <script src="~/Content/kindeditor/kindeditor-min.js"></script>
+    <script src="~/Content/easyui/ekindeditor.js"></script>
+
+    <script>
+        function selectType() {
+            var type1 = $("#goodstype").combobox("getValue");
+            if (type1 != '') {
+                //alert(type1);
+                $("#goodsType2").combobox({ url: "/Tools/GetGoodsType2/" + type1 });
+                $("#goodsPinPai").combobox({ url: "/Tools/GetGoodsPinPai/" + type1 });
+            }
+        }
+        function selectType2() {
+            var type1 = $("#s_goodstype").combobox("getValue");
+            if (type1 != '') {
+                var url2 = "/Tools/GetGoodsType2_/" + type1;
+                $("#s_goodsType2").combobox({ url: url2 });
+                $("#s_goodsPinPai").combobox({ url: "/Tools/GetGoodsPinPai_/" + type1 });
+            } else {
+                $("#s_goodsType2").combobox("clear");
+                $("#s_goodsPinPai").combobox("clear");
+            }
+        }
+    </script>
+    <script>
+        var tableName = "goods";
+        var sortName = "goodsid";
+        var idField = "goodsid";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'goodsname', title: '商品名称', width: 100, sortable: true
+    }, {
+        field: 'goodsprice', title: '商品价格', width: 100, sortable: true
+    }, {
+        field: 'goodsdiscountprice', title: '折后价格', width: 100, sortable: true
+    }, {
+        field: 'goodstype', title: '一级类别', width: 100, sortable: true
+    }, {
+        field: 'goodsType2', title: '二级类别', width: 100, sortable: true
+    }, {
+        field: 'goodsPinPai', title: '品牌', width: 100, sortable: true
+    }, {
+        field: 'istj', title: '是否推荐', width: 50, sortable: true
+    }, {
+        field: 'goodscount', title: '商品数量', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var istj = $("#s_istj").val()
+            var obj = {
+                goodsname: $("#s_goodsname").val(),
+                goodstype: $("#s_goodstype").combobox("getValue"),
+                goodsType2: $("#s_goodsType2").combobox("getValue"),
+                goodsPinPai: $("#s_goodsPinPai").combobox("getValue"),
+                istj: istj,
+            };
+            return obj;
+        }
+    </script>
+}

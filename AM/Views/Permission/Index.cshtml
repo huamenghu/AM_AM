@@ -1,0 +1,208 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="/Content/ZTree/css/zTreeStyle/zTreeStyle.css"
+    type="text/css">
+<div data-options="region:'west',split:false" title="权限列表" style="width: 250px;">
+    <ul id="tree" class="ztree">
+    </ul>
+</div>
+<div region="center" title="权限详情" style="border: 0; background: #E6EEF8; padding: 20px" id="divCenter" buttons="#buttons">
+    <form  action="/" method="post" id="form1">
+        <table>
+            <tr>
+                <td class="right">权限名称：</td>
+                <td>
+                    <input type="text" name="Name" class="easyui-validatebox" required="true" style="width: 200px" />
+                    <input type="hidden" id="hid_id" />
+                    <input type="hidden" id="PCode" name="PCode" />
+                    <input type="hidden" id="Code" name="Code" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">描述：</td>
+                <td>
+                    <input type="text" name="Description" class="easyui-validatebox" style="width: 200px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">URL地址：</td>
+                <td>
+                    <input type="text" name="URL" class="easyui-validatebox" style="width: 200px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">访问类型：</td>
+                <td>
+                    <select id="HttpType" name="HttpType" style="width: 200px;">
+                        @{
+                            {
+                                var httpTypes = AM.BLL.EnumManager.GetTypes(typeof(AM.BLL.EnumHttpType));
+                                foreach (var item in httpTypes)
+                                {
+                            <option value="@item.Key">@item.Value</option>
+                                }
+                            }
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="right">图标：</td>
+                <td>
+                    <input type="text" name="Res" class="easyui-validatebox" style="width: 200px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">排序：</td>
+                <td>
+                    <input type="text" name="Sequence" class="easyui-numberbox" style="width: 200px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">是否菜单：</td>
+                <td>
+                    <input name="IsShow" type="checkbox" value="true" />
+                </td>
+            </tr>
+            <tr>
+                <td class="right">是否可用：</td>
+                <td>
+                    <input name="IsAvailable" type="checkbox" checked="checked" value="true" />
+                </td>
+            </tr>
+        </table>
+        <div id="buttons" style="padding: 10px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-add" id="btnAdd" onclick="saveData()">添加</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-ok" id="btnSave" onclick="saveData()">保存</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-redo" id="btnReset" onclick="reset()">重置</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-cancel" id="btnDelete" onclick="_delete()">删除</a>
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.core-3.5.min.js"></script>
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.excheck-3.5.min.js"></script>
+    <script type="text/javascript" src="/Content/ZTree/js/jquery.ztree.exedit-3.5.min.js"></script>
+    <script>
+        var table = "permission";
+        var dlg_Edit_form = $("#form1");
+        var btnAdd = $("#btnAdd");
+        var btnSave = $("#btnSave");
+        var btnReset = $("#btnReset");
+        var btnDelete = $("#btnDelete");
+        var exp_id = $("#hid_id");
+        var pcode = $("#PCode");
+        var code = $("#Code");
+        var virpath = '';
+        $(function () {
+            $('body').layout();
+            _btnAdd();
+            dlg_Edit_form.url = virpath + "/" + table + "/Add/";
+        });
+
+        var tree_setting = {
+            data: {
+                key: {
+                    title: "title"
+                },
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onClick: permission_onClick
+            }
+        };
+        function _add(pId) {
+            _btnAdd();
+            dlg_Edit_form.form('clear');
+            dlg_Edit_form.url = virpath + "/" + table + "/Add/";
+            exp_id.val(pId);
+            pcode.val(pId);
+        }
+        function _btnAdd() {
+            btnAdd.show();
+            btnSave.hide();
+            //btnReset.hide();
+            btnDelete.hide();
+        }
+        function reset() {
+            var id = code.val();
+            if (id == "" || id == null) {
+                javascript: $('#form1').form('clear')
+            } else {
+                $.post(virpath + "/" + table + "/FillForm/", { id: id }, function (result) {
+                    dlg_Edit_form.form('load', result);
+                });
+            }
+        }
+        function _btnUpdate() {
+            btnAdd.hide();
+            btnSave.show();
+            //btnReset.show();
+            btnDelete.show();
+        }
+        function _edit(id) {
+            _btnUpdate();
+            dlg_Edit_form.form('clear');
+            $.post(virpath + "/" + table + "/FillForm/", { 'id': id }, function (result) {
+                dlg_Edit_form.form('load', result);
+            });
+            dlg_Edit_form.url = virpath + "/" + table + "/update/" + id;
+            exp_id.val(id);
+        }
+
+        function permission_onClick(event, treeId, treeNode, clickFlag) {
+            if (treeNode.f1 == "add") {
+                _add(treeNode.pId);
+                code.val("");
+            } else {
+                _edit(treeNode.id);
+                code.val(treeNode.id);
+            }
+        }
+        $(document).ready(function () {
+            $.post(virpath + "/permission/LoadData?id=" + exp_id.val(), function (data) {
+                $.fn.zTree.init($("#tree"), tree_setting, data);
+            });
+            _add();
+        });
+
+        function saveData(flag) {
+            dlg_Edit_form.form('submit', {
+                url: dlg_Edit_form.url,
+                onSubmit: function () {
+                    if (flag == "delete")
+                        return true;
+                    else
+                         return $(this).form('validate');
+                },
+                success: function (result) {
+                    //result为请求处理后的返回值    
+                    var result = eval('(' + result + ')');
+                    var desc = filterDesc(result.ResultDescription);
+                    if (result.IsSuccess) {
+                        msgFade("操作成功：" + desc);
+                        $.post(virpath + "/permission/LoadData?id=" + exp_id.val(), function (data) {
+                            $.fn.zTree.init($("#tree"), tree_setting, data);
+                        });
+                    } else {
+                        msgShow('操作失败:' + desc);
+                    }
+                }
+            });
+        }
+        function _delete() {
+            $.messager.confirm('提示信息', '您确认要删除选中的所有记录吗?', function (data) {
+                if (data) {
+                    dlg_Edit_form.url = virpath + "/" + table + "/delete/" + code.val();
+                    exp_id.val(pcode.val());
+                    saveData("delete");
+                    _btnAdd();
+                    dlg_Edit_form.form('clear');
+                }
+            });
+        }
+    </script>
+}

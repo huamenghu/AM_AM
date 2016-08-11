@@ -1,0 +1,412 @@
+﻿* {
+    font-size: 12px;
+    font-family: Tahoma,Verdana,微软雅黑,新宋体;
+}
+
+body {
+    background: #D2E0F2;
+}
+
+a {
+    color: Black;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: Red;
+        text-decoration: underline;
+    }
+
+.textbox03 {
+    border: #878787 1px solid;
+    padding: 4px 3px;
+    font: Verdana, Geneva, sans-serif,宋体;
+    line-height: 14px;
+    background-color: #fff;
+    height: auto;
+    font-size: 14px;
+    font-weight: bold;
+    width: 190px;
+}
+
+.txt01 {
+    font: Verdana, Geneva, sans-serif,宋体;
+    padding: 3px 2px 2px 2px;
+    border-width: 1px;
+    border-color: #ddd;
+    color: #000;
+}
+
+.txt {
+    border: #878787 1px solid;
+    padding: 4px 3px;
+    font: Verdana, Geneva, sans-serif,宋体;
+    line-height: 14px;
+    background-color: #fff;
+    height: auto;
+    font-size: 14px;
+}
+
+.footer {
+    text-align: center;
+    color: #15428B;
+    margin: 0px;
+    padding: 0px;
+    line-height: 23px;
+    font-weight: bold;
+}
+
+.head a {
+    color: White;
+    text-decoration: underline;
+}
+
+.easyui-accordion ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+}
+
+    .easyui-accordion ul li {
+        padding: 0px;
+    }
+
+        .easyui-accordion ul li a {
+            line-height: 24px;
+        }
+
+        .easyui-accordion ul li div {
+            margin: 2px 0px;
+            padding-left: 10px;
+            padding-top: 2px;
+        }
+
+            .easyui-accordion ul li div.hover {
+                border: 1px dashed #99BBE8;
+                background: #E0ECFF;
+                cursor: pointer;
+            }
+
+                .easyui-accordion ul li div.hover a {
+                    color: #416AA3;
+                }
+
+            .easyui-accordion ul li div.selected {
+                border: 1px solid #99BBE8;
+                background: #E0ECFF;
+                cursor: default;
+            }
+
+                .easyui-accordion ul li div.selected a {
+                    color: #416AA3;
+                    font-weight: bold;
+                }
+
+
+
+.icon {
+    background: url(../images/tabicons.png) no-repeat;
+    width: 18px;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.icon-sys {
+    background-position: 0px 0px;
+    /*background-position: -60px -60px;*/
+}
+
+.icon-data {
+    background-position: -20px -20px;
+}
+
+.icon-dataset {
+    background-position: -220px -300px;
+}
+
+.icon-datameg {
+    background-position: -100px -300px;
+}
+
+.icon-datatime {
+    background-position: -120px -100px;
+}
+
+.icon-SetTD {
+    background-position: -220px -320px;
+}
+
+.icon-SelectTD {
+    background-position: 0px -320px;
+}
+
+.icon-person {
+    background-position: -80px -420px;
+    /*background-position: -420px -80px;*/
+}
+
+.icon-persongMangnger {
+    background-position: -100px -480px;
+}
+
+.icon-department {
+    background-position: -200px -220px;
+}
+
+.icon-dictionary {
+    background-position: -220px -420px;
+}
+
+.icon-import {
+    background-position: -140px -300px;
+}
+
+.icon-wasi {
+    background-position: -280px -420px;
+}
+
+.icon-wasitransducer {
+    background-position: -40px -20px;
+}
+
+.icon-wasitts {
+    background-position: -240px -20px;
+}
+
+.icon-wasitransducestate {
+    background-position: -80px -20px;
+}
+
+.icon-wasitransducetype {
+    background-position: -120px 0px;
+}
+
+.icon-wasidtp {
+    background-position: -120px -20px;
+}
+
+.icon-wasidelaytime {
+    background-position: -120px -100px;
+}
+
+.icon-kaiguan {
+    background-position: -80px -400px;
+}
+
+.icon-kaiguanstate {
+    background-position: -40px -400px;
+}
+
+.icon-kaiguanvaluedescription {
+    background-position: -60px -400px;
+}
+
+.icon-message {
+    background-position: -140px -180px;
+}
+
+.icon-megSearch {
+    background-position: -60px -260px;
+}
+
+.icon-megSend {
+    background-position: -260px 0px;
+}
+
+.icon-download {
+    background-position: -0px -20px;
+}
+
+.icon-help {
+    background-position: -160px -220px;
+}
+
+.icon-helpWord {
+    background-position: -180px -320px;
+}
+
+.icon-setting {
+    background-position: -20px -100px;
+}
+
+.icon-settingGL {
+    background-position: -280px 0px;
+}
+
+.icon-settingRiZ {
+    background-position: -120px 0px;
+}
+
+
+
+.icon-add {
+    background-position: -20px 0px;
+}
+
+.icon-add1 {
+    background: url('icon/edit_add.png') no-repeat;
+}
+
+.icon-nav {
+    /*background-position: -100px -20px;*/
+    background-position: -60px -60px;
+}
+
+.icon-users {
+    background-position: -100px -480px;
+}
+
+.icon-role {
+    background-position: -360px -200px;
+}
+
+.icon-set {
+    background-position: -380px -200px;
+}
+
+.icon-log {
+    background-position: -380px -80px;
+}
+
+.icon-Export {
+    background-position: -280px -260px;
+}
+
+.icon-TState {
+    background-position: -10px -80px;
+}
+
+.icon-IsAvailable {
+    background-position: -420px -180px;
+}
+
+.icon-TYJValue {
+    background-position: -120px -100px;
+}
+
+.icon-TWXValue {
+    background-position: -120px -80px;
+}
+
+
+
+.icon-delete16 {
+    background: url('icon/delete.gif') no-repeat;
+    width: 18px;
+    line-height: 18px;
+    display: inline-block;
+}
+
+.icon-delete {
+    background-position: -140px -120px;
+}
+
+.icon-edit {
+    background-position: -380px -320px;
+}
+
+.icon-select {
+    background-position: -260px -400px;
+}
+
+.icon-magic {
+    background-position: 0px -500px;
+}
+
+.icon-database {
+    background-position: -20px -140px;
+}
+
+.icon-expand {
+    background: url('/images/coll2.gif') no-repeat;
+}
+
+.icon-collapse {
+    background: url('/images/coll3.gif') no-repeat;
+}
+
+.pageHeader {
+    background: transparent url(../images/bg-head-blue.gif) repeat-x;
+    height: 40px;
+    width: 100%;
+}
+
+.pageFooter {
+    background: transparent url(../images/bg-footer.png) repeat-x;
+    height: 23px;
+    line-height: 22px;
+    text-align: right;
+    padding-right: 20px;
+    width: 100%;
+}
+
+
+/*****************小辛2-13-7-8*****************************/
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.red {
+    color: red;
+}
+
+.w80 {
+    width: 80px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.w120 {
+    width: 120px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+.searchInput {
+    width: 80px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+.editInput {
+    width: 200px;  
+    vertical-align: middle;
+}
+.viewTable {
+            line-height: 25px;
+            width: 95%;
+            padding-top: 10px;
+        }
+
+        .viewtr {
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .viewtd1 {
+            text-align: right;
+            padding-right: 10px;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .viewtd2 {
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .viewtd3 {
+            text-align: right;
+            padding-right: 10px;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .viewtd4 {
+            border-bottom: 1px dashed #cccccc;
+        }
+/**********************************************/

@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    Dao.news news = ViewBag.News;
+}
+<!--您的位置-->
+<div class="news-page">
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/AboutUS">企业介绍</a></li>
+    </ul>
+
+    <div class="enterprise-text-out">
+        <ul class="enterprise-but-box">
+            <li class="enterprise-but"><a href="/web/AboutUS">企业介绍</a></li>
+            <li><a href="/web/ryzz">荣誉资质</a></li>
+        </ul>
+        <h3>
+            后顾无忧起重事业有限公司
+            <div class=""> LOOK EASY LIFTING ENTERPRISE CO., LTD</div>
+        </h3>
+
+        @*<p>
+            @news.newssummary
+        </p>*@
+        @if (string.IsNullOrEmpty(news.newslogo) == false)
+        {
+            <img src="@news.newslogo" />
+        }
+        <p>
+            @Html.Raw(news.newscontent)
+        </p>
+    </div>
+</div>
+
+
+<!--联系我们-->
+<div class="contact-out ">
+    <div class="news-title">
+        <h2>联系我们</h2>
+        <div>CONTACT US</div>
+    </div>
+    <div class="contact-box">
+        <ul>
+            <li class="address">
+                <div><img src="/Content/Web/images/address.png" /></div>
+                <p>@ViewBag.Address</p>
+            </li>
+
+            <li>
+                <div><img src="/Content/Web/images/phone.png" /></div>
+                @ViewBag.Tel
+            </li>
+
+            <li>
+                <div><img src="/Content/Web/images/e-mail.png" /></div>
+                @ViewBag.Email
+            </li>
+        </ul>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_aboutus").addClass("index");
+         
+            /*联系我们*/
+            $(".contact-box ul li").mouseenter(function () {
+                $(this).find("div").animate({ marginLeft: 30 }, 300)
+            }).mouseleave(function () {
+                $(this).find("div").animate({ marginLeft: 0 }, 300)
+            })
+        })
+    </script>
+}

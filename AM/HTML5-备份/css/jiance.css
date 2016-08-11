@@ -1,0 +1,9 @@
+.notice{
+	color: red;
+}
+input[type=radio]{
+	width: 15px;
+}
+input[type=radio]:focus{
+	box-shadow: none;
+}

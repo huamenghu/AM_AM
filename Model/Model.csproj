@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A466DE3-B89E-46D6-BE65-61B9C2B39911}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base.cs" />
+    <Compile Include="ExGoodsType.cs" />
+    <Compile Include="ExLogin.cs" />
+    <Compile Include="ExMyinfo.cs" />
+    <Compile Include="ExUserinfo.cs" />
+    <Compile Include="KuaiDi100.cs" />
+    <Compile Include="PaLogin.cs" />
+    <Compile Include="PaUserinfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PaRegistered.cs" />
+    <Compile Include="PaBase.cs" />
+    <Compile Include="PaSetuserlogo.cs" />
+    <Compile Include="ExUserpoints.cs" />
+    <Compile Include="ExMyaddrlist.cs" />
+    <Compile Include="Myaddr.cs" />
+    <Compile Include="ExTypelist.cs" />
+    <Compile Include="ExGoodsTypeSecond.cs" />
+    <Compile Include="ExGoodsTypeFirst.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="ExGoods.cs" />
+    <Compile Include="ExGoodsIndex.cs" />
+    <Compile Include="ExTypeGoods.cs" />
+    <Compile Include="ExShopIndex.cs" />
+    <Compile Include="ExGoodsSearch.cs" />
+    <Compile Include="ExShopSearch.cs" />
+    <Compile Include="ExGrade.cs" />
+    <Compile Include="ExSureMyCat.cs" />
+    <Compile Include="ExAddr.cs" />
+    <Compile Include="ExMyOrder.cs" />
+    <Compile Include="ExOrder.cs" />
+    <Compile Include="ExOrderGoods.cs" />
+    <Compile Include="ExMyOrderXQ.cs" />
+    <Compile Include="ExExpress.cs" />
+    <Compile Include="ExMyOrderExpress.cs" />
+    <Compile Include="ExMyOrderRejectedGoodsInfo.cs" />
+    <Compile Include="ExMyOrderPay.cs" />
+    <Compile Include="ExWuLiu.cs" />
+    <Compile Include="ExConsumptionnote.cs" />
+    <Compile Include="ExCat.cs" />
+    <Compile Include="ExCatGoods.cs" />
+    <Compile Include="ExAliPay.cs" />
+    <Compile Include="ExTrainTypeList.cs" />
+    <Compile Include="ExTrainType.cs" />
+    <Compile Include="ExQualificationType.cs" />
+    <Compile Include="ExQualificationTypeList.cs" />
+    <Compile Include="ExNews.cs" />
+    <Compile Include="ExFault.cs" />
+    <Compile Include="SMS.cs" />
+    <Compile Include="ExAd.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dao\Dao.csproj">
+      <Project>{ecab65ae-755a-45ea-b09b-d05a065f5d33}</Project>
+      <Name>Dao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

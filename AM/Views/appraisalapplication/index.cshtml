@@ -1,0 +1,159 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">公司名称：
+                    </td>
+                    <td>
+                        <input name="appraisalcompanyname" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">公司地址：
+                    </td>
+                    <td>
+                        <input name="appraisalcompanyaddr" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">产品名称：
+                    </td>
+                    <td>
+                        <input name="appraisalgoodsname" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">产品型号：
+                    </td>
+                    <td>
+                        <input name="appraisalgoodstype" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">生产厂家：
+                    </td>
+                    <td>
+                        <input name="appraisalmanufacturer" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">出厂日期：
+                    </td>
+                    <td>
+                        <input type="text" name="appraisaloutfactorydate" editable="false" class="easyui-datebox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">产品简介：
+                    </td>
+                    <td>
+                        <input name="appraisalgoodssummary" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">计划鉴定时间：
+                    </td>
+                    <td>
+                        <input type="text" name="appraisalplandate" editable="false" class="easyui-datebox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">申请时间：
+                    </td>
+                    <td>
+                        <input type="text" name="appraisalapplicationdate" editable="false" class="easyui-datebox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系人：
+                    </td>
+                    <td>
+                        <input name="appraisallinkname" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">联系电话：
+                    </td>
+                    <td>
+                        <input name="appraisallinktel" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">邮箱：
+                    </td>
+                    <td>
+                        <input name="appraisalemail" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">状态：
+                    </td>
+                    <td>
+                        <input name="state" id="state" class="easyui-combobox editInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">是否支付：
+                    </td>
+                    <td>
+                        <input name="ispay" type="radio" value="true" />已支付
+                        <input name="ispay" type="radio" value="false" />未支付
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        公司名称：
+                        <input id="s_appraisalcompanyname" class="easyui-validatebox searchInput" />
+        联系电话：
+                        <input id="s_appraisallinktel" class="easyui-validatebox searchInput" />
+        联系人：
+                        <input id="s_appraisallinkname" class="easyui-validatebox searchInput" />
+        处理状态：
+                    <input id="s_state" class="easyui-combobox searchInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "appraisalapplication";
+        var sortName = "GUID";
+        var idField = "GUID";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'appraisallinkname', title: '联系人', width: 100, sortable: true
+    }, {
+        field: 'appraisallinktel', title: '联系电话', width: 100, sortable: true
+    }, {
+        field: 'appraisalcompanyname', title: '公司名称', width: 200, sortable: true
+    }, {
+        field: 'appraisalapplicationdate', title: '申请时间', width: 150, sortable: true
+    }, {
+        field: 'ispay', title: '是否支付', width: 100, sortable: true
+    }, {
+        field: 'state', title: '处理状态', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                appraisalcompanyname: $("#s_appraisalcompanyname").val(),
+                appraisallinktel: $("#s_appraisallinktel").val(),
+                appraisallinkname: $("#s_appraisallinkname").val(),
+                state: $("#s_state").combobox("getValue"),
+            };
+            return obj;
+        }
+    </script>
+}

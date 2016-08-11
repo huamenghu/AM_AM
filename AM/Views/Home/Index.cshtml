@@ -1,0 +1,187 @@
+﻿@using AM.BLL;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/Content/easyui/default.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/easyui14/themes/default/easyui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/easyui14/themes/icon.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/easyui/themes/default/menu.css")" rel="stylesheet" type="text/css" />
+
+    <title>@ViewBag.Title
+    </title> 
+</head>
+<body class="easyui-layout" style="overflow: hidden; margin: 0; padding: 0" scroll="no">
+    <noscript>
+        <div style="position: absolute; z-index: 100000; height: 2046px; top: 0px; left: 0px; width: 100%; background: white; text-align: center;">
+            <img src="@Url.Content("~/Content/images/noscript.gif")" alt='抱歉，请开启脚本支持！' />
+        </div>
+    </noscript>
+    <div region="north" style="overflow: hidden; height: 30px; background: url(/Content/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%; line-height: 20px; color: #fff; font-family: Verdana, 微软雅黑,黑体">
+        <span style="float: right; padding-right: 20px; padding-top: 2px" class="head">
+            <a href="javascript:void(0)" id="checkdata">整理数据</a>
+            <a href="javascript:void(0)" id="editpass">修改密码</a>
+            <a href="javascript:void(0)" id="loginOut">安全退出</a></span>
+        <span id="bgclock" style="float: right; padding-right: 10px; padding-top: 2px" class="head"></span>
+        <span style="padding-left: 10px; font-size: 16px;">
+            <img src="@Url.Content("~/Content/images/blocks.gif")" width="20" height="20" align="absmiddle" />
+            @ViewBag.MainTitle
+        </span>
+    </div>
+    <div region="south" split="false" style="height: 25px; overflow: hidden; background: #E6EEF8; text-align: center; border-top: 0px; padding: 3px; vertical-align: top">
+
+
+        <img src="../../Content/images/user_16.png" />
+        <span id="UserDesc" style="margin-right: 15px;">@ViewBag.UserName
+        </span>
+
+
+        <img src="../../Content/images/info_16.png" />
+        <span id="VersionDesc" style="margin-right: auto; margin-left: auto;">@ViewBag.CopyRight
+            @ViewBag.Version</span>
+    </div>
+    <div region="west" hide="true" split="true" title="导航菜单" style="width: 180px;" id="west">
+        <div id="nav" class="easyui-accordion" fit="true" border="false">
+            <!--  导航内容 -->
+
+        </div>
+    </div>
+    <div id="mainPanle" region="center" style="background: #eee;">
+        <div id="tabs" class="easyui-tabs" fit="true" border="false">
+            @*<div title="桌面">
+                <iframe scrolling="auto" id="frameDesktop" frameborder="0" src="/Home/Null" style="width: 100%; height: 100%; margin:-1px 0"></iframe>
+            </div>*@
+        </div>
+    </div>
+    <div id="mm" class="easyui-menu" style="width: 150px; display: none">
+        <div id="mm-tabupdate">刷新</div>
+        <div class="menu-sep"></div>
+        <div id="mm-tabclose">关闭</div>
+        <div id="mm-tabcloseall">全部关闭</div>
+        <div id="mm-tabcloseother">除此之外全部关闭</div>
+        <div class="menu-sep"></div>
+        <div id="mm-tabcloseright">当前页右侧全部关闭</div>
+        <div id="mm-tabcloseleft">当前页左侧全部关闭</div>
+        <div class="menu-sep"></div>
+        <div id="mm-exit">退出</div>
+    </div>
+    <div id="w" style="padding: 10px 20px">
+        <form id="formPwd" method="post">
+            <table>
+                <tr>
+                    <td class="right">原密码：</td>
+                    <td>
+                        <input type="password" name="oldpassword" class="easyui-validatebox" required="true" value="" /></td>
+                </tr>
+                <tr>
+                    <td class="right">新密码：</td>
+                    <td>
+                        <input type="password" name="password" id="password" class="easyui-validatebox" required="true" value="" /></td>
+                </tr>
+                <tr>
+                    <td class="right">确认密码：</td>
+                    <td>
+                        <input type="password" name="password2" id="password2" class="easyui-validatebox" required="true" validtype="equalTo['#password']" value="" /></td>
+                </tr>
+            </table>
+            <div style="padding: 10px; text-align: center">
+                <a href="javascript:void(0)" id="btnEp" class="easyui-linkbutton">确定</a>
+                <a href="javascript:void(0)" id="btnCancel" class="easyui-linkbutton">取消</a>
+            </div>
+        </form>
+    </div>
+    @*<script type="text/javascript">
+        if (window.top != window.self) {
+            window.top.location.replace("./Home/Index");
+        }
+        //window.opener.top.opener = null; window.opener.top.open('', '_self'); window.opener.top.close()
+    </script>*@
+    <script type="text/javascript" src="@Url.Content("~/Content/easyui/jquery-1.8.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/easyui14/jquery.easyui.min.js")"></script>
+    <script type="text/javascript" src='@Url.Content("~/Content/easyui14/locale/easyui-lang-zh_CN.js")'> </script>
+    <script src="/Content/easyui/easyuiExtend.js"></script>
+    <script src="/Content/index.js"></script>
+    <script type="text/javascript">
+        var _menus = { "menus": [@Html.Raw(ViewBag.Menus)] };
+
+        //设置登录窗口
+        function openPwd() {
+            $('#w').window({
+                title: '修改密码',
+                width: 300,
+                modal: true,
+                shadow: true,
+                closed: true,
+                height: 190,
+                resizable: false
+            });
+        }
+        //关闭登录窗口
+        function closePwd() {
+            $('#w').window('close');
+        }
+
+        $(function () {
+            openPwd();
+            $('#editpass').click(function () {
+                $('#w').window('open');
+            });
+            $('#checkdata').click(function () {
+                $.messager.confirm('系统提示', '您确定要整理数据吗，主要功能：刷新用户等级，数据量大时，可能比较耗时', function (r) {
+                    if (r) {
+                        $.post("/Home/checkdata", {}, function (d) {
+                            var result = eval('(' + d + ')'); //处理Json
+                            var desc = filterDesc(result.ResultDescription);
+                            if (result.IsSuccess) {
+                                msgFade("整理成功！");                              
+                            } else {
+                                msgShow('操作失败，' + desc);
+                            }
+                        });
+                    }
+                });
+            });
+            $('#btnEp').click(function () {
+                $("#formPwd").form('submit', {
+                    url: "/Home/ModifyPassword",
+                    onSubmit: function () {
+                        return $(this).form('validate');
+                    },
+                    success: function (data) {
+                        try {
+                            var result = eval('(' + data + ')'); //处理Json
+                            var desc = filterDesc(result.ResultDescription);
+                            if (result.IsSuccess) {
+                                msgFade("修改密码成功！");
+                                closePwd();
+                            } else {
+                                msgShow('操作失败，' + desc);
+                            }
+                        } catch (err) {
+                            msgShow('操作失败！' + "请重试或重新登录");
+                        }
+                    }
+                });
+            });
+            $('#btnCancel').click(function () { closePwd(); });
+
+            $('#loginOut').click(function () {
+                $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function (r) {
+                    if (r) {
+                        location.href = '/Login/Index';
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
+

@@ -1,0 +1,202 @@
+﻿@using AM.BLL;
+@using Dao;
+@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    var id = ViewBag.ID;
+    var fid = ViewBag.FID;
+    var pageIndex = ViewBag.PageIndex;
+    if (ViewBag.Exist == false)
+    {
+        Response.Redirect("/web/Page404");
+    }
+}
+<!--您的位置-->
+<div class="news-page">
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/news">无忧资讯</a></li>
+    </ul>
+    <div class="news-page-out">
+        <div class="news-page-left fl">
+            <div class="news-page-left-title">
+                <ul>
+                    @{
+                        List<newstype> types = ViewBag.Types;
+                        if (string.IsNullOrEmpty(fid))
+                        {
+
+                        }
+                        for (int i = 0; i < 2; i++)
+                        {
+                            if (types.Count > i + 1) { }
+                            var type = types[i];
+                            if (string.IsNullOrEmpty(fid))
+                            {
+                                if ((string.IsNullOrEmpty(id) && i == 0) || id == type.typeid)
+                                {
+                                    <li class="news-page-left-title1"><a href="/web/news/@type.typeid">@type.typename</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="/web/news/@type.typeid">@type.typename</a></li>
+                                }
+                            }
+                            else
+                            {
+                                <li><a href="/web/news/@type.typeid">@type.typename</a></li>
+                            }
+                        }
+                        if (string.IsNullOrEmpty(fid))
+                        {
+                            <li><a href="/web/news/?fid=yes">常见故障</a></li>
+                        }
+                        else
+                        {
+                            <li class="news-page-left-title1"><a href="/web/news/?fid=yes">常见故障</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+
+            <div class="news-page-left-main">
+                <ul>
+                    @{
+                        List<news> list = ViewBag.List;
+                        foreach (var item in list)
+                        {
+                            var logo = item.newslogo;
+                            if (string.IsNullOrEmpty(item.newslogo))
+                            {
+                                logo = DataStore.NoImg;
+                            }
+                            var title = item.newstitle;
+                            if (title.Length > 13)
+                            {
+                                title = title.Substring(0, 12) + "…";
+                            }
+                            var s = item.newssummary;
+                            if (s.Length > 86)
+                            {
+                                s = s.Substring(0, 85) + "…";
+                            }
+                            <li>
+                                <div class="news-imgbox fl"><img src="@logo" width="180" height="130"/></div>
+                                <div class="news-main-box fl">
+                                    <h3><div class="fl">@title</div><span class="fr">@item.newsdate.ToString("yyyy-MM-dd")</span></h3>
+                                    <p>
+                                        @s
+                                    </p>
+                                </div>
+                                <div class="details"><a href="/web/NewsDetail/@item.newsid">查看详情</a></div>
+                            </li>
+                        }
+                    }
+                </ul>
+                @{
+                    var index_p = pageIndex - 1;
+                    var index_n = pageIndex + 1;
+
+                    var pageCount = ViewBag.PageCount;
+
+                    var start = 1;
+                    var end = pageCount;
+
+                    if (pageIndex > 5)
+                    {
+                        start = pageIndex - 4;
+                    }
+                    if (pageCount > pageIndex + 4)
+                    {
+                        end = pageIndex + 4;
+                    }
+                }
+                <div class="number-of-pages">
+                    <div class="number-of-box">
+                        <a href="/web/news/@id?fid=@fid">首页</a>
+                        @if (index_p < 1)
+                        {
+                            <a href="javascript:void(0)">上一页</a>
+                        }
+                        else
+                        {
+                            <a href="/web/news/@id?fid=@fid&pageIndex=@index_p">上一页</a>
+                        }
+                        @{
+                            for (int i = start; i <= end; i++)
+                            {
+                                if (i == pageIndex)
+                                {
+                                    <a class="one" href="/web/news/@id?fid=@fid&pageIndex=@i">@i</a>
+                                }
+                                else
+                                {
+                                    <a href="/web/news/@id?fid=@fid&pageIndex=@i">@i</a>
+                                }
+                            }
+                        }
+
+
+                        @if (index_n > pageCount)
+                        {
+                            <a href="javascript:void(0)">下一页</a>
+                        }
+                        else
+                        {
+                            <a href="/web/news/@id?fid=@fid&pageIndex=@index_n">下一页</a>
+                        }
+                        <a href="/web/news/@id?fid=@fid&pageIndex=@pageCount">末页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-page-right fr">
+            <div class="news-box">
+                <div class="news-box-title">
+                    <h3>资讯推荐</h3>
+                    <span>RECOMMEND</span>
+                </div>
+
+                <ul>
+                    @{
+                        List<news> tj = ViewBag.TJ;
+                        for (int i = 0; i < tj.Count; i++)
+                        {
+                            var logo = tj[i].newslogo;
+                            if (string.IsNullOrEmpty(logo))
+                            {
+                                logo = DataStore.NoImg;
+                            }
+                            var title = tj[i].newstitle;
+                            if (title.Length > 14)
+                            {
+                                title = title.Substring(0, 13) + "…";
+                            }
+                            if (i == 0)
+                            {
+                                <li class="headlines pr">
+                                    <a href="#"><img src="@logo" width="325" height="150"/></a>
+                                    <p><a href="/web/newsDetail/@tj[i].newsid">@title</a></p>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="news-list"><p><a href="/web/newsDetail/@tj[i].newsid">@title</a><span>@tj[i].newsdate.ToString("yyyy-MM-dd")</span></p></li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_news").addClass("index");
+
+        })
+    </script>
+}

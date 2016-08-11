@@ -1,0 +1,232 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+
+}
+@section head{
+    <style>
+        .newsimg{
+            width:325px;
+            height:150px;
+        }
+    </style>
+}
+<!--无忧功能-->
+<div class="function-out">
+    <div class="function-box">
+        <div class="function-title">
+            <h3>后顾无忧，让您的起重事业从此无忧</h3>
+            <div>THERE IS NO WORRY, LET YOUR CAREER LIFTING FROM WORRY</div>
+        </div>
+        <div class="function-body">
+            <ul>
+                <li>
+                    <div><a href="#"><img src="/Content/Web/images/function-1.png" /></a></div>
+                    <a href="#">无忧商城</a>
+                </li>
+                <li>
+                    <div><a href="/web/Train#1"><img src="/Content/Web/images/function-2.png" /></a></div>
+                    <a href="/web/Train#1">培训申请</a>
+                </li>
+                <li>
+                    <div><a href="/web/ZZSQ#1"><img src="/Content/Web/images/function-3.png" /></a></div>
+                    <a href="/web/ZZSQ#1">资质申请</a>
+                </li>
+                <li>
+                    <div><a href="/web/Test#1"><img src="/Content/Web/images/function-4.png" /></a></div>
+                    <a href="/web/Test#1">检测申请</a>
+                </li>
+                <li>
+                    <div><a href="/web/FASJ#1"><img src="/Content/Web/images/function-5.png" /></a></div>
+                    <a href="/web/FASJ#1">专家非标方案设计</a>
+                </li>
+                <li>
+                    <div><a href="/web/FALZ#1"><img src="/Content/Web/images/function-6.png" /></a></div>
+                    <a href="/web/FALZ#1">专家非标方案论证</a>
+                </li>
+                <li>
+                    <div><a href="/web/CPJD#1"><img src="/Content/Web/images/function-7.png" /></a></div>
+                    <a href="/web/CPJD#1">专家产品鉴定报告</a>
+                </li>
+                <li>
+                    <div><a href="/web/SGJD#1"><img src="/Content/Web/images/function-8.png" /></a></div>
+                    <a href="/web/SGJD#1">专家事故鉴定</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--最新资讯-->
+<div class="news-out">
+    <div class="news-title">
+        <h2>无忧资讯</h2>
+        <div>WUYOU NEWS</div>
+    </div>
+    <div class="news-out-box">
+        <div class="news-out-box2">
+            @{
+                var newsType = AM.BLL.DataStore.NewsType.Where(a => true).OrderBy(a => a.sort).Take(2).ToList();
+                foreach (var item in newsType)
+                {
+                    <div class="news-box fl">
+                        <div class="news-box-title">
+                            <h3>@item.typename</h3>
+                            <span>@item.description</span>
+                        </div>
+                        @{
+                    var news = AM.BLL.DB.Instant.NewsManager.Where(a => a.newstype == item.typeid).OrderByDescending(a => a.newsistj).ThenByDescending(a => a.newsdate).Take(6).Select(a => new
+                    {
+                        a.newsid,
+                        a.newsdate,
+                        a.newstitle,
+                        a.newslogo
+                    }).ToList();
+                    <ul>
+                        @{
+                    var i = 0;
+                    foreach (var first in news)
+                    {
+                        var ftitle = first.newstitle.Length > 15 ? first.newstitle.Substring(0, 14) + "…" : first.newstitle;
+                        var fdate = first.newsdate.ToString("yyyy-MM-dd");
+                        if (i == 0)
+                        {
+                            var logo = first.newslogo;
+                            if (string.IsNullOrEmpty(logo))
+                            {
+                                logo = AM.BLL.DataStore.NoImg;
+                            }
+                            <li class="headlines pr">
+                                <a href="/web/newsDetail/@first.newsid"><img src="@logo" alt="@first.newstitle" class="newsimg"/></a>
+                                <p><a href="/web/newsDetail/@first.newsid" title="@first.newstitle">@ftitle</a></p>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="news-list"><p><a href="/web/newsDetail/@first.newsid" title="@first.newstitle">@ftitle</a><span>@fdate</span></p></li>
+                        }
+                        i++;
+                    }
+                        }
+                    </ul>
+                        }
+
+                    </div>
+                }
+            }
+            <div class="news-box fl">
+                <div class="news-box-title">
+                    <h3>常见故障</h3>
+                    <span>FAULT</span>
+                </div>
+                <ul>
+                    @{
+                        var faultList = AM.BLL.DB.Instant.FaultManager.Where(a => true).OrderByDescending(a => a.faultdate).Take(6).Select(a => new
+                        {
+                            a.faultdate,
+                            a.faultid,
+                            a.faultlogo,
+                            a.faulttitle
+                        }).ToList();
+                        var i2 = 0;
+                        foreach (var first in faultList)
+                        {
+                            var ftitle = first.faulttitle.Length > 15 ? first.faulttitle.Substring(0, 14) + "…" : first.faulttitle;
+                            var fdate = first.faultdate.ToString("yyyy-MM-dd");
+                            if (i2 == 0)
+                            {
+                                var logo = first.faultlogo;
+                                if (string.IsNullOrEmpty(logo))
+                                {
+                                    logo = AM.BLL.DataStore.NoImg;
+                                }
+                                <li class="headlines pr">
+                                    <a href="/web/faultDetail/@first.faultid"><img src="@logo" alt="@first.faulttitle" class="newsimg" /></a>
+                                    <p><a href="/web/faultDetail/@first.faultid" title="@first.faulttitle">@ftitle</a></p>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="news-list"><p><a href="/web/faultDetail/@first.faultid" title="@first.faulttitle">@ftitle</a><span>@fdate</span></p></li>
+                            }
+                            i2++;
+                        }
+}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="more"><a href="/web/news">MORE +</a></div>
+</div>
+
+<!--企业介绍-->
+<div class="enterprise-out">
+    <div class="enterprise-box">
+        <div class="enterprise-left fl">
+            <div class="video"><img src="/Content/Web/images/video.png" /></div>
+        </div>
+        <div class="triangle fl"><img src="/Content/Web/images/enterprise-bg.png" /></div>
+        <div class="enterprise-right fl">
+            <div class="news-title">
+                <h2>公司简介</h2>
+                <div>COMPANY PROFILE</div>
+            </div>
+            <p>
+                @{
+                    //公司简介 类别 00003
+                    var news1 = AM.BLL.DB.Instant.NewsManager.First(a => a.newstype == "00003");
+                    if (news1 != null)
+                    {
+                        var newssummary = news1.newssummary;
+                        if (newssummary.Length > 310)
+                        {
+                            newssummary = newssummary.Substring(0, 308) + "…";
+                        }
+                        <text>
+                            @newssummary
+                        </text>
+                    }
+                }
+            </p>
+        </div>
+    </div>
+    <div class="more"><a href="/web/AboutUS">MORE +</a></div>
+</div>
+
+<!--联系我们-->
+<div class="contact-out">
+    <div class="news-title">
+        <h2>联系我们</h2>
+        <div>CONTACT US</div>
+    </div>
+    <div class="contact-box">
+        <ul>
+            <li class="address">
+                <div><img src="/Content/Web/images/address.png" /></div>
+                <p>@ViewBag.Address</p>
+            </li>
+
+            <li>
+                <div><img src="/Content/Web/images/phone.png" /></div>
+                @ViewBag.Tel
+            </li>
+
+            <li>
+                <div><img src="/Content/Web/images/e-mail.png" /></div>
+                @ViewBag.Email
+            </li>
+        </ul>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_index").addClass("index");
+            /*联系我们*/
+            $(".contact-box ul li").mouseenter(function () {
+                $(this).find("div").animate({ marginLeft: 30 }, 300)
+            }).mouseleave(function () {
+                $(this).find("div").animate({ marginLeft: 0 }, 300)
+            })
+        })
+    </script>
+}

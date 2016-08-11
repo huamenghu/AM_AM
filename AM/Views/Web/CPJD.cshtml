@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    ViewBag.Title = "产品鉴定申请表";
+}
+<!--表格申请-->
+<div class="apply-out">
+    <!--您的位置-->
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/CPJD#1">产品鉴定申请表</a></li>
+    </ul>
+
+    <!--表格-->
+    <div class="apply-box">
+        <ul class="apply-but apply-but2">
+            <li><a href="/web/FASJ#1">专业非标方案设计</a></li>
+            <li><a href="/web/FALZ#1">专业非标方案论证</a></li>
+            <li class="apply-but1"><a href="/web/CPJD#1">产品鉴定申请表</a></li>
+            <li><a href="/web/SGJD#1">事故鉴定申请表</a></li>
+        </ul>
+
+        <div class="apply-sm-box">
+            <h3>
+                高空机械工程技术研究院
+                <br />高空机械产品鉴定申请表
+            </h3>
+            <form id="form1" method="post" onsubmit="return false">              
+                <div class="apply-table">
+                    <h4>公司名称<span>COMPANY NAME</span></h4>
+                    <div><input type="text" name="appraisalcompanyname" placeholder="请输入公司名称" class="width1" />
+                        <input type="hidden" name="userid" value="@ViewBag.UserID" />
+                    </div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>公司地址<span>COMPANY ADDRESS</span></h4>
+                    <div><input type="text" name="appraisalcompanyaddr" placeholder="请输入公司地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>产品名称<span>PROJIET NAME</span></h4>
+                    <div><input type="text" name="appraisalgoodsname" placeholder="请输入产品名称" class="width4" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">产品型号<span>PRODUCT MODEL</span></h4>
+                    <div><input type="text" name="appraisalgoodstype" placeholder="请输入产品型号" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>生产厂家<span>MANUFACTURER</span></h4>
+                    <div><input type="text" name="appraisalmanufacturer" placeholder="请输入生产厂家" class="width4" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">出厂日期<span>FACTORY DATE</span></h4>
+                    <div><input type="text" name="appraisaloutfactorydate" placeholder="请输入出厂日期" class="width3 " onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table cl">
+                    <h4>产品简介<span>PRODUCT DESCRIPTION</span></h4>
+                    <div><textarea class="Paper_main_text" name="appraisalgoodssummary" placeholder="请输入产品简介内容"></textarea></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>计划鉴定时间<span>PLAN IDENTIFICATION TIME</span></h4>
+                    <div><input type="text" name="appraisalplandate" placeholder="请输入计划鉴定时间" class="width2 " onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>申请时间<span>APPLICATION TIME</span></h4>
+                    <div><input type="text" name="appraisalapplicationdate" placeholder="请输入申请时间" class="width2 " onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table cl">
+                    <h4 class="title-width">联系人<span>CONTACT PERSON</span></h4>
+                    <div><input type="text" name="appraisallinkname" placeholder="请输入姓名" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">联系电话<span>CONTACT PHONE</span></h4>
+                    <div><input type="text" name="appraisallinktel" placeholder="请输入电话/手机" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">邮箱<span>ECONOMIC TYPE</span></h4>
+                    <div><input type="text" name="appraisalemail" placeholder="请输邮箱" class="width3" /></div>
+                </div>
+
+                <div class="apply-table-but cl">
+                    <input type="submit" value="提交" id="btnOK" class="submit" /> <input type="reset" value="重置" class="reset" onclick="reset()" />
+                </div>
+                <div id="divTip">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(function () {
+            $("#li_js").addClass("index");
+            //提交表单
+            $("#btnOK").click(function () {
+               var data=  $('#form1').serialize();
+                $.post("/Client/postupappraisalapplication", data, function (d) {
+                    //var result = eval('(' + d + ')'); //处理Json
+                    //alert("x" + d.message+d.code);
+                    if (d.code == 1) {
+                        alert("提交成功！申请费用：" + d.price);
+                    } else {
+                        alert("提交失败！原因：" + d.message);
+                    }
+                });                
+            });
+        })
+        function reset() {
+            $("input").each(function (e) {
+                $(this).val("");
+            });
+        }
+    </script>
+}

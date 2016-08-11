@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+
+}
+<!--注册-->
+<a name="reg" id="reg">&nbsp;</a>
+<div class="registered-out">
+    <img src="/Content/Web/images/registered-03.png" />
+    <div class="successful">
+        <div class="fl"><img src="/Content/Web/images/registered-04.png" /></div>
+        <div class="successful-text fl">
+            <h3>恭喜您注册成功！</h3>
+            <p><span>3</span>秒后自动跳转至<a href="/">无忧首页</a></p>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_index").addClass("index");
+
+        })
+        function ok() {
+            location.href = "/";
+        }
+        window.setTimeout("ok();", 3000);
+    </script>
+}

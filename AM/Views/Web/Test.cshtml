@@ -1,0 +1,162 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    ViewBag.Title = "检测申请";
+}
+<!--表格申请-->
+<div class="apply-out">
+    <!--您的位置-->
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/Test#1">检测申请</a></li>
+    </ul>
+
+    <!--表格-->
+    <div class="apply-box">
+        <ul class="apply-but">
+            <li><a href="/web/ZZSQ#1">资质申请</a></li>
+            <li class="apply-but1"><a href="/web/Test#1">检测申请</a></li>
+            <li><a href="/web/Train#1">培训申请</a></li>
+        </ul>
+
+        <div class="apply-sm-box">
+            <h3>高空机械工程技术研究院检测申请表</h3>
+            <form id="form1" onsubmit="return false">
+                <div class="apply-table">
+                    <h4>委托单位名称<span>DELEGATE UNIT NAME</span></h4>
+                    <div>
+                        <input type="text" name="testingclientcompanyname" placeholder="请输入单位名称" class="width1" />
+                        <input type="hidden" name="userid" value="@ViewBag.UserID" />
+                    </div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>委托单位地址<span>DELEGATE UNIT ADDRESS</span></h4>
+                    <div><input name="testingclientcompanyaddr" type="text" placeholder="请输入单位地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>联系人<span>CONTACT PERSON</span></h4>
+                    <div><input name="testinglinkname" type="text" placeholder="请输入姓名" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>联系电话<span>CONTACT PHONE</span></h4>
+                    <div><input name="testingtel" type="text" placeholder="请输入联系电话" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>工程名称<span>PROJECT NAME</span></h4>
+                    <div><input name="testingengineeringname" type="text" placeholder="请输入工程名称" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>工程地址<span>PROJECT ADDRESS</span></h4>
+                    <div><input name="testingengineeringaddr" type="text" placeholder="请输入工程地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>施工单位<span>CONSTRUCTION UNIT</span></h4>
+                    <div><input name="testingconstructioncompany" type="text" placeholder="请输入施工单位名称" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>安装单位<span>INSTALLATION UNIT</span></h4>
+                    <div><input name="testingbuildercompany" type="text" placeholder="请输入安装单位名称" class="width1" /></div>
+                </div>
+
+                <div style="clear:both"></div>
+                <div class="apply-table test-content">
+                    <h4>检测内容<span>TEST CONTENT</span></h4>
+                    <div>
+                        <label><input type="checkbox" name="testingcontent" value="高处作业吊篮"><span>高处作业吊篮</span></label>
+                        <label><input type="checkbox" name="testingcontent" value="安全锁"><span>安全锁</span></label>
+                        <label><input type="checkbox" name="testingcontent" value="附着式升降脚手架"><span>附着式升降脚手架</span></label>
+                        <label><input type="checkbox" name="testingcontent" value="擦窗机"><span>擦窗机</span></label>
+                    </div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>检验数量<span>QUANTITY OF INSPECTION</span></h4>
+                    <div><input name="testingsize" type="text" placeholder="请输入检验数量" class="width2" /></div>
+                </div>
+                <div class="clear"></div>
+                <div class="apply-table cl general">检验设备概况</div>
+
+                <div class="apply-table">
+                    <h4>生产厂家<span>MANUFACTURER</span></h4>
+                    <div><input name="testingmanufacturer" type="text" placeholder="请输入生产厂家名称" class="width1" /></div>
+                </div>
+
+                <div class="apply-table ">
+                    <h4 class="title-width">设备编号<span>NUMBER</span></h4>
+                    <div><input name="testingequipmentnumber" type="text" placeholder="请输入姓名" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">设备型号<span>DEVICE TYPE</span></h4>
+                    <div><input name="testingequipmenttype" type="text" placeholder="请输入电话/手机" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">安装高度<span>MOUNTING HEIGHT</span></h4>
+                    <div><input name="testingmountheight" type="text" placeholder="请输邮箱" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>其它<span>OTHER</span></h4>
+                    <div><input name="testingother" type="text" placeholder="请输入设备其它概况" class="width1" /></div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="apply-table test-content">
+                    <h4>取报告方式<span>REPORT FORM</span></h4>
+                    <div class="radio">
+                        <label><input name="testingtheway" type="radio"><span>自取</span></label>
+                        <label><input name="testingtheway" type="radio"><span>快递</span></label>
+                        <label><input name="testingtheway" type="radio"><span>其他：<input type="text" placeholder="请输入其他方式" class="width5" /></span></label>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="apply-table test-content">
+                    <h4>报告快递至<span>REPORT DELIVERY TO</span></h4>
+                    <div class="radio">
+                        <label><input name="testingmailing" type="radio"><span>委托单位</span></label>
+                        <label><input name="testingmailing" type="radio" class="radio2"><span>其他：<input type="text" placeholder="请输入其他方式" class="width6" /></span></label>
+                    </div>
+                </div>
+
+                <div class="apply-table-but cl">
+                    <input type="submit" value="提交" id="btnOK" class="submit" /> <input type="reset" value="重置" class="reset" onclick="reset()" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(function () {
+            $("#li_sq").addClass("index");
+            //提交表单
+            $("#btnOK").click(function () {
+                var data = $('#form1').serialize();
+                $.post("/Client/postuptestingapplicationinfo", data, function (d) {
+                    //var result = eval('(' + d + ')'); //处理Json
+                    //alert("x" + d.message+d.code);
+                    if (d.code == 1) {
+                        alert("提交成功！申请费用：" + d.price);
+                    } else {
+                        alert("提交失败！原因：" + d.message);
+                    }
+                });
+            });
+        })
+        function reset() {
+            $("input").each(function (e) {
+                $(this).val("");
+            });
+        }
+    </script>
+}

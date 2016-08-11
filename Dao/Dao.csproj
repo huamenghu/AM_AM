@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECAB65AE-755A-45EA-B09B-D05A065F5D33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dao</RootNamespace>
+    <AssemblyName>Dao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ad.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="addr.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="admin.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="alipay.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="app.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="applicationinfo.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="appraisalaccident.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="appraisalapplication.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthPermission.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthRelation.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthRole.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthUser.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthUserPermission.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthUserRole.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cat.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="config.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consumptionnote.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="expertsdesigninfo.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="expertsproofinfo.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="expresscode.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fault.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="faulttype.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="goods.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="goodstype.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="grade.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="news.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="newstype.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ordergoods.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="orderpingjia.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qualificationtype.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="recommended.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="testing.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="threelogin.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="train.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="traintype.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="upfeedbackinfo.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>AM.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AM.edmx</DependentUpon>
+      <LastGenOutput>AM.Context.cs</LastGenOutput>
+    </None>
+    <None Include="AM.edmx.diagram">
+      <DependentUpon>AM.edmx</DependentUpon>
+    </None>
+    <None Include="AM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AM.edmx</DependentUpon>
+      <LastGenOutput>AM.cs</LastGenOutput>
+    </None>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

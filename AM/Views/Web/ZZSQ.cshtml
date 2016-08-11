@@ -1,0 +1,138 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    ViewBag.Title = "资质申请";
+}
+<!--表格申请-->
+<div class="apply-out">
+    <!--您的位置-->
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/ZZSQ#1">资质申请</a></li>
+    </ul>
+
+    <!--表格-->
+    <div class="apply-box">
+        <ul class="apply-but">
+            <li class="apply-but1"><a href="/web/ZZSQ#1">资质申请</a></li>
+            <li><a href="/web/Test#1">检测申请</a></li>
+            <li><a href="/web/Train#1">培训申请</a></li>
+        </ul>
+
+        <div class="apply-sm-box">
+            <h3>高空机械工程技术研究院资质申请表</h3>
+            <form id="form1" onsubmit="return false">
+                <div class="apply-table">
+                    <h4>单位名称<span>UNIT NAME</span></h4>
+                    <div>
+                        <input name="applicompanyname" type="text" placeholder="请输入单位名称" class="width1" />
+                        <input type="hidden" name="userid" value="@ViewBag.UserID" />
+                    </div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>单位地址<span>UNIT ADDRESS</span></h4>
+                    <div><input name="applicompanyaddr" type="text" placeholder="请输入单位地址" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>营业执照号<span>BUSINESS LICENSE NUMBER</span></h4>
+                    <div><input name="applibusinessregistnumber" type="text" placeholder="请输入营业执照号" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>组织机构代码<span>ORGANIZATIONCODE</span></h4>
+                    <div><input name="appliorganizationcode" type="text" placeholder="请输入组织机构代码" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>工作单位<span>UNIT ADDRESS</span></h4>
+                    <div><input name="appliemployer" type="text" placeholder="请输入工作单位名称" class="width1" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>注册资金（万元）<span>REGISTERED CAPITAL</span></h4>
+                    <div><input name="appliregistercapital" type="text" placeholder="请输入注册资金" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>注册日期<span>REGISTERED DATE</span></h4>
+                    <div><input name="appliregistrationdate" type="text" placeholder="请输入注册日期" class="width2" onclick="WdatePicker()" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>经济类型<span>ECONOMIC TYPE</span></h4>
+                    <div><input name="applieconomytype" type="text" placeholder="请输入经济类型" class="width2" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4>资质类别<span>QUALIFICATIONCATEGORY</span></h4>
+                    <div>
+                        <select name="appliqualificationtypeid" class="drop-down1">
+                            <option selected>请选择</option>
+                            @{
+                                var types = AM.BLL.DB.Instant.QualificationTypeManager.Where(a => true).Select(a => new
+                                {
+                                    a.typeid,
+                                    a.typename,
+                                    a.sort
+                                }).OrderBy(a => a.sort).ToList();
+                                foreach (var item in types)
+                                {
+                                    <option value="@item.typeid">@item.typename</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+                <div class="apply-table">
+                    <h4 class="title-width">联系人<span>CONTACT PERSON</span></h4>
+                    <div><input name="applilinkname" type="text" placeholder="请输入姓名" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">联系电话<span>CONTACT PHONE</span></h4>
+                    <div><input name="applilinktel" type="text" placeholder="请输入电话/手机" class="width3" /></div>
+                </div>
+
+                <div class="apply-table">
+                    <h4 class="title-width">邮箱<span>ECONOMIC TYPE</span></h4>
+                    <div><input name="appliemail" type="text" placeholder="请输邮箱" class="width3" /></div>
+                </div>
+
+                <div class="apply-table-but cl">
+                    <input type="submit" value="提交" id="btnOK" class="submit" /> <input type="reset" value="重置" class="reset" onclick="reset()" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(function () {
+            $("#li_sq").addClass("index");
+            //提交表单
+            $("#btnOK").click(function () {
+                var data = $('#form1').serialize();
+                $.post("/Client/postupqualificationapplicationinfo", data, function (d) {
+                    //var result = eval('(' + d + ')'); //处理Json
+                    //alert("x" + d.message+d.code);
+                    if (d.code == 1) {
+                        alert("提交成功！申请费用：" + d.price);
+                    } else {
+                        alert("提交失败！原因：" + d.message);
+                    }
+                });
+            });
+        })
+        function reset() {
+            $("input").each(function (e) {
+                $(this).val("");
+            });
+        }
+    </script>
+}

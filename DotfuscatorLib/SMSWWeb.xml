@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE dotfuscator SYSTEM "http://www.preemptive.com/dotfuscator/dtd/dotfuscator_v2.3.dtd">
+<dotfuscator version="2.3">
+  <!--This is application generated code. Do not edit manually.-->
+  <input>
+    <loadpaths />
+    <asmlist>
+      <inputassembly refid="08a715da-f1b1-4e18-a1a7-aedc8cba0cc3">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <option>library</option>
+        <option>transformxaml</option>
+        <file dir="D:\公司常用\SMSWWeb\SMSWWeb\SMSWWeb\bin" name="MFXinY.dll" />
+      </inputassembly>
+      <inputassembly refid="c0eb3425-7672-4c9b-bca6-8e9ad9bba42a">
+        <option>honoroas</option>
+        <option>stripoa</option>
+        <option>library</option>
+        <option>transformxaml</option>
+        <file dir="D:\公司常用\SMSWWeb\SMSWWeb\SMSWWeb\bin" name="SMSWWeb.dll" />
+      </inputassembly>
+    </asmlist>
+  </input>
+  <output>
+    <file dir="${configdir}\Dotfuscated" />
+  </output>
+  <renaming scheme="unprintable">
+    <option>enhancedOI</option>
+    <option>keepnamespace</option>
+    <option>xmlserialization</option>
+    <excludelist>
+      <type name="&lt;PrivateImplementationDetails&gt;{27E8CB86-7961-4828-82D9-88EB17D3CC48}" />
+      <type name="&lt;PrivateImplementationDetails&gt;{27E8CB86-7961-4828-82D9-88EB17D3CC48}/__StaticArrayInitTypeSize=604" />
+      <type name="&lt;PrivateImplementationDetails&gt;{27E8CB86-7961-4828-82D9-88EB17D3CC48}/__StaticArrayInitTypeSize=96" />
+      <type name="&lt;&gt;f__AnonymousType23`2&lt;&lt;Name&gt;j__TPar,&lt;Tel&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType92`5&lt;&lt;Msg&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MsgType&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;Level&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType93`2&lt;&lt;GUID&gt;j__TPar,&lt;DCGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType94`3&lt;&lt;controller&gt;j__TPar,&lt;action&gt;j__TPar,&lt;id&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType95`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___tts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType96`1&lt;&lt;TSGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType97`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea3`11&lt;&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TSName&gt;j__TPar,&lt;TSLevel&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea4`14&lt;&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;ChannelNumber&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TSName&gt;j__TPar,&lt;TSLevel&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;MonitorTypeAndTypeName&gt;j__TPar&gt;" />
+      <type name="&lt;PrivateImplementationDetails&gt;{66E7234B-D0FA-4BD0-BBCB-AD4EBF0E25DD}" />
+      <type name="&lt;PrivateImplementationDetails&gt;{66E7234B-D0FA-4BD0-BBCB-AD4EBF0E25DD}/__StaticArrayInitTypeSize=604" />
+      <type name="&lt;PrivateImplementationDetails&gt;{66E7234B-D0FA-4BD0-BBCB-AD4EBF0E25DD}/__StaticArrayInitTypeSize=96" />
+      <type name="&lt;&gt;f__AnonymousType0`2&lt;&lt;t&gt;j__TPar,&lt;__tts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1`2&lt;&lt;&lt;&gt;h__TransparentIdentifier32&gt;j__TPar,&lt;___tts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType10`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera3&gt;j__TPar,&lt;___sss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType11`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera4&gt;j__TPar,&lt;__ss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType12`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera5&gt;j__TPar,&lt;___ss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType13`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera6&gt;j__TPar,&lt;__ssp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType14`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera7&gt;j__TPar,&lt;___ssp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType15`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera8&gt;j__TPar,&lt;__p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType16`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera9&gt;j__TPar,&lt;___p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType17`2&lt;&lt;&lt;&gt;h__TransparentIdentifieraa&gt;j__TPar,&lt;__ct&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType18`16&lt;&lt;IsStart&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;SwitcherID&gt;j__TPar,&lt;SwitcherType&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;SGUID&gt;j__TPar,&lt;SSGUID&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;PGUID&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;TypeName&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType19`2&lt;&lt;_c&gt;j__TPar,&lt;__ccs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1a`2&lt;&lt;&lt;&gt;h__TransparentIdentifierad&gt;j__TPar,&lt;___ccs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1b`2&lt;&lt;&lt;&gt;h__TransparentIdentifierae&gt;j__TPar,&lt;__cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1c`2&lt;&lt;&lt;&gt;h__TransparentIdentifieraf&gt;j__TPar,&lt;___cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1d`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb0&gt;j__TPar,&lt;__csp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1e`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb1&gt;j__TPar,&lt;___csp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType1f`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb2&gt;j__TPar,&lt;__p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2`2&lt;&lt;TSGUID&gt;j__TPar,&lt;State&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType20`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb3&gt;j__TPar,&lt;___p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType21`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb4&gt;j__TPar,&lt;__ct&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType22`11&lt;&lt;IsStart&gt;j__TPar,&lt;CName&gt;j__TPar,&lt;CGUID&gt;j__TPar,&lt;CSGUID&gt;j__TPar,&lt;PGUID&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PTels&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;TName&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType23`3&lt;&lt;Name&gt;j__TPar,&lt;Tel&gt;j__TPar,&lt;SortOrder&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType24`2&lt;&lt;_st&gt;j__TPar,&lt;__svd&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType25`1&lt;&lt;State&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType26`6&lt;&lt;GUID&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Title&gt;j__TPar,&lt;Keyword&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;Sort&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType27`2&lt;&lt;d&gt;j__TPar,&lt;tt&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType28`6&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Sort&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType29`4&lt;&lt;Type&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Sort&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2a`5&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Fvalue&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2b`3&lt;&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2c`2&lt;&lt;Name&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2d`6&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;DTGUID&gt;j__TPar,&lt;PGUID&gt;j__TPar,&lt;SortOrder&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2e`2&lt;&lt;a&gt;j__TPar,&lt;bb&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType2f`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2&gt;j__TPar,&lt;bbb&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3`2&lt;&lt;&lt;&gt;h__TransparentIdentifier33&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType30`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3&gt;j__TPar,&lt;cc&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType31`12&lt;&lt;GUID&gt;j__TPar,&lt;MineCode&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;Sex&gt;j__TPar,&lt;SFZ&gt;j__TPar,&lt;Department&gt;j__TPar,&lt;Duty&gt;j__TPar,&lt;BirthdayType&gt;j__TPar,&lt;BirthdayValue&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType32`2&lt;&lt;a&gt;j__TPar,&lt;f1f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType33`2&lt;&lt;&lt;&gt;h__TransparentIdentifier7&gt;j__TPar,&lt;f1f1f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType34`2&lt;&lt;&lt;&gt;h__TransparentIdentifier8&gt;j__TPar,&lt;f2f2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType35`16&lt;&lt;GUID&gt;j__TPar,&lt;MineCode&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;Sex&gt;j__TPar,&lt;SFZ&gt;j__TPar,&lt;Department&gt;j__TPar,&lt;Duty&gt;j__TPar,&lt;BirthdayType&gt;j__TPar,&lt;BirthdayValue&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;FriendName1&gt;j__TPar,&lt;FriendTel1&gt;j__TPar,&lt;FriendName2&gt;j__TPar,&lt;FriendTel2&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType36`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2b&gt;j__TPar,&lt;f1f1f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType37`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2c&gt;j__TPar,&lt;f2f2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType38`2&lt;&lt;_p&gt;j__TPar,&lt;__d&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType39`2&lt;&lt;&lt;&gt;h__TransparentIdentifier5e&gt;j__TPar,&lt;___d&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3a`2&lt;&lt;&lt;&gt;h__TransparentIdentifier5f&gt;j__TPar,&lt;__dblist&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3b`2&lt;&lt;&lt;&gt;h__TransparentIdentifier60&gt;j__TPar,&lt;___dblist&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3c`2&lt;&lt;&lt;&gt;h__TransparentIdentifier61&gt;j__TPar,&lt;__f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3d`2&lt;&lt;&lt;&gt;h__TransparentIdentifier62&gt;j__TPar,&lt;___f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3e`2&lt;&lt;&lt;&gt;h__TransparentIdentifier63&gt;j__TPar,&lt;__f2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType3f`12&lt;&lt;CardCode&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;SFZ&gt;j__TPar,&lt;BirthdayType&gt;j__TPar,&lt;BirthdayValue&gt;j__TPar,&lt;Department&gt;j__TPar,&lt;Duty&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;FriendName1&gt;j__TPar,&lt;FriendTel1&gt;j__TPar,&lt;FriendName2&gt;j__TPar,&lt;FriendTel2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4`2&lt;&lt;TGUID&gt;j__TPar,&lt;TSGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType40`7&lt;&lt;ID&gt;j__TPar,&lt;Sender&gt;j__TPar,&lt;ReceiverName&gt;j__TPar,&lt;ReceiverPhone&gt;j__TPar,&lt;Content&gt;j__TPar,&lt;InsertTime&gt;j__TPar,&lt;State&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType41`9&lt;&lt;GUID&gt;j__TPar,&lt;Department&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;FriendName1&gt;j__TPar,&lt;FriendTel1&gt;j__TPar,&lt;FriendName2&gt;j__TPar,&lt;FriendTel2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType42`6&lt;&lt;GUID&gt;j__TPar,&lt;Content&gt;j__TPar,&lt;State&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;MT&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType43`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3a&gt;j__TPar,&lt;f1f1f1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType44`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3b&gt;j__TPar,&lt;f2f2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType45`7&lt;&lt;Name&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;FriendName1&gt;j__TPar,&lt;FriendTel1&gt;j__TPar,&lt;FriendName2&gt;j__TPar,&lt;FriendTel2&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType46`1&lt;&lt;Msg&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType47`4&lt;&lt;GUID&gt;j__TPar,&lt;Start&gt;j__TPar,&lt;End&gt;j__TPar,&lt;TempletGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType48`3&lt;&lt;Start&gt;j__TPar,&lt;End&gt;j__TPar,&lt;TempletGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType49`2&lt;&lt;Start&gt;j__TPar,&lt;End&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4a`7&lt;&lt;GUID&gt;j__TPar,&lt;UserName&gt;j__TPar,&lt;LogType&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;IP&gt;j__TPar,&lt;OperTime&gt;j__TPar,&lt;MT&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4b" />
+      <type name="&lt;&gt;f__AnonymousType4c`11&lt;&lt;TimeFormat&gt;j__TPar,&lt;TimeString1&gt;j__TPar,&lt;TimeString2&gt;j__TPar,&lt;TimeString3&gt;j__TPar,&lt;IsTime&gt;j__TPar,&lt;UserString&gt;j__TPar,&lt;State&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Content&gt;j__TPar,&lt;ContentTest&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4d`6&lt;&lt;GUID&gt;j__TPar,&lt;Content&gt;j__TPar,&lt;ContentTest&gt;j__TPar,&lt;State&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4e`12&lt;&lt;GUID&gt;j__TPar,&lt;TimeFormat&gt;j__TPar,&lt;TimeString1&gt;j__TPar,&lt;TimeString2&gt;j__TPar,&lt;TimeString3&gt;j__TPar,&lt;IsTime&gt;j__TPar,&lt;UserString&gt;j__TPar,&lt;State&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Content&gt;j__TPar,&lt;ContentTest&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType4f`19&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TTGUID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;PValue&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;RiskValue&gt;j__TPar,&lt;State&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5`2&lt;&lt;q&gt;j__TPar,&lt;__t&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType50`2&lt;&lt;l&gt;j__TPar,&lt;ttt&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType51`21&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;ChannelNumber&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TTName&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;PValue&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;RiskValue&gt;j__TPar,&lt;State&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;PassTime&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType52`22&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;ChannelNumber&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TTGUID&gt;j__TPar,&lt;TTName&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;PValue&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;RiskValue&gt;j__TPar,&lt;State&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;PassTime&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType53`2&lt;&lt;ts&gt;j__TPar,&lt;t&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType54`8&lt;&lt;State&gt;j__TPar,&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Level&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType55`19&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;PValue&gt;j__TPar,&lt;RiskValue&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;State&gt;j__TPar,&lt;TSGUID&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType56`19&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TTGUID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;PValue&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;State&gt;j__TPar,&lt;TSGUID&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType57`1&lt;&lt;PValue&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType58`1&lt;&lt;RiskValue&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType59`1&lt;&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5a`7&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Level&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5b`5&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5c`5&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;TGUID&gt;j__TPar,&lt;TSGUID&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5d`5&lt;&lt;GUID&gt;j__TPar,&lt;UserName&gt;j__TPar,&lt;Password&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5e`5&lt;&lt;GUID&gt;j__TPar,&lt;UserName&gt;j__TPar,&lt;Password&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType5f`4&lt;&lt;UserName&gt;j__TPar,&lt;Password&gt;j__TPar,&lt;Type&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6`2&lt;&lt;&lt;&gt;h__TransparentIdentifier36&gt;j__TPar,&lt;___t&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType60`2&lt;&lt;p&gt;j__TPar,&lt;t&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType61`5&lt;&lt;IsCheck&gt;j__TPar,&lt;GUID&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;CardCode&gt;j__TPar,&lt;Tels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType62`7&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;IOName&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType63`4&lt;&lt;GUID&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;Flag&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType64`17&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;SwitcherID&gt;j__TPar,&lt;SwitcherType&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;State&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType65`2&lt;&lt;TypeID&gt;j__TPar,&lt;IOID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType66`2&lt;&lt;l&gt;j__TPar,&lt;__ss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType67`19&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;MineName&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;SwitcherID&gt;j__TPar,&lt;SwitcherType&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;State&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;IsNew&gt;j__TPar,&lt;IsInit&gt;j__TPar,&lt;InitDT&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;PassTime&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar,&lt;Note&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType68`2&lt;&lt;_ss&gt;j__TPar,&lt;__sss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType69`6&lt;&lt;State&gt;j__TPar,&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6a`5&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6b`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___sss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6c`1&lt;&lt;SSGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6d`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__ss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6e`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2&gt;j__TPar,&lt;___ss&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType6f`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3&gt;j__TPar,&lt;__ssp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7`2&lt;&lt;&lt;&gt;h__TransparentIdentifier37&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType70`2&lt;&lt;&lt;&gt;h__TransparentIdentifier4&gt;j__TPar,&lt;___ssp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType71`2&lt;&lt;&lt;&gt;h__TransparentIdentifier5&gt;j__TPar,&lt;__p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType72`8&lt;&lt;StationID&gt;j__TPar,&lt;SwitcherID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType73`9&lt;&lt;StationID&gt;j__TPar,&lt;SwitcherID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;SwitcherType&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType74`8&lt;&lt;GUID&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;IOName&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;Flag&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType75`2&lt;&lt;_s&gt;j__TPar,&lt;__st&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType76`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___st&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType77`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__svd&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType78`9&lt;&lt;GUID&gt;j__TPar,&lt;SwitcherDescription&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;IOName&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;SwitcherValueDescription&gt;j__TPar,&lt;Flag&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType79`9&lt;&lt;GUID&gt;j__TPar,&lt;SwitcherDescription&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;IOID&gt;j__TPar,&lt;IOName&gt;j__TPar,&lt;Value&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;Flag&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7a`11&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;CT1&gt;j__TPar,&lt;CT2&gt;j__TPar,&lt;CT3&gt;j__TPar,&lt;CT4&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7b`2&lt;&lt;l&gt;j__TPar,&lt;__cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7c`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7d`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__t1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7e`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2&gt;j__TPar,&lt;___t1&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType7f`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3&gt;j__TPar,&lt;__t2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8`2&lt;&lt;&lt;&gt;h__TransparentIdentifier38&gt;j__TPar,&lt;___ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType80`2&lt;&lt;&lt;&gt;h__TransparentIdentifier4&gt;j__TPar,&lt;___t2&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType81`2&lt;&lt;&lt;&gt;h__TransparentIdentifier5&gt;j__TPar,&lt;__t3&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType82`2&lt;&lt;&lt;&gt;h__TransparentIdentifier6&gt;j__TPar,&lt;___t3&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType83`2&lt;&lt;&lt;&gt;h__TransparentIdentifier7&gt;j__TPar,&lt;__t4&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType84`13&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;CT1&gt;j__TPar,&lt;CT2&gt;j__TPar,&lt;CT3&gt;j__TPar,&lt;CT4&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;PassTime&gt;j__TPar,&lt;IsStart&gt;j__TPar,&lt;IsAvailable&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType85`2&lt;&lt;_cs&gt;j__TPar,&lt;__ccs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType86`5&lt;&lt;GUID&gt;j__TPar,&lt;Code&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;Remark&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType87`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___ccs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType88`1&lt;&lt;CSGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType89`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8a`2&lt;&lt;&lt;&gt;h__TransparentIdentifier2&gt;j__TPar,&lt;___cs&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8b`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3&gt;j__TPar,&lt;__csp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8c`2&lt;&lt;&lt;&gt;h__TransparentIdentifier4&gt;j__TPar,&lt;___csp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8d`2&lt;&lt;&lt;&gt;h__TransparentIdentifier6&gt;j__TPar,&lt;___p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8e`2&lt;&lt;&lt;&gt;h__TransparentIdentifier7&gt;j__TPar,&lt;__ct&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType8f`8&lt;&lt;Name&gt;j__TPar,&lt;TypeID&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9`2&lt;&lt;&lt;&gt;h__TransparentIdentifier39&gt;j__TPar,&lt;__tsp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType90`7&lt;&lt;Name&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType91`6&lt;&lt;GUID&gt;j__TPar,&lt;Msg&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MsgType&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;Level&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType92`2&lt;&lt;a&gt;j__TPar,&lt;__b&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType93`5&lt;&lt;Msg&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MsgType&gt;j__TPar,&lt;DT&gt;j__TPar,&lt;Level&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType94`2&lt;&lt;GUID&gt;j__TPar,&lt;DCGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType95`3&lt;&lt;controller&gt;j__TPar,&lt;action&gt;j__TPar,&lt;id&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType96`2&lt;&lt;&lt;&gt;h__TransparentIdentifier0&gt;j__TPar,&lt;___tts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType97`1&lt;&lt;TSGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType98`2&lt;&lt;&lt;&gt;h__TransparentIdentifier1&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType99`2&lt;&lt;t&gt;j__TPar,&lt;__tt&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9a`2&lt;&lt;&lt;&gt;h__TransparentIdentifier4&gt;j__TPar,&lt;___tt&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9b`2&lt;&lt;&lt;&gt;h__TransparentIdentifier5&gt;j__TPar,&lt;__ttts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9c`2&lt;&lt;&lt;&gt;h__TransparentIdentifier6&gt;j__TPar,&lt;___ttts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9d`2&lt;&lt;&lt;&gt;h__TransparentIdentifier7&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9e`2&lt;&lt;&lt;&gt;h__TransparentIdentifiera&gt;j__TPar,&lt;___t&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousType9f`2&lt;&lt;&lt;&gt;h__TransparentIdentifierb&gt;j__TPar,&lt;__ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3a&gt;j__TPar,&lt;___tsp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea0`2&lt;&lt;&lt;&gt;h__TransparentIdentifierc&gt;j__TPar,&lt;___ts&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea1`2&lt;&lt;&lt;&gt;h__TransparentIdentifierd&gt;j__TPar,&lt;__tsp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea2`2&lt;&lt;&lt;&gt;h__TransparentIdentifiere&gt;j__TPar,&lt;___tsp&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea3`2&lt;&lt;&lt;&gt;h__TransparentIdentifierf&gt;j__TPar,&lt;__p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea4`11&lt;&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TSName&gt;j__TPar,&lt;TSLevel&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypea5`14&lt;&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;ChannelNumber&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;TSName&gt;j__TPar,&lt;TSLevel&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;PName&gt;j__TPar,&lt;PCardCode&gt;j__TPar,&lt;PTels&gt;j__TPar,&lt;TypeName&gt;j__TPar,&lt;MonitorTypeAndTypeName&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypeb`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3b&gt;j__TPar,&lt;__p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypec`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3c&gt;j__TPar,&lt;___p&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTyped`2&lt;&lt;&lt;&gt;h__TransparentIdentifier3d&gt;j__TPar,&lt;__tt&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypee`18&lt;&lt;IsStart&gt;j__TPar,&lt;StationID&gt;j__TPar,&lt;TransducerID&gt;j__TPar,&lt;Description&gt;j__TPar,&lt;MonitorType&gt;j__TPar,&lt;FValue&gt;j__TPar,&lt;TTName&gt;j__TPar,&lt;TGUID&gt;j__TPar,&lt;TSGUID&gt;j__TPar,&lt;StartDT&gt;j__TPar,&lt;TSName&gt;j__TPar,&lt;DelayTimeName&gt;j__TPar,&lt;DelayTimeValue&gt;j__TPar,&lt;IsSend&gt;j__TPar,&lt;TSPGUID&gt;j__TPar,&lt;Name&gt;j__TPar,&lt;Tels&gt;j__TPar,&lt;PGUID&gt;j__TPar&gt;" />
+      <type name="&lt;&gt;f__AnonymousTypef`2&lt;&lt;_s&gt;j__TPar,&lt;__sss&gt;j__TPar&gt;" />
+      <type name="&lt;PrivateImplementationDetails&gt;{5A02C0B1-121A-4C70-A286-51220873F7E3}" />
+      <type name="&lt;PrivateImplementationDetails&gt;{5A02C0B1-121A-4C70-A286-51220873F7E3}/__StaticArrayInitTypeSize=604" />
+      <type name="&lt;PrivateImplementationDetails&gt;{5A02C0B1-121A-4C70-A286-51220873F7E3}/__StaticArrayInitTypeSize=96" />
+      <type name="SMSWWeb.Common.ConstantManager">
+        <method name="get_CurSystem" signature="int32()" />
+        <method name="set_CurSystem" signature="void(int32)" />
+        <method name="get_CurUser" signature="SMSWWeb.Models.user()" />
+        <method name="set_CurUser" signature="void(SMSWWeb.Models.user)" />
+        <field name="BackGroundUserName" signature="string" />
+        <field name="CombinationStateInstruction" signature="string" />
+        <field name="ConfigDescription" signature="string" />
+        <field name="MsgStateInstruction" signature="string" />
+        <field name="NomalSendContent" signature="string" />
+        <field name="NotNull" signature="string" />
+        <field name="NumberNotNull" signature="string" />
+        <field name="SMSWTitle" signature="string" />
+        <field name="texthtml" signature="string" />
+        <field name="Title" signature="string" />
+        <field name="TransduceStateInstruction1" signature="string" />
+        <field name="TransduceStateInstruction2" signature="string" />
+        <field name="TransduceStateInstruction3" signature="string" />
+        <field name="TransduceStateInstruction4" signature="string" />
+        <field name="Version" signature="string" />
+        <propertymember name="CurSystem" />
+        <propertymember name="CurUser" />
+      </type>
+    </excludelist>
+    <mapping>
+      <mapoutput overwrite="false">
+        <file dir="${configdir}\Dotfuscated" name="Map.xml" />
+      </mapoutput>
+    </mapping>
+    <referencerulelist>
+      <referencerule rulekey="{6655B10A-FD58-462d-8D4F-5B1316DFF0FF}" />
+      <referencerule rulekey="{229FD6F8-5BCC-427b-8F72-A7A413ECDF1A}" />
+      <referencerule rulekey="{2B7E7C8C-A39A-4db8-9DFC-6AFD38509061}" />
+      <referencerule rulekey="{7D9C8B02-2383-420f-8740-A9760394C2C1}" />
+      <referencerule rulekey="{89769974-93E9-4e71-8D92-BE70E855ACFC}" />
+      <referencerule rulekey="{494EA3BA-B947-44B5-BEE8-A11CC85AAF9B}" />
+    </referencerulelist>
+  </renaming>
+  <controlflow level="high" />
+  <stringencrypt />
+  <sos mergeruntime="true">
+    <option>dontsendtamper</option>
+  </sos>
+  <smartobfuscation>
+    <smartobfuscationreport verbosity="all" overwrite="false" />
+  </smartobfuscation>
+</dotfuscator>

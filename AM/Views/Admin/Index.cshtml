@@ -1,0 +1,70 @@
+﻿@{
+   Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" >
+            <table>
+                <tr>
+                    <td class="right">用户名：
+                    </td>
+                    <td>
+                        <input name="UserName" class="easyui-validatebox editInput" required='true'    />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">密码：
+                    </td>
+                    <td>
+                        <input name="Password" class="easyui-validatebox editInput"      />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">用户类型：
+                    </td>
+                    <td>
+                    <input name="Type"  class="easyui-combobox editInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetUserType'" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">备注：
+                    </td>
+                    <td>
+                        <input name="Remark" class="easyui-validatebox editInput" required='true'    />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+ <div id="tb" style="padding: 3px 0px 3px 10px; height: auto">    <div style="vertical-align: middle">
+                   用户名：
+                        <input id="s_UserName" class="easyui-validatebox searchInput"/>
+                   用户类型：
+                    <input id="s_Type" class="easyui-combobox searchInput" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetUserType'" />
+<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>    </div></div>
+@section scripts{
+ <script>
+     var tableName = "admin";                                                                   
+     var sortName = "GUID";                                                                     
+     var idField = "GUID";                                                                      
+     var sortOrder = "asc";                                                                     
+                                                                                                  
+     var columns = [[                                                                             
+ { field: 'UserName', title: '用户名', width: 100, sortable: true
+ }, { field: 'Type', title: '用户类型', width: 100, sortable: true
+ }, { field: 'Remark', title: '备注', width: 300, sortable: true
+ }     ]];                                                                                          
+     function toExcel() {                                                                         
+                                                                                                  
+     }                                                                                            
+                                                                                                  
+     function returnQueryParams() {                                                               
+         var obj = {                                                                              
+             UserName: $("#s_UserName").val(),                                                
+             Type: $("#s_Type").combobox("getValue"),                                            
+         };                                                                                       
+         return obj;                                                                              
+     }                                                                                            
+ </script>                                                                                        
+}

@@ -1,0 +1,77 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 600px; height: 220px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td class="right">
+                        等级名称
+                    </td>
+                    <td>
+                        <input name="gradename" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        消费条件：
+                    </td>
+                    <td>
+                        <input name="gradefull" class="easyui-numberbox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        折扣率：
+                    </td>
+                    <td>
+                        <input name="gradediscount" precision="2" class="easyui-numberbox editInput" required='true' />(如：8折就是0.8)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        等级logo：
+                    </td>
+                    <td>
+                        <input type="file" name="gradelogo" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        等级名称：
+        <input id="s_gradename" class="easyui-validatebox searchInput" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var tableName = "grade";
+        var sortName = "gradeid";
+        var idField = "gradeid";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'gradename', title: '等级名称', width: 100, sortable: true
+    }, {
+        field: 'gradefull', title: '消费条件', width: 100, sortable: true
+    }, {
+        field: 'gradediscount', title: '折扣率', width: 100, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                gradename: $("#s_gradename").val()
+            };
+            return obj;
+        }
+    </script>
+}

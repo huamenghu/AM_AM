@@ -1,0 +1,158 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+@section head{
+    <style>
+        .img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+}
+<div id="Dlg-Edit" title="窗口" style="width: 850px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td class="right">一级分类：
+                    </td>
+                    <td>
+                        <input name="type1" id="type1" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'typename',valueField:'typeid',url:'/Tools/GetFaultType',onSelect:function(){selectType();}" />
+                    </td>
+                </tr>
+                @*<tr>
+                    <td class="right">二级分类：
+                    </td>
+                    <td>
+                        <input name="type2" id="type2" class="easyui-combobox editInput" editable="false" required="false" data-options="textField:'typename',valueField:'typeid'" />
+                    </td>
+                </tr>*@
+                <tr>
+                    <td class="right">故障名：
+                    </td>
+                    <td>
+                        <input name="faulttitle" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">故障Logo：
+                    </td>
+                    <td>
+                        <input name="faultlogo" type="file" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">故障时间：
+                    </td>
+                    <td>
+                        <input type="text" name="faultdate" editable="false" class="easyui-datebox" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">故障描述：
+                    </td>
+                    <td>
+                        <input name="faultsummary" class="easyui-validatebox editInput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">故障内容：
+                    </td>
+                    <td>
+                        <textarea class="easyui-kindeditor" style="width: 550px; height: 250px" name="faultcontent" id="newscontent"></textarea>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        故障名：
+                        <input id="s_faulttitle" class="easyui-validatebox searchInput" />
+        内容关键字：
+                        <input id="s_faultcontent" class="easyui-validatebox searchInput" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/kindeditor/kindeditor-min.js"></script>
+    <script src="~/Content/easyui/ekindeditor.js"></script>
+    <script>
+        var tableName = "fault";
+        var sortName = "faultid";
+        var idField = "faultid";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'type1', title: '一级类别', width: 100, sortable: true
+    }, {
+    //    field: 'type2', title: '二级类别', width: 100, sortable: true
+    //}, {
+        field: 'faulttitle', title: '故障名', width: 100, sortable: true
+    }, {
+        field: 'faultdate', title: '故障时间', width: 140, sortable: true
+    }, {
+        field: 'faultsummary', title: '故障描述', width: 250, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                faulttitle: $("#s_faulttitle").val(),
+                faultcontent: $("#s_faultcontent").val(),
+            };
+            return obj;
+        }
+        function selectType() {
+            var type1 = $("#type1").combobox("getValue");
+            if (type1 != '') {
+                $("#type2").combobox({ url: "/Tools/GetFaultType2/" + type1 });
+            }
+        }
+    </script>
+}
+@section scripts2{
+toolbar = [{
+    text: '新增',
+    iconCls: 'icon-add',
+    handler: add
+    }, '-', {
+    text: '查看',
+    iconCls: 'icon-edit',
+    handler: view
+    }, '-', {
+    text: '修改',
+    iconCls: 'icon-edit',
+    handler: edit2
+    }, '-', {
+    text: '删除',
+    iconCls: 'icon-remove',
+    handler: del
+
+    }];
+    function edit2() {
+    var rows = datagrid.datagrid('getSelections');
+    var num = rows.length;
+    if (num == 0) {
+    msgShow('请选择一条记录进行操作!');
+    return;
+    }
+    else if (num > 1) {
+    msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+    return;
+    }
+    dlg_Edit_form.form('clear');
+    dlg_Edit.dialog('open');
+    dlg_Edit.dialog('setTitle', '修改');
+    $.post("/" + tableName + "/FillForm/", { id: rows[0][idField] }, function (result) {
+    dlg_Edit_form.form('load', result);
+    kindeditor.html(result.faultcontent);
+    });
+    dlg_Edit_form.url = "/" + tableName + "/update/" + rows[0][idField];
+    }
+}

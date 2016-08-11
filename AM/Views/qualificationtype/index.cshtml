@@ -1,0 +1,60 @@
+﻿@{
+   Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 570px; height: 200px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" >
+            <table>
+                <tr>
+                    <td class="right">类别名：
+                    </td>
+                    <td>
+                        <input name="typename" class="easyui-validatebox editInput" required='true'    />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">排序：
+                    </td>
+                    <td>
+                        <input type="text" name="sort" class="easyui-numberbox"      />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">描述：
+                    </td>
+                    <td>
+                        <input name="description" class="easyui-validatebox editInput"      />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+ <div id="tb" style="padding: 3px 0px 3px 10px; height: auto">    <div style="vertical-align: middle">
+                   类型名：
+                        <input id="s_typename" class="easyui-validatebox searchInput"/>
+<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>    </div></div>
+@section scripts{
+ <script>
+     var tableName = "qualificationtype";
+     var sortName = "typeid";                                                                     
+     var idField = "typeid";                                                                      
+     var sortOrder = "asc";                                                                     
+                                                                                                  
+     var columns = [[                                                                             
+ { field: 'typename', title: '类型名', width: 100, sortable: true
+ }, { field: 'sort', title: '排序', width: 100, sortable: true
+ }, { field: 'description', title: '描述', width: 300, sortable: true
+ }     ]];                                                                                          
+     function toExcel() {                                                                         
+                                                                                                  
+     }                                                                                            
+                                                                                                  
+     function returnQueryParams() {                                                               
+         var obj = {                                                                              
+             typename: $("#s_typename").val(),                                                
+         };                                                                                       
+         return obj;                                                                              
+     }                                                                                            
+ </script>                                                                                        
+}

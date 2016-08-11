@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5d4632c77d2c4d0e8b44127b215ba3a1" Name="关系图1">
+        <EntityTypeShape EntityType="AM.Dao.addr" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.admin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.app" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.cat" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.goodstype" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.recommended" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.upfeedbackinfo" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AM.Dao.grade" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AM.Dao.qualificationtype" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AM.Dao.traintype" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AM.Dao.orderpingjia" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AM.Dao.consumptionnote" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AM.Dao.user" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AM.Dao.applicationinfo" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AM.Dao.appraisalaccident" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AM.Dao.appraisalapplication" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AM.Dao.expertsdesigninfo" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AM.Dao.expertsproofinfo" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AM.Dao.fault" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AM.Dao.testing" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AM.Dao.train" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="AM.Dao.ad" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthPermission" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthRelation" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthRole" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthUser" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthUserPermission" Width="1.5" PointX="14.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AM.Dao.AuthUserRole" Width="1.5" PointX="12.75" PointY="14.75" />
+        <EntityTypeShape EntityType="AM.Dao.config" Width="1.5" PointX="14.75" PointY="14.75" />
+        <EntityTypeShape EntityType="AM.Dao.faulttype" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="AM.Dao.newstype" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AM.Dao.goods" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AM.Dao.expresscode" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AM.Dao.news" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="AM.Dao.ordergoods" Width="1.5" PointX="4.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AM.Dao.alipay" Width="1.5" PointX="6.75" PointY="17.75" />
+        <EntityTypeShape EntityType="AM.Dao.threelogin" Width="1.5" PointX="13.375" PointY="17.75" />
+        <EntityTypeShape EntityType="AM.Dao.order" Width="1.5" PointX="17.375" PointY="14.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

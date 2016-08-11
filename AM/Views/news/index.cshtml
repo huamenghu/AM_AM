@@ -1,0 +1,164 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+@section head{
+    <style>
+        .img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+}
+<div id="Dlg-Edit" title="窗口" style="width: 850px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <td class="right">
+                        新闻标题：
+                    </td>
+                    <td>
+                        <input name="newstitle" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                    <td class="right">
+                        发布日期：
+                    </td>
+                    <td>
+                        <input type="text" name="newsdate" id="newsdate" editable="false" class="easyui-datebox" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        新闻类别：
+                    </td>
+                    <td>
+                        <input name="newstype" id="newstype" class="easyui-combobox editInput" editable="false" required="true" data-options="textField:'typename',valueField:'typeid',url:'/Tools/GetNewsType'" />
+                    </td>
+                    <td class="right">
+                        是否推荐：
+                    </td>
+                    <td>
+                        <input name="newsistj" type="checkbox" value="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        预览图：
+                    </td>
+                    <td colspan="3">
+                        <input name="newslogo" type="file" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        新闻简介：
+                    </td>
+                    <td colspan="3">
+                        <input name="newssummary" class="easyui-validatebox" style="width: 550px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        新闻内容：
+                    </td>
+                    <td colspan="3">
+                        <textarea class="easyui-kindeditor" style="width: 550px; height: 250px" name="newscontent" id="newscontent"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        标题：
+        <input id="s_newstitle" class="easyui-validatebox searchInput" />
+        新闻类别：
+        <input name="s_newstype" id="s_newstype" class="easyui-combobox editInput" editable="false" data-options="textField:'typename',valueField:'typeid',url:'/Tools/GetNewsType_'" />
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/kindeditor/kindeditor-min.js"></script>
+    <script src="~/Content/easyui/ekindeditor.js"></script>
+    <script>
+        var tableName = "news";
+        var sortName = "newsid";
+        var idField = "newsid";
+        var sortOrder = "asc";
+
+        var columns = [[
+    {
+        field: 'newstitle', title: '新闻标题', width: 200, sortable: true
+    }, {
+        field: 'newstype', title: '新闻类别', width: 200, sortable: true
+    }, {
+        field: 'newssummary', title: '新闻简介', width: 200, sortable: true
+    }, {
+        field: 'newsdate', title: '发布日期', width: 100, sortable: true
+    }, {
+        field: 'newsistj', title: '是否推荐', width: 80, sortable: true
+    }]];
+        function toExcel() {
+
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                newstitle: $("#s_newstitle").val(),
+                newstype: $("#s_newstype").val(),
+            };
+            return obj;
+        }
+    </script>
+}
+@section scripts2{
+    toolbar = [{
+    text: '新增',
+    iconCls: 'icon-add',
+    handler: add2
+    }, '-', {
+    text: '查看',
+    iconCls: 'icon-edit',
+    handler: view
+    }, '-', {
+    text: '修改',
+    iconCls: 'icon-edit',
+    handler: edit2
+    }, '-', {
+    text: '删除',
+    iconCls: 'icon-remove',
+    handler: del
+    }];
+
+    function add2() {
+    dlg_Edit_form.form('clear');
+    kindeditor.html('');
+    dlg_Edit.dialog('open');
+    dlg_Edit.dialog('setTitle', '添加');
+    $("#newsdate").datebox("setValue",'@DateTime.Now.ToString("yyyy-MM-dd")');
+    dlg_Edit_form.url = "/" + tableName + "/Add/" + url_;
+    }
+
+    function edit2() {
+    var rows = datagrid.datagrid('getSelections');
+    var num = rows.length;
+    if (num == 0) {
+    msgShow('请选择一条记录进行操作!');
+    return;
+    }
+    else if (num > 1) {
+    msgShow('您选择了多条记录,只能选择一条记录进行修改!');
+    return;
+    }
+    dlg_Edit_form.form('clear');
+    dlg_Edit.dialog('open');
+
+    dlg_Edit.dialog('setTitle', '修改');
+    $.post("/" + tableName + "/FillForm/", { id: rows[0][idField] }, function (result) {
+    dlg_Edit_form.form('load', result);
+    kindeditor.html(result.newscontent);
+    });
+    dlg_Edit_form.url = "/" + tableName + "/update/" + rows[0][idField];
+    }
+}

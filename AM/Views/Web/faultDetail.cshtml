@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWeb.cshtml";
+    string faultid = ViewBag.ID;
+    var fault = AM.BLL.DB.Instant.FaultManager.First(a => a.faultid == faultid);
+    if (fault == null)
+    {
+        Response.Redirect("/web/Page404");
+    }
+    fault.faultclicks = fault.faultclicks ?? 0 + 1;
+    AM.BLL.DB.Instant.FaultManager.Update(fault);
+    var faulttype = AM.BLL.DataStore.FaultType.FirstOrDefault(a => a.typeid == fault.faulttype);
+
+    ViewBag.Title = fault.faulttitle;
+
+    var next = AM.BLL.DB.Instant.FaultManager.Where(a => a.faulttype == fault.faulttype && a.faultdate <= fault.faultdate && a.faultid != fault.faultid).Select(a => new
+    {
+        a.faulttitle,
+        a.faultid
+    }).Take(1).ToList().Select(a => new Dao.fault()
+    {
+        faulttitle = a.faulttitle,
+        faultid = a.faultid
+    }).FirstOrDefault();
+    if (next == null)
+    {
+        next = new Dao.fault { faultid = "#", faulttitle = "没有了" };
+    }
+
+    var pn = AM.BLL.DB.Instant.FaultManager.Where(a => a.faulttype == fault.faulttype && a.faultdate >= fault.faultdate && a.faultid != fault.faultid).Select(a => new
+    {
+        a.faulttitle,
+        a.faultid
+    }).Take(1).ToList().Select(a => new Dao.fault()
+    {
+        faulttitle = a.faulttitle,
+        faultid = a.faultid
+    }).FirstOrDefault();
+    if (pn == null)
+    {
+        pn = new Dao.fault { faultid = "#", faulttitle = "没有了" };
+    }
+}
+<!--您的位置-->
+<div class="fault-page">
+    <ul class="location">
+        <p>您现在的位置：</p>
+        <li><a href="/" name="1">首页</a></li>
+        <li>></li>
+        <li><a href="/web/fault">无忧资讯</a></li>
+        <li>></li>
+        <li><a href="/fault/@faulttype.typeid">@(faulttype.typename)</a></li>
+    </ul>
+
+    <div class="fault-page-text-out">
+        <div class="fault-page-text">
+            <h3>@fault.faulttitle</h3>
+            <div class="release-time">
+                <div class="fl">发布时间：@fault.faultdate.ToString("yyyy-MM-dd")</div>
+                <div class="fr">浏览次数：@fault.faultclicks 次</div>
+            </div>
+
+            <p>
+                @Html.Raw(fault.faultcontent)
+            </p>
+        </div>
+
+        <div class="next-fault-box">
+            <div><a href="/web/faultDetail/@pn.faultid">上一篇：@(pn.faulttitle.Length > 15 ? pn.faulttitle.Substring(0, 15) + "..." : pn.faulttitle)</a></div>
+            <div><a href="/web/faultDetail/@next.faultid">下一篇：@(next.faulttitle.Length > 15 ? next.faulttitle.Substring(0, 15) + "..." : next.faulttitle)</a></div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $("#li_index").addClass("index");
+            /*新闻资讯*/
+            $(".fault-page-left-main ul").hide();
+            $(".fault-page-left-main ul:first").show();
+            $(".fault-page-left-title ul li").mouseenter(function () {
+                n = $(this).index();
+                $(".fault-page-left-title ul li").removeClass("fault-page-left-title1").eq(n).addClass("fault-page-left-title1");
+                $(".fault-page-left-main ul").hide().eq(n).fadeIn(200);
+            })
+
+        })
+    </script>
+}
