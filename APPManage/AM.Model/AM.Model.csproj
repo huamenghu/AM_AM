@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basket_check.cs" />
+    <Compile Include="basket_install.cs" />
+    <Compile Include="basket_keep.cs" />
+    <Compile Include="basket_made.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="basket-train.cs" />
   </ItemGroup>
