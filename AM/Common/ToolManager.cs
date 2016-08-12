@@ -164,5 +164,27 @@ namespace AM.Common
                 return null;
             }
         }
+
+        public static string GetSqlStr(string arrStr)
+        {
+            string[] sqlArr = arrStr.Split(',');
+            string sqlStr = string.Empty;
+            if (sqlArr.Length > 0)
+            {
+                for (int i = 0; i < sqlArr.Length; i++)
+                {
+                    sqlStr += "'"+sqlArr[i]+"'";
+                    if (i + 1 < sqlArr.Length)
+                    {
+                        sqlStr += ",";
+                    }
+                }
+            }
+            else
+            {
+                sqlStr = arrStr;
+            }
+            return sqlStr;
+        }
     }
 }

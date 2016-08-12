@@ -210,7 +210,6 @@
 
 
         function myview(rowData) {
-            debugger;
             $.post("/" + tableName + "/ViewResult", { id: rowData[idField] }, function (data) {
                 view.dialog("open");
                 $("#divview").html(data);

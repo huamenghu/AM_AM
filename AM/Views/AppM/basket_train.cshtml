@@ -147,7 +147,16 @@
 
         ]];
         function toExcel() {
-
+            var arr = getSelectedArr(datagrid, idField);
+            if (arr.length > 0) {
+                $.messager.confirm('提示信息', '您确认要导出选中的所有记录吗?', function (data) {
+                    if (data) {
+                        window.open("/" + tableName + "/Export/" + arr.join(','));
+                    }
+                });
+            } else {
+                msgShow('请先选择要导出的记录。');
+            }
         }
 
         function returnQueryParams() {

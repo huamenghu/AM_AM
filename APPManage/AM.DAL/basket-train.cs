@@ -457,7 +457,16 @@ namespace AM.DAL
                 return null;
             }
         }
-		#endregion  ExtensionMethod
+
+        public DataSet GetDataByGuidList(string Guidlist)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from basket_train ");
+            strSql.Append(" where Guid in (" + Guidlist + ")  ");
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString());
+            return ds;
+        }
+        #endregion  ExtensionMethod
 	}
 }
 

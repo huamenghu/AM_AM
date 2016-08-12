@@ -63,13 +63,7 @@ namespace AM.BLL
 
             return dal.Delete(Guid);
         }
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool DeleteList(string Guidlist)
-        {
-            return dal.DeleteList(Maticsoft.Common.PageValidate.SafeLongFilter(Guidlist, 0));
-        }
+
 
         /// <summary>
         /// 得到一个对象实体
@@ -192,6 +186,17 @@ namespace AM.BLL
             DataSet ds = dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
             count =Convert.ToInt32(ds.Tables[1].Rows[0]["count"]);
             return DataTableToList(ds.Tables[0]); ;
+        }
+        public DataSet GetDataByGuidList(string Guidlist)
+        {
+            return dal.GetDataByGuidList(Guidlist);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteList(string Guidlist)
+        {
+            return dal.DeleteList(Guidlist);
         }
 		#endregion  ExtensionMethod
 	}
