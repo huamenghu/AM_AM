@@ -1,12 +1,12 @@
 ﻿/**  版本信息模板在安装目录下，可自行修改。
-* basket_check.cs
+* xsweit_check.cs
 *
 * 功 能： N/A
-* 类 名： basket_check
+* 类 名： xsweit_check
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/8/12 17:55:15   N/A    初版
+* V0.01  2016/8/12 22:32:22   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -23,11 +23,11 @@ using AM.Model;//Please add references
 namespace AM.DAL
 {
 	/// <summary>
-	/// 数据访问类:basket_check
+	/// 数据访问类:xsweit_check
 	/// </summary>
-	public partial class basket_checkDAL
+	public partial class xsweit_checkDAL
 	{
-        public basket_checkDAL()
+        public xsweit_checkDAL()
 		{}
 		#region  BasicMethod
 
@@ -37,7 +37,7 @@ namespace AM.DAL
 		public bool Exists(string Guid)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) from basket_check");
+			strSql.Append("select count(1) from xsweit_check");
 			strSql.Append(" where Guid=@Guid ");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)			};
@@ -50,46 +50,48 @@ namespace AM.DAL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(AM.Model.basket_check model)
+		public bool Add(AM.Model.xsweit_check model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("insert into basket_check(");
-			strSql.Append("Guid,userid,CreateDate,cpmc,ggxh,ypbh,ypsl,scrq,jylx,wtdw,scdw,jydd,jysj,jyyj,jyjl,bz)");
+			strSql.Append("insert into xsweit_check(");
+			strSql.Append("Guid,userid,CreateDate,CPMC,GGXH,WTDW,LXR,SCDW,LXDH,CPBH,WTRQ,DWDZ,WTJYYQ,JYYJ,JYFY,YQWCRQ,PHWCXM)");
 			strSql.Append(" values (");
-			strSql.Append("@Guid,@userid,@CreateDate,@cpmc,@ggxh,@ypbh,@ypsl,@scrq,@jylx,@wtdw,@scdw,@jydd,@jysj,@jyyj,@jyjl,@bz)");
+			strSql.Append("@Guid,@userid,@CreateDate,@CPMC,@GGXH,@WTDW,@LXR,@SCDW,@LXDH,@CPBH,@WTRQ,@DWDZ,@WTJYYQ,@JYYJ,@JYFY,@YQWCRQ,@PHWCXM)");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("@Guid", MySqlDbType.VarChar,36),
 					new MySqlParameter("@userid", MySqlDbType.VarChar,255),
 					new MySqlParameter("@CreateDate", MySqlDbType.DateTime),
-					new MySqlParameter("@cpmc", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ggxh", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ypbh", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ypsl", MySqlDbType.VarChar,255),
-					new MySqlParameter("@scrq", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jylx", MySqlDbType.VarChar,255),
-					new MySqlParameter("@wtdw", MySqlDbType.VarChar,255),
-					new MySqlParameter("@scdw", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jydd", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jysj", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jyyj", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jyjl", MySqlDbType.VarChar,255),
-					new MySqlParameter("@bz", MySqlDbType.VarChar,255)};
+					new MySqlParameter("@CPMC", MySqlDbType.Text),
+					new MySqlParameter("@GGXH", MySqlDbType.Text),
+					new MySqlParameter("@WTDW", MySqlDbType.Text),
+					new MySqlParameter("@LXR", MySqlDbType.Text),
+					new MySqlParameter("@SCDW", MySqlDbType.Text),
+					new MySqlParameter("@LXDH", MySqlDbType.Text),
+					new MySqlParameter("@CPBH", MySqlDbType.Text),
+					new MySqlParameter("@WTRQ", MySqlDbType.Text),
+					new MySqlParameter("@DWDZ", MySqlDbType.Text),
+					new MySqlParameter("@WTJYYQ", MySqlDbType.Text),
+					new MySqlParameter("@JYYJ", MySqlDbType.Text),
+					new MySqlParameter("@JYFY", MySqlDbType.Text),
+					new MySqlParameter("@YQWCRQ", MySqlDbType.Text),
+					new MySqlParameter("@PHWCXM", MySqlDbType.Text)};
 			parameters[0].Value = model.Guid;
 			parameters[1].Value = model.userid;
 			parameters[2].Value = model.CreateDate;
-			parameters[3].Value = model.cpmc;
-			parameters[4].Value = model.ggxh;
-			parameters[5].Value = model.ypbh;
-			parameters[6].Value = model.ypsl;
-			parameters[7].Value = model.scrq;
-			parameters[8].Value = model.jylx;
-			parameters[9].Value = model.wtdw;
-			parameters[10].Value = model.scdw;
-			parameters[11].Value = model.jydd;
-			parameters[12].Value = model.jysj;
-			parameters[13].Value = model.jyyj;
-			parameters[14].Value = model.jyjl;
-			parameters[15].Value = model.bz;
+			parameters[3].Value = model.CPMC;
+			parameters[4].Value = model.GGXH;
+			parameters[5].Value = model.WTDW;
+			parameters[6].Value = model.LXR;
+			parameters[7].Value = model.SCDW;
+			parameters[8].Value = model.LXDH;
+			parameters[9].Value = model.CPBH;
+			parameters[10].Value = model.WTRQ;
+			parameters[11].Value = model.DWDZ;
+			parameters[12].Value = model.WTJYYQ;
+			parameters[13].Value = model.JYYJ;
+			parameters[14].Value = model.JYFY;
+			parameters[15].Value = model.YQWCRQ;
+			parameters[16].Value = model.PHWCXM;
 
 			int rows=DbHelperMySQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -104,59 +106,62 @@ namespace AM.DAL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(AM.Model.basket_check model)
+		public bool Update(AM.Model.xsweit_check model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update basket_check set ");
+			strSql.Append("update xsweit_check set ");
 			strSql.Append("userid=@userid,");
 			strSql.Append("CreateDate=@CreateDate,");
-			strSql.Append("cpmc=@cpmc,");
-			strSql.Append("ggxh=@ggxh,");
-			strSql.Append("ypbh=@ypbh,");
-			strSql.Append("ypsl=@ypsl,");
-			strSql.Append("scrq=@scrq,");
-			strSql.Append("jylx=@jylx,");
-			strSql.Append("wtdw=@wtdw,");
-			strSql.Append("scdw=@scdw,");
-			strSql.Append("jydd=@jydd,");
-			strSql.Append("jysj=@jysj,");
-			strSql.Append("jyyj=@jyyj,");
-			strSql.Append("jyjl=@jyjl,");
-			strSql.Append("bz=@bz");
+			strSql.Append("CPMC=@CPMC,");
+			strSql.Append("GGXH=@GGXH,");
+			strSql.Append("WTDW=@WTDW,");
+			strSql.Append("LXR=@LXR,");
+			strSql.Append("SCDW=@SCDW,");
+			strSql.Append("LXDH=@LXDH,");
+			strSql.Append("CPBH=@CPBH,");
+			strSql.Append("WTRQ=@WTRQ,");
+			strSql.Append("DWDZ=@DWDZ,");
+			strSql.Append("WTJYYQ=@WTJYYQ,");
+			strSql.Append("JYYJ=@JYYJ,");
+			strSql.Append("JYFY=@JYFY,");
+			strSql.Append("YQWCRQ=@YQWCRQ,");
+			strSql.Append("PHWCXM=@PHWCXM");
 			strSql.Append(" where Guid=@Guid ");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("@userid", MySqlDbType.VarChar,255),
 					new MySqlParameter("@CreateDate", MySqlDbType.DateTime),
-					new MySqlParameter("@cpmc", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ggxh", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ypbh", MySqlDbType.VarChar,255),
-					new MySqlParameter("@ypsl", MySqlDbType.VarChar,255),
-					new MySqlParameter("@scrq", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jylx", MySqlDbType.VarChar,255),
-					new MySqlParameter("@wtdw", MySqlDbType.VarChar,255),
-					new MySqlParameter("@scdw", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jydd", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jysj", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jyyj", MySqlDbType.VarChar,255),
-					new MySqlParameter("@jyjl", MySqlDbType.VarChar,255),
-					new MySqlParameter("@bz", MySqlDbType.VarChar,255),
+					new MySqlParameter("@CPMC", MySqlDbType.Text),
+					new MySqlParameter("@GGXH", MySqlDbType.Text),
+					new MySqlParameter("@WTDW", MySqlDbType.Text),
+					new MySqlParameter("@LXR", MySqlDbType.Text),
+					new MySqlParameter("@SCDW", MySqlDbType.Text),
+					new MySqlParameter("@LXDH", MySqlDbType.Text),
+					new MySqlParameter("@CPBH", MySqlDbType.Text),
+					new MySqlParameter("@WTRQ", MySqlDbType.Text),
+					new MySqlParameter("@DWDZ", MySqlDbType.Text),
+					new MySqlParameter("@WTJYYQ", MySqlDbType.Text),
+					new MySqlParameter("@JYYJ", MySqlDbType.Text),
+					new MySqlParameter("@JYFY", MySqlDbType.Text),
+					new MySqlParameter("@YQWCRQ", MySqlDbType.Text),
+					new MySqlParameter("@PHWCXM", MySqlDbType.Text),
 					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)};
 			parameters[0].Value = model.userid;
 			parameters[1].Value = model.CreateDate;
-			parameters[2].Value = model.cpmc;
-			parameters[3].Value = model.ggxh;
-			parameters[4].Value = model.ypbh;
-			parameters[5].Value = model.ypsl;
-			parameters[6].Value = model.scrq;
-			parameters[7].Value = model.jylx;
-			parameters[8].Value = model.wtdw;
-			parameters[9].Value = model.scdw;
-			parameters[10].Value = model.jydd;
-			parameters[11].Value = model.jysj;
-			parameters[12].Value = model.jyyj;
-			parameters[13].Value = model.jyjl;
-			parameters[14].Value = model.bz;
-			parameters[15].Value = model.Guid;
+			parameters[2].Value = model.CPMC;
+			parameters[3].Value = model.GGXH;
+			parameters[4].Value = model.WTDW;
+			parameters[5].Value = model.LXR;
+			parameters[6].Value = model.SCDW;
+			parameters[7].Value = model.LXDH;
+			parameters[8].Value = model.CPBH;
+			parameters[9].Value = model.WTRQ;
+			parameters[10].Value = model.DWDZ;
+			parameters[11].Value = model.WTJYYQ;
+			parameters[12].Value = model.JYYJ;
+			parameters[13].Value = model.JYFY;
+			parameters[14].Value = model.YQWCRQ;
+			parameters[15].Value = model.PHWCXM;
+			parameters[16].Value = model.Guid;
 
 			int rows=DbHelperMySQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -176,7 +181,7 @@ namespace AM.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from basket_check ");
+			strSql.Append("delete from xsweit_check ");
 			strSql.Append(" where Guid=@Guid ");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)			};
@@ -198,7 +203,7 @@ namespace AM.DAL
 		public bool DeleteList(string Guidlist )
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("delete from basket_check ");
+			strSql.Append("delete from xsweit_check ");
 			strSql.Append(" where Guid in ("+Guidlist + ")  ");
 			int rows=DbHelperMySQL.ExecuteSql(strSql.ToString());
 			if (rows > 0)
@@ -215,17 +220,17 @@ namespace AM.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public AM.Model.basket_check GetModel(string Guid)
+		public AM.Model.xsweit_check GetModel(string Guid)
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Guid,userid,CreateDate,cpmc,ggxh,ypbh,ypsl,scrq,jylx,wtdw,scdw,jydd,jysj,jyyj,jyjl,bz from basket_check ");
+			strSql.Append("select Guid,userid,CreateDate,CPMC,GGXH,WTDW,LXR,SCDW,LXDH,CPBH,WTRQ,DWDZ,WTJYYQ,JYYJ,JYFY,YQWCRQ,PHWCXM from xsweit_check ");
 			strSql.Append(" where Guid=@Guid ");
 			MySqlParameter[] parameters = {
 					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)			};
 			parameters[0].Value = Guid;
 
-			AM.Model.basket_check model=new AM.Model.basket_check();
+			AM.Model.xsweit_check model=new AM.Model.xsweit_check();
 			DataSet ds=DbHelperMySQL.Query(strSql.ToString(),parameters);
 			if(ds.Tables[0].Rows.Count>0)
 			{
@@ -241,9 +246,9 @@ namespace AM.DAL
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public AM.Model.basket_check DataRowToModel(DataRow row)
+		public AM.Model.xsweit_check DataRowToModel(DataRow row)
 		{
-			AM.Model.basket_check model=new AM.Model.basket_check();
+			AM.Model.xsweit_check model=new AM.Model.xsweit_check();
 			if (row != null)
 			{
 				if(row["Guid"]!=null)
@@ -258,57 +263,61 @@ namespace AM.DAL
 				{
 					model.CreateDate=DateTime.Parse(row["CreateDate"].ToString());
 				}
-				if(row["cpmc"]!=null)
+				if(row["CPMC"]!=null)
 				{
-					model.cpmc=row["cpmc"].ToString();
+					model.CPMC=row["CPMC"].ToString();
 				}
-				if(row["ggxh"]!=null)
+				if(row["GGXH"]!=null)
 				{
-					model.ggxh=row["ggxh"].ToString();
+					model.GGXH=row["GGXH"].ToString();
 				}
-				if(row["ypbh"]!=null)
+				if(row["WTDW"]!=null)
 				{
-					model.ypbh=row["ypbh"].ToString();
+					model.WTDW=row["WTDW"].ToString();
 				}
-				if(row["ypsl"]!=null)
+				if(row["LXR"]!=null)
 				{
-					model.ypsl=row["ypsl"].ToString();
+					model.LXR=row["LXR"].ToString();
 				}
-				if(row["scrq"]!=null)
+				if(row["SCDW"]!=null)
 				{
-					model.scrq=row["scrq"].ToString();
+					model.SCDW=row["SCDW"].ToString();
 				}
-				if(row["jylx"]!=null)
+				if(row["LXDH"]!=null)
 				{
-					model.jylx=row["jylx"].ToString();
+					model.LXDH=row["LXDH"].ToString();
 				}
-				if(row["wtdw"]!=null)
+				if(row["CPBH"]!=null)
 				{
-					model.wtdw=row["wtdw"].ToString();
+					model.CPBH=row["CPBH"].ToString();
 				}
-				if(row["scdw"]!=null)
+				if(row["WTRQ"]!=null)
 				{
-					model.scdw=row["scdw"].ToString();
+					model.WTRQ=row["WTRQ"].ToString();
 				}
-				if(row["jydd"]!=null)
+				if(row["DWDZ"]!=null)
 				{
-					model.jydd=row["jydd"].ToString();
+					model.DWDZ=row["DWDZ"].ToString();
 				}
-				if(row["jysj"]!=null)
+				if(row["WTJYYQ"]!=null)
 				{
-					model.jysj=row["jysj"].ToString();
+					model.WTJYYQ=row["WTJYYQ"].ToString();
 				}
-				if(row["jyyj"]!=null)
+				if(row["JYYJ"]!=null)
 				{
-					model.jyyj=row["jyyj"].ToString();
+					model.JYYJ=row["JYYJ"].ToString();
 				}
-				if(row["jyjl"]!=null)
+				if(row["JYFY"]!=null)
 				{
-					model.jyjl=row["jyjl"].ToString();
+					model.JYFY=row["JYFY"].ToString();
 				}
-				if(row["bz"]!=null)
+				if(row["YQWCRQ"]!=null)
 				{
-					model.bz=row["bz"].ToString();
+					model.YQWCRQ=row["YQWCRQ"].ToString();
+				}
+				if(row["PHWCXM"]!=null)
+				{
+					model.PHWCXM=row["PHWCXM"].ToString();
 				}
 			}
 			return model;
@@ -320,8 +329,8 @@ namespace AM.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Guid,userid,CreateDate,cpmc,ggxh,ypbh,ypsl,scrq,jylx,wtdw,scdw,jydd,jysj,jyyj,jyjl,bz ");
-			strSql.Append(" FROM basket_check ");
+			strSql.Append("select Guid,userid,CreateDate,CPMC,GGXH,WTDW,LXR,SCDW,LXDH,CPBH,WTRQ,DWDZ,WTJYYQ,JYYJ,JYFY,YQWCRQ,PHWCXM ");
+			strSql.Append(" FROM xsweit_check ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -335,7 +344,7 @@ namespace AM.DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM basket_check ");
+			strSql.Append("select count(1) FROM xsweit_check ");
 			if(strWhere.Trim()!="")
 			{
 				strSql.Append(" where "+strWhere);
@@ -350,49 +359,21 @@ namespace AM.DAL
 				return Convert.ToInt32(obj);
 			}
 		}
-
-
-		/*
-		/// <summary>
-		/// 分页获取数据列表
-		/// </summary>
-		public DataSet GetList(int PageSize,int PageIndex,string strWhere)
-		{
-			MySqlParameter[] parameters = {
-					new MySqlParameter("@tblName", MySqlDbType.VarChar, 255),
-					new MySqlParameter("@fldName", MySqlDbType.VarChar, 255),
-					new MySqlParameter("@PageSize", MySqlDbType.Int32),
-					new MySqlParameter("@PageIndex", MySqlDbType.Int32),
-					new MySqlParameter("@IsReCount", MySqlDbType.Bit),
-					new MySqlParameter("@OrderType", MySqlDbType.Bit),
-					new MySqlParameter("@strWhere", MySqlDbType.VarChar,1000),
-					};
-			parameters[0].Value = "basket_check";
-			parameters[1].Value = "Guid";
-			parameters[2].Value = PageSize;
-			parameters[3].Value = PageIndex;
-			parameters[4].Value = 0;
-			parameters[5].Value = 0;
-			parameters[6].Value = strWhere;	
-			return DbHelperMySQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
-		}*/
+		
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public basket_check GetModelByUserId(string UserId)
+        public xsweit_check GetModelByUserId(string UserId)
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * from basket_check ");
+            strSql.Append("select * from xsweit_check ");
             strSql.Append(" where UserId=@UserId ");
             MySqlParameter[] parameters = {
 					new MySqlParameter("@UserId", MySqlDbType.VarChar,36)			};
             parameters[0].Value = UserId;
 
-            basket_check model = new basket_check();
+            xsweit_check model = new xsweit_check();
             DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
             {
@@ -407,15 +388,16 @@ namespace AM.DAL
         public DataSet GetDataByGuidList(string Guidlist)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select * from basket_check ");
+            strSql.Append("select * from xsweit_check ");
             strSql.Append(" where Guid in (" + Guidlist + ")  ");
             DataSet ds = DbHelperMySQL.Query(strSql.ToString());
             return ds;
         }
+
         public DataSet GetListByPage(string strWhere, string orderby, int startIndex, int endIndex)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT * FROM basket_check TT  ");
+            strSql.Append("SELECT * FROM xsweit_check TT  ");
             if (!string.IsNullOrEmpty(strWhere.Trim()))
             {
                 strSql.Append(" WHERE " + strWhere);
@@ -430,7 +412,7 @@ namespace AM.DAL
                 strSql.Append("order by TT.Guid desc");
             }
             strSql.AppendFormat(" LIMIT {0} , {1} ", startIndex, endIndex);
-            strSql.Append(";SELECT count(Guid) as count FROM basket_check TT  ");
+            strSql.Append(";SELECT count(Guid) as count FROM xsweit_check TT  ");
             return DbHelperMySQL.Query(strSql.ToString());
         }
 		#endregion  ExtensionMethod

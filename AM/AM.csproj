@@ -232,6 +232,10 @@
     <Compile Include="Common\ToolManager.cs" />
     <Compile Include="Controllers\alipayController.cs" />
     <Compile Include="Controllers\AppM\AppMController.cs" />
+    <Compile Include="Controllers\AppM\basket_checkController.cs" />
+    <Compile Include="Controllers\AppM\basket_installController.cs" />
+    <Compile Include="Controllers\AppM\basket_keepController.cs" />
+    <Compile Include="Controllers\AppM\basket_madeController.cs" />
     <Compile Include="Controllers\AppM\basket_trainController.cs" />
     <Compile Include="Controllers\ExpressController.cs" />
     <Compile Include="Controllers\gradeController.cs" />
@@ -2073,6 +2077,10 @@
     <Content Include="Scripts\Layer\mobile\README.md" />
     <Content Include="Scripts\Layer\README.md" />
     <Content Include="Views\AppM\basket_train.cshtml" />
+    <Content Include="Views\AppM\basket_check.cshtml" />
+    <Content Include="Views\AppM\basket_install.cshtml" />
+    <Content Include="Views\AppM\basket_keep.cshtml" />
+    <Content Include="Views\AppM\basket_made.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

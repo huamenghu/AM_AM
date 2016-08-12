@@ -1,12 +1,12 @@
 ﻿/**  版本信息模板在安装目录下，可自行修改。
-* basket_check.cs
+* staging_check.cs
 *
 * 功 能： N/A
-* 类 名： basket_check
+* 类 名： staging_check
 *
 * Ver    变更日期             负责人  变更内容
 * ───────────────────────────────────
-* V0.01  2016/8/12 17:55:15   N/A    初版
+* V0.01  2016/8/12 22:32:20   N/A    初版
 *
 * Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
 *┌──────────────────────────────────┐
@@ -22,12 +22,12 @@ using AM.Model;
 namespace AM.BLL
 {
 	/// <summary>
-	/// basket_check
+	/// staging_check
 	/// </summary>
-	public partial class basket_checkBLL
+	public partial class staging_checkBLL
 	{
-        private readonly AM.DAL.basket_checkDAL dal = new AM.DAL.basket_checkDAL();
-        public basket_checkBLL()
+        private readonly AM.DAL.staging_checkDAL dal = new AM.DAL.staging_checkDAL();
+        public staging_checkBLL()
 		{}
 		#region  BasicMethod
 		/// <summary>
@@ -41,7 +41,7 @@ namespace AM.BLL
 		/// <summary>
 		/// 增加一条数据
 		/// </summary>
-		public bool Add(AM.Model.basket_check model)
+		public bool Add(AM.Model.staging_check model)
 		{
 			return dal.Add(model);
 		}
@@ -49,7 +49,7 @@ namespace AM.BLL
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
-		public bool Update(AM.Model.basket_check model)
+		public bool Update(AM.Model.staging_check model)
 		{
 			return dal.Update(model);
 		}
@@ -62,12 +62,18 @@ namespace AM.BLL
 			
 			return dal.Delete(Guid);
 		}
-
+		/// <summary>
+		/// 删除一条数据
+		/// </summary>
+		public bool DeleteList(string Guidlist )
+		{
+			return dal.DeleteList(Guidlist );
+		}
 
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
-		public AM.Model.basket_check GetModel(string Guid)
+		public AM.Model.staging_check GetModel(string Guid)
 		{
 			
 			return dal.GetModel(Guid);
@@ -76,10 +82,10 @@ namespace AM.BLL
 		/// <summary>
 		/// 得到一个对象实体，从缓存中
 		/// </summary>
-		public AM.Model.basket_check GetModelByCache(string Guid)
+		public AM.Model.staging_check GetModelByCache(string Guid)
 		{
 			
-			string CacheKey = "basket_checkModel-" + Guid;
+			string CacheKey = "staging_checkModel-" + Guid;
 			object objModel = Maticsoft.Common.DataCache.GetCache(CacheKey);
 			if (objModel == null)
 			{
@@ -94,7 +100,7 @@ namespace AM.BLL
 				}
 				catch{}
 			}
-			return (AM.Model.basket_check)objModel;
+			return (AM.Model.staging_check)objModel;
 		}
 
 		/// <summary>
@@ -107,7 +113,7 @@ namespace AM.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<AM.Model.basket_check> GetModelList(string strWhere)
+		public List<AM.Model.staging_check> GetModelList(string strWhere)
 		{
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
@@ -115,13 +121,13 @@ namespace AM.BLL
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
-		public List<AM.Model.basket_check> DataTableToList(DataTable dt)
+		public List<AM.Model.staging_check> DataTableToList(DataTable dt)
 		{
-			List<AM.Model.basket_check> modelList = new List<AM.Model.basket_check>();
+			List<AM.Model.staging_check> modelList = new List<AM.Model.staging_check>();
 			int rowsCount = dt.Rows.Count;
 			if (rowsCount > 0)
 			{
-				AM.Model.basket_check model;
+				AM.Model.staging_check model;
 				for (int n = 0; n < rowsCount; n++)
 				{
 					model = dal.DataRowToModel(dt.Rows[n]);
@@ -166,18 +172,18 @@ namespace AM.BLL
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
-        public basket_check DataRowToModel(DataRow row)
+        public staging_check DataRowToModel(DataRow row)
         {
             return dal.DataRowToModel(row);
         }
-        public basket_check GetModelByUserId(string UserId)
+        public staging_check GetModelByUserId(string UserId)
         {
 
             return dal.GetModelByUserId(UserId);
         }
-        public bool AddAndCheck(basket_check model)
+        public bool AddAndCheck(staging_check model)
         {
-            basket_check bmodel = GetModelByUserId(model.userid);
+            staging_check bmodel = GetModelByUserId(model.userid);
             if (bmodel == null)
                 return dal.Add(model);
             else
@@ -186,7 +192,7 @@ namespace AM.BLL
         /// <summary>
         /// 分页获取数据列表
         /// </summary>
-        public List<basket_check> GetListByPage(string strWhere, string orderby, int startIndex, int endIndex, out int count)
+        public List<staging_check> GetListByPage(string strWhere, string orderby, int startIndex, int endIndex, out int count)
         {
             DataSet ds = dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
             count = Convert.ToInt32(ds.Tables[1].Rows[0]["count"]);
@@ -196,13 +202,7 @@ namespace AM.BLL
         {
             return dal.GetDataByGuidList(Guidlist);
         }
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool DeleteList(string Guidlist)
-        {
-            return dal.DeleteList(Guidlist);
-        }
+
 		#endregion  ExtensionMethod
 	}
 }

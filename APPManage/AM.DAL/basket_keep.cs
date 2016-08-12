@@ -1032,7 +1032,7 @@ namespace AM.DAL
 					new MySqlParameter("@UserId", MySqlDbType.VarChar,36)			};
             parameters[0].Value = UserId;
 
-            basket_train model = new basket_train();
+            basket_keep model = new basket_keep();
             DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
             {

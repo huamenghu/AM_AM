@@ -1,0 +1,178 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+<div id="Dlg-Edit" title="窗口" style="width: 670px; height: 400px;" buttons="#buttons">
+    <div style="padding: 10px 10px 40px 40px;">
+        <form method="post">
+            <table>
+                <tr>
+                    <td class="right">
+                        姓名：
+                    </td>
+                    <td>
+                        <input type="text" name="xm" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        性别：
+                    </td>
+                    <td>
+                        <input name="xb" type="radio" value="男" />男
+                        <input name="xb" type="radio" value="女" />女
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        文化程度：
+                    </td>
+                    <td>
+                        <input type="text" name="whcd" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        联系电话：
+                    </td>
+                    <td>
+                        <input type="text" name="lxdh" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        专业工龄：
+                    </td>
+                    <td>
+                        <input type="text" name="zygl" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        身体状况：
+                    </td>
+                    <td>
+                        <input type="text" name="stzk" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        身份证号：
+                    </td>
+                    <td>
+                        <input type="text" name="sfzh" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        工作单位：
+                    </td>
+                    <td>
+                        <input type="text" name="gzdw" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        邮编：
+                    </td>
+                    <td>
+                        <input type="text" name="yb" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        本人签字：
+                    </td>
+                    <td>
+                        <input type="text" name="brqz" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        培训点：
+                    </td>
+                    <td>
+                        <input type="text" name="pxd" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        工作经历：
+                    </td>
+                    <td>
+                        <input type="text" name="gzjl" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="right">
+                        所在单位意见：
+                    </td>
+                    <td>
+                        <input type="text" name="szdwyj" class="easyui-validatebox editInput" required='true' />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
+    <div style="vertical-align: middle">
+        姓名：
+        <input name="s_trainname" id="s_trainname" class="easyui-validatebox searchInput" />
+        @*电话：
+        <input name="s_traintel" id="s_traintel" class="easyui-validatebox searchInput" />
+        身份证号：
+        <input name="s_trainID" id="s_trainID" class="easyui-validatebox searchInput" />
+        培训工种：
+        <input name="s_traintypeid" id="s_traintypeid" class="easyui-combobox" data-options="textField:'Name',valueField:'ID',url:'/Tools/GetTrainType2'" />
+        处理状态：
+        <input name="s_state" id="s_state" class="easyui-combobox" data-options="textField:'Value',valueField:'Key',url:'/Tools/GetState2'" />*@
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-search" onclick="findData()">查询</a>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var tableName = "basket_train";
+        var sortName = "Guid";
+        var idField = "Guid";
+        var sortOrder = "asc";
+
+        var columns = [[
+                        { field: 'xm', title: '姓名', width: 100, sortable: true },
+                        { field: 'xb', title: '性别', width: 100, sortable: true },
+                        { field: 'whcd', title: '文化程度', width: 100, sortable: true },
+                        { field: 'lxdh', title: '联系电话', width: 100, sortable: true },
+                        { field: 'sfzh', title: '身份证号', width: 100, sortable: true },
+
+        ]];
+        function toExcel() {
+            var arr = getSelectedArr(datagrid, idField);
+            if (arr.length > 0) {
+                $.messager.confirm('提示信息', '您确认要导出选中的所有记录吗?', function (data) {
+                    if (data) {
+                        window.open("/" + tableName + "/Export/" + arr.join(','));
+                    }
+                });
+            } else {
+                msgShow('请先选择要导出的记录。');
+            }
+        }
+
+        function returnQueryParams() {
+            var obj = {
+                trainname: $("#s_trainname").val(),
+                //traintel: $("#s_traintel").val(),
+                //trainID: $("#s_trainID").val(),
+                //traintypeid: $("#s_traintypeid").combobox("getValue"),
+                //state: $("#s_state").combobox("getValue"),
+            };
+            return obj;
+        }
+    </script>
+}
+
+
+
+
+

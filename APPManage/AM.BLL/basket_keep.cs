@@ -46,13 +46,7 @@ namespace AM.BLL
 
             return dal.Delete(Guid);
         }
-        /// <summary>
-        /// 删除一条数据
-        /// </summary>
-        public bool DeleteList(string Guidlist)
-        {
-            return dal.DeleteList(Maticsoft.Common.PageValidate.SafeLongFilter(Guidlist, 0));
-        }
+
 
         /// <summary>
         /// 得到一个对象实体
@@ -156,7 +150,43 @@ namespace AM.BLL
 
         #endregion  BasicMethod
         #region  ExtensionMethod
+        public basket_keep DataRowToModel(DataRow row)
+        {
+            return dal.DataRowToModel(row);
+        }
+        public basket_keep GetModelByUserId(string UserId)
+        {
 
+            return dal.GetModelByUserId(UserId);
+        }
+        public bool AddAndCheck(basket_keep model)
+        {
+            basket_keep bmodel = GetModelByUserId(model.userid);
+            if (bmodel == null)
+                return dal.Add(model);
+            else
+                return false;
+        }
+        /// <summary>
+        /// 分页获取数据列表
+        /// </summary>
+        public List<basket_keep> GetListByPage(string strWhere, string orderby, int startIndex, int endIndex, out int count)
+        {
+            DataSet ds = dal.GetListByPage(strWhere, orderby, startIndex, endIndex);
+            count = Convert.ToInt32(ds.Tables[1].Rows[0]["count"]);
+            return DataTableToList(ds.Tables[0]); ;
+        }
+        public DataSet GetDataByGuidList(string Guidlist)
+        {
+            return dal.GetDataByGuidList(Guidlist);
+        }
+        /// <summary>
+        /// 删除一条数据
+        /// </summary>
+        public bool DeleteList(string Guidlist)
+        {
+            return dal.DeleteList(Guidlist);
+        }
         #endregion  ExtensionMethod
     }
 }

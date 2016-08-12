@@ -45,8 +45,18 @@
     <Compile Include="basket_install.cs" />
     <Compile Include="basket_keep.cs" />
     <Compile Include="basket_made.cs" />
+    <Compile Include="basket_rent.cs" />
+    <Compile Include="building_hoist.cs" />
+    <Compile Include="jsj_keep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="basket-train.cs" />
+    <Compile Include="qzj_check.cs" />
+    <Compile Include="safe_lock.cs" />
+    <Compile Include="staging_check.cs" />
+    <Compile Include="tower_crane.cs" />
+    <Compile Include="winow_check.cs" />
+    <Compile Include="wt_check.cs" />
+    <Compile Include="xsweit_check.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
