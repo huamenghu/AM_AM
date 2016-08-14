@@ -535,67 +535,67 @@ namespace AM.DAL
 				{
 					model.ZYSBZT1=row["ZYSBZT1"].ToString();
 				}
-				if(row["ZYSBMC2"]!=null)
+                if (row.Table.Columns.Contains("ZYSBMC2") && row["ZYSBMC2"] != null)
 				{
 					model.ZYSBMC2=row["ZYSBMC2"].ToString();
 				}
-				if(row["ZYSBXH2"]!=null)
+                if (row.Table.Columns.Contains("ZYSBXH2") && row["ZYSBXH2"] != null)
 				{
 					model.ZYSBXH2=row["ZYSBXH2"].ToString();
 				}
-				if(row["ZYSBBH2"]!=null)
+                if (row.Table.Columns.Contains("ZYSBBH2") && row["ZYSBBH2"] != null)
 				{
 					model.ZYSBBH2=row["ZYSBBH2"].ToString();
 				}
-				if(row["ZYSBZT2"]!=null)
+                if (row.Table.Columns.Contains("ZYSBZT2") && row["ZYSBZT2"] != null)
 				{
 					model.ZYSBZT2=row["ZYSBZT2"].ToString();
 				}
-				if(row["ZYSBMC3"]!=null)
+                if (row.Table.Columns.Contains("ZYSBMC3") && row["ZYSBMC3"] != null)
 				{
 					model.ZYSBMC3=row["ZYSBMC3"].ToString();
 				}
-				if(row["ZYSBXH3"]!=null)
+                if (row.Table.Columns.Contains("ZYSBXH3") && row["ZYSBXH3"] != null)
 				{
 					model.ZYSBXH3=row["ZYSBXH3"].ToString();
 				}
-				if(row["ZYSBBH3"]!=null)
+                if (row.Table.Columns.Contains("ZYSBBH3") && row["ZYSBBH3"] != null)
 				{
 					model.ZYSBBH3=row["ZYSBBH3"].ToString();
 				}
-				if(row["ZYSBZT3"]!=null)
+                if (row.Table.Columns.Contains("ZYSBZT3") && row["ZYSBZT3"] != null)
 				{
 					model.ZYSBZT3=row["ZYSBZT3"].ToString();
 				}
-				if(row["ZYSBMC4"]!=null)
+                if (row.Table.Columns.Contains("ZYSBMC4") && row["ZYSBMC4"] != null)
 				{
 					model.ZYSBMC4=row["ZYSBMC4"].ToString();
 				}
-				if(row["ZYSBXH4"]!=null)
+                if (row.Table.Columns.Contains("ZYSBXH4") && row["ZYSBXH4"] != null)
 				{
 					model.ZYSBXH4=row["ZYSBXH4"].ToString();
 				}
-				if(row["ZYSBBH4"]!=null)
+                if (row.Table.Columns.Contains("ZYSBBH4") && row["ZYSBBH4"] != null)
 				{
 					model.ZYSBBH4=row["ZYSBBH4"].ToString();
 				}
-				if(row["ZYSBZT4"]!=null)
+                if (row.Table.Columns.Contains("ZYSBZT4") && row["ZYSBZT4"] != null)
 				{
 					model.ZYSBZT4=row["ZYSBZT4"].ToString();
 				}
-				if(row["ZYSBMC5"]!=null)
+                if (row.Table.Columns.Contains("ZYSBMC5") && row["ZYSBMC5"] != null)
 				{
 					model.ZYSBMC5=row["ZYSBMC5"].ToString();
 				}
-				if(row["ZYSBXH5"]!=null)
+                if (row.Table.Columns.Contains("ZYSBXH5") && row["ZYSBXH5"] != null)
 				{
 					model.ZYSBXH5=row["ZYSBXH5"].ToString();
 				}
-				if(row["ZYSBBH5"]!=null)
+                if (row.Table.Columns.Contains("ZYSBBH5") && row["ZYSBBH5"] != null)
 				{
 					model.ZYSBBH5=row["ZYSBBH5"].ToString();
 				}
-				if(row["ZYSBZT5"]!=null)
+                if (row.Table.Columns.Contains("ZYSBZT5") && row["ZYSBZT5"] != null)
 				{
 					model.ZYSBZT5=row["ZYSBZT5"].ToString();
 				}

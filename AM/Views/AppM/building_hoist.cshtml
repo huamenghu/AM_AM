@@ -133,17 +133,17 @@
 
 @section scripts{
     <script>
-        var tableName = "basket_train";
+        var tableName = "building_hoist";
         var sortName = "Guid";
         var idField = "Guid";
         var sortOrder = "asc";
 
         var columns = [[
-                        { field: 'xm', title: '姓名', width: 100, sortable: true },
-                        { field: 'xb', title: '性别', width: 100, sortable: true },
-                        { field: 'whcd', title: '文化程度', width: 100, sortable: true },
-                        { field: 'lxdh', title: '联系电话', width: 100, sortable: true },
-                        { field: 'sfzh', title: '身份证号', width: 100, sortable: true },
+                        { field: 'GCMC', title: '工程名称', width: 100, sortable: true },
+                        { field: 'SYDW', title: '使用单位', width: 100, sortable: true },
+                        { field: 'SGDD', title: '施工地点', width: 100, sortable: true },
+                        { field: 'JLDW', title: '监理单位', width: 100, sortable: true },
+                        { field: 'AZDW', title: '安装单位', width: 100, sortable: true },
 
         ]];
         function toExcel() {

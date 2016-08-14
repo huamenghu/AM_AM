@@ -1448,115 +1448,115 @@ namespace AM.DAL
 				{
 					model.GLRYSFZHM1=row["GLRYSFZHM1"].ToString();
 				}
-				if(row["GLRYXH2"]!=null)
+                if (row.Table.Columns.Contains("GLRYXH2") && row["GLRYXH2"] != null)
 				{
 					model.GLRYXH2=row["GLRYXH2"].ToString();
 				}
-				if(row["GLRYXM2"]!=null)
+                if (row.Table.Columns.Contains("GLRYXM2") && row["GLRYXM2"] != null)
 				{
 					model.GLRYXM2=row["GLRYXM2"].ToString();
 				}
-				if(row["GLRYZW2"]!=null)
+                if (row.Table.Columns.Contains("GLRYZW2") && row["GLRYZW2"] != null)
 				{
 					model.GLRYZW2=row["GLRYZW2"].ToString();
 				}
-				if(row["GLRYZC2"]!=null)
+                if (row.Table.Columns.Contains("GLRYZC2") && row["GLRYZC2"] != null)
 				{
 					model.GLRYZC2=row["GLRYZC2"].ToString();
 				}
-				if(row["GLRYXL2"]!=null)
+                if (row.Table.Columns.Contains("GLRYXL2") && row["GLRYXL2"] != null)
 				{
 					model.GLRYXL2=row["GLRYXL2"].ToString();
 				}
-				if(row["GLRYZY2"]!=null)
+                if (row.Table.Columns.Contains("GLRYZY2") && row["GLRYZY2"] != null)
 				{
 					model.GLRYZY2=row["GLRYZY2"].ToString();
 				}
-				if(row["GLRYSFZHM2"]!=null)
+                if (row.Table.Columns.Contains("GLRYSFZHM2") && row["GLRYSFZHM2"] != null)
 				{
 					model.GLRYSFZHM2=row["GLRYSFZHM2"].ToString();
 				}
-				if(row["GLRYXH3"]!=null)
+                if (row.Table.Columns.Contains("GLRYXH3") && row["GLRYXH3"] != null)
 				{
 					model.GLRYXH3=row["GLRYXH3"].ToString();
 				}
-				if(row["GLRYXM3"]!=null)
+                if (row.Table.Columns.Contains("GLRYXM3") && row["GLRYXM3"] != null)
 				{
 					model.GLRYXM3=row["GLRYXM3"].ToString();
 				}
-				if(row["GLRYZW3"]!=null)
+                if (row.Table.Columns.Contains("GLRYZW3") && row["GLRYZW3"] != null)
 				{
 					model.GLRYZW3=row["GLRYZW3"].ToString();
 				}
-				if(row["GLRYZC3"]!=null)
+                if (row.Table.Columns.Contains("GLRYZC3") && row["GLRYZC3"] != null)
 				{
 					model.GLRYZC3=row["GLRYZC3"].ToString();
 				}
-				if(row["GLRYXL3"]!=null)
+                if (row.Table.Columns.Contains("GLRYXL3") && row["GLRYXL3"] != null)
 				{
 					model.GLRYXL3=row["GLRYXL3"].ToString();
 				}
-				if(row["GLRYZY3"]!=null)
+                if (row.Table.Columns.Contains("GLRYZY3") && row["GLRYZY3"] != null)
 				{
 					model.GLRYZY3=row["GLRYZY3"].ToString();
 				}
-				if(row["GLRYSFZHM3"]!=null)
+                if (row.Table.Columns.Contains("GLRYSFZHM3") && row["GLRYSFZHM3"] != null)
 				{
 					model.GLRYSFZHM3=row["GLRYSFZHM3"].ToString();
 				}
-				if(row["GLRYXH4"]!=null)
+                if (row.Table.Columns.Contains("GLRYXH4") && row["GLRYXH4"] != null)
 				{
 					model.GLRYXH4=row["GLRYXH4"].ToString();
 				}
-				if(row["GLRYXM4"]!=null)
+                if (row.Table.Columns.Contains("GLRYXM4") && row["GLRYXM4"] != null)
 				{
 					model.GLRYXM4=row["GLRYXM4"].ToString();
 				}
-				if(row["GLRYZW4"]!=null)
+                if (row.Table.Columns.Contains("GLRYZW4") && row["GLRYZW4"] != null)
 				{
 					model.GLRYZW4=row["GLRYZW4"].ToString();
 				}
-				if(row["GLRYZC4"]!=null)
+                if (row.Table.Columns.Contains("GLRYZC4") && row["GLRYZC4"] != null)
 				{
 					model.GLRYZC4=row["GLRYZC4"].ToString();
 				}
-				if(row["GLRYXL4"]!=null)
+                if (row.Table.Columns.Contains("GLRYXL4") && row["GLRYXL4"] != null)
 				{
 					model.GLRYXL4=row["GLRYXL4"].ToString();
 				}
-				if(row["GLRYZY4"]!=null)
+                if (row.Table.Columns.Contains("GLRYZY4") && row["GLRYZY4"] != null)
 				{
 					model.GLRYZY4=row["GLRYZY4"].ToString();
 				}
-				if(row["GLRYSFZHM4"]!=null)
+                if (row.Table.Columns.Contains("GLRYSFZHM4") && row["GLRYSFZHM4"] != null)
 				{
 					model.GLRYSFZHM4=row["GLRYSFZHM4"].ToString();
 				}
-				if(row["GLRYXH5"]!=null)
+                if (row.Table.Columns.Contains("GLRYXH5") && row["GLRYXH5"] != null)
 				{
 					model.GLRYXH5=row["GLRYXH5"].ToString();
 				}
-				if(row["GLRYXM5"]!=null)
+                if (row.Table.Columns.Contains("GLRYXM5") && row["GLRYXM5"] != null)
 				{
 					model.GLRYXM5=row["GLRYXM5"].ToString();
 				}
-				if(row["GLRYZW5"]!=null)
+                if (row.Table.Columns.Contains("GLRYZW5") && row["GLRYZW5"] != null)
 				{
 					model.GLRYZW5=row["GLRYZW5"].ToString();
 				}
-				if(row["GLRYZC5"]!=null)
+                if (row.Table.Columns.Contains("GLRYZC5") && row["GLRYZC5"] != null)
 				{
 					model.GLRYZC5=row["GLRYZC5"].ToString();
 				}
-				if(row["GLRYXL5"]!=null)
+                if (row.Table.Columns.Contains("GLRYXL5") && row["GLRYXL5"] != null)
 				{
 					model.GLRYXL5=row["GLRYXL5"].ToString();
 				}
-				if(row["GLRYZY5"]!=null)
+                if (row.Table.Columns.Contains("GLRYZY5") && row["GLRYZY5"] != null)
 				{
 					model.GLRYZY5=row["GLRYZY5"].ToString();
 				}
-				if(row["GLRYSFZHM5"]!=null)
+                if (row.Table.Columns.Contains("GLRYSFZHM5") && row["GLRYSFZHM5"] != null)
 				{
 					model.GLRYSFZHM5=row["GLRYSFZHM5"].ToString();
 				}
@@ -1572,51 +1572,51 @@ namespace AM.DAL
 				{
 					model.JSGRGZ1=row["JSGRGZ1"].ToString();
 				}
-				if(row["JSGRXH2"]!=null)
+                if (row.Table.Columns.Contains("JSGRXH2") && row["JSGRXH2"] != null)
 				{
 					model.JSGRXH2=row["JSGRXH2"].ToString();
 				}
-				if(row["JSGRXM2"]!=null)
+                if (row.Table.Columns.Contains("JSGRXM2") && row["JSGRXM2"] != null)
 				{
 					model.JSGRXM2=row["JSGRXM2"].ToString();
 				}
-				if(row["JSGRGZ2"]!=null)
+                if (row.Table.Columns.Contains("JSGRGZ2") && row["JSGRGZ2"] != null)
 				{
 					model.JSGRGZ2=row["JSGRGZ2"].ToString();
 				}
-				if(row["JSGRXH3"]!=null)
+                if (row.Table.Columns.Contains("JSGRXH3") && row["JSGRXH3"] != null)
 				{
 					model.JSGRXH3=row["JSGRXH3"].ToString();
 				}
-				if(row["JSGRXM3"]!=null)
+                if (row.Table.Columns.Contains("JSGRXM3") && row["JSGRXM3"] != null)
 				{
 					model.JSGRXM3=row["JSGRXM3"].ToString();
 				}
-				if(row["JSGRGZ3"]!=null)
+                if (row.Table.Columns.Contains("JSGRGZ3") && row["JSGRGZ3"] != null)
 				{
 					model.JSGRGZ3=row["JSGRGZ3"].ToString();
 				}
-				if(row["JSGRXH4"]!=null)
+                if (row.Table.Columns.Contains("JSGRXH4") && row["JSGRXH4"] != null)
 				{
 					model.JSGRXH4=row["JSGRXH4"].ToString();
 				}
-				if(row["JSGRXM4"]!=null)
+                if (row.Table.Columns.Contains("JSGRXM4") && row["JSGRXM4"] != null)
 				{
 					model.JSGRXM4=row["JSGRXM4"].ToString();
 				}
-				if(row["JSGRGZ4"]!=null)
+                if (row.Table.Columns.Contains("JSGRGZ4") && row["JSGRGZ4"] != null)
 				{
 					model.JSGRGZ4=row["JSGRGZ4"].ToString();
 				}
-				if(row["JSGRXH5"]!=null)
+                if (row.Table.Columns.Contains("JSGRXH5") && row["JSGRXH5"] != null)
 				{
 					model.JSGRXH5=row["JSGRXH5"].ToString();
 				}
-				if(row["JSGRXM5"]!=null)
+                if (row.Table.Columns.Contains("JSGRXM5") && row["JSGRXM5"] != null)
 				{
 					model.JSGRXM5=row["JSGRXM5"].ToString();
 				}
-				if(row["JSGRGZ5"]!=null)
+                if (row.Table.Columns.Contains("JSGRGZ5") && row["JSGRGZ5"] != null)
 				{
 					model.JSGRGZ5=row["JSGRGZ5"].ToString();
 				}
@@ -1632,51 +1632,51 @@ namespace AM.DAL
 				{
 					model.ZGZSYXQ1=row["ZGZSYXQ1"].ToString();
 				}
-				if(row["ZGZSFZJG2"]!=null)
+                if (row.Table.Columns.Contains("ZGZSFZJG2") && row["ZGZSFZJG2"] != null)
 				{
 					model.ZGZSFZJG2=row["ZGZSFZJG2"].ToString();
 				}
-				if(row["ZGZSZSBH2"]!=null)
+                if (row.Table.Columns.Contains("ZGZSZSBH2") && row["ZGZSZSBH2"] != null)
 				{
 					model.ZGZSZSBH2=row["ZGZSZSBH2"].ToString();
 				}
-				if(row["ZGZSYXQ2"]!=null)
+                if (row.Table.Columns.Contains("ZGZSYXQ2") && row["ZGZSYXQ2"] != null)
 				{
 					model.ZGZSYXQ2=row["ZGZSYXQ2"].ToString();
 				}
-				if(row["ZGZSFZJG3"]!=null)
+                if (row.Table.Columns.Contains("ZGZSFZJG3") && row["ZGZSFZJG3"] != null)
 				{
 					model.ZGZSFZJG3=row["ZGZSFZJG3"].ToString();
 				}
-				if(row["ZGZSZSBH3"]!=null)
+                if (row.Table.Columns.Contains("ZGZSZSBH3") && row["ZGZSZSBH3"] != null)
 				{
 					model.ZGZSZSBH3=row["ZGZSZSBH3"].ToString();
 				}
-				if(row["ZGZSYXQ3"]!=null)
+                if (row.Table.Columns.Contains("ZGZSYXQ3") && row["ZGZSYXQ3"] != null)
 				{
 					model.ZGZSYXQ3=row["ZGZSYXQ3"].ToString();
 				}
-				if(row["ZGZSFZJG4"]!=null)
+                if (row.Table.Columns.Contains("ZGZSFZJG4") && row["ZGZSFZJG4"] != null)
 				{
 					model.ZGZSFZJG4=row["ZGZSFZJG4"].ToString();
 				}
-				if(row["ZGZSZSBH4"]!=null)
+                if (row.Table.Columns.Contains("ZGZSZSBH4") && row["ZGZSZSBH4"] != null)
 				{
 					model.ZGZSZSBH4=row["ZGZSZSBH4"].ToString();
 				}
-				if(row["ZGZSYXQ4"]!=null)
+                if (row.Table.Columns.Contains("ZGZSYXQ4") && row["ZGZSYXQ4"] != null)
 				{
 					model.ZGZSYXQ4=row["ZGZSYXQ4"].ToString();
 				}
-				if(row["ZGZSFZJG5"]!=null)
+                if (row.Table.Columns.Contains("ZGZSFZJG5") && row["ZGZSFZJG5"] != null)
 				{
 					model.ZGZSFZJG5=row["ZGZSFZJG5"].ToString();
 				}
-				if(row["ZGZSZSBH5"]!=null)
+                if (row.Table.Columns.Contains("ZGZSZSBH5") && row["ZGZSZSBH5"] != null)
 				{
 					model.ZGZSZSBH5=row["ZGZSZSBH5"].ToString();
 				}
-				if(row["ZGZSYXQ5"]!=null)
+                if (row.Table.Columns.Contains("ZGZSYXQ5") && row["ZGZSYXQ5"] != null)
 				{
 					model.ZGZSYXQ5=row["ZGZSYXQ5"].ToString();
 				}
@@ -1700,83 +1700,83 @@ namespace AM.DAL
 				{
 					model.WXJCSBBZ1=row["WXJCSBBZ1"].ToString();
 				}
-				if(row["WXJCSBXUH2"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXUH2") && row["WXJCSBXUH2"] != null)
 				{
 					model.WXJCSBXUH2=row["WXJCSBXUH2"].ToString();
 				}
-				if(row["WXJCSBMC2"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBMC2") && row["WXJCSBMC2"] != null)
 				{
 					model.WXJCSBMC2=row["WXJCSBMC2"].ToString();
 				}
-				if(row["WXJCSBXH2"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXH2") && row["WXJCSBXH2"] != null)
 				{
 					model.WXJCSBXH2=row["WXJCSBXH2"].ToString();
 				}
-				if(row["WXJCSBSL2"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBSL2") && row["WXJCSBSL2"] != null)
 				{
 					model.WXJCSBSL2=row["WXJCSBSL2"].ToString();
 				}
-				if(row["WXJCSBBZ2"]!=null)
+                if (row.Table.Columns.Contains("ZGZSYXQ5") && row["WXJCSBBZ2"] != null)
 				{
 					model.WXJCSBBZ2=row["WXJCSBBZ2"].ToString();
 				}
-				if(row["WXJCSBXUH3"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXUH3") && row["WXJCSBXUH3"] != null)
 				{
 					model.WXJCSBXUH3=row["WXJCSBXUH3"].ToString();
 				}
-				if(row["WXJCSBMC3"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBMC3") && row["WXJCSBMC3"] != null)
 				{
 					model.WXJCSBMC3=row["WXJCSBMC3"].ToString();
 				}
-				if(row["WXJCSBXH3"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXH3") && row["WXJCSBXH3"] != null)
 				{
 					model.WXJCSBXH3=row["WXJCSBXH3"].ToString();
 				}
-				if(row["WXJCSBSL3"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBSL3") && row["WXJCSBSL3"] != null)
 				{
 					model.WXJCSBSL3=row["WXJCSBSL3"].ToString();
 				}
-				if(row["WXJCSBBZ3"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBBZ3") && row["WXJCSBBZ3"] != null)
 				{
 					model.WXJCSBBZ3=row["WXJCSBBZ3"].ToString();
 				}
-				if(row["WXJCSBXUH4"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXUH4") && row["WXJCSBXUH4"] != null)
 				{
 					model.WXJCSBXUH4=row["WXJCSBXUH4"].ToString();
 				}
-				if(row["WXJCSBMC4"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBMC4") && row["WXJCSBMC4"] != null)
 				{
 					model.WXJCSBMC4=row["WXJCSBMC4"].ToString();
 				}
-				if(row["WXJCSBXH4"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXH4") && row["WXJCSBXH4"] != null)
 				{
 					model.WXJCSBXH4=row["WXJCSBXH4"].ToString();
 				}
-				if(row["WXJCSBSL4"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBSL4") && row["WXJCSBSL4"] != null)
 				{
 					model.WXJCSBSL4=row["WXJCSBSL4"].ToString();
 				}
-				if(row["WXJCSBBZ4"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBBZ4") && row["WXJCSBBZ4"] != null)
 				{
 					model.WXJCSBBZ4=row["WXJCSBBZ4"].ToString();
 				}
-				if(row["WXJCSBXUH5"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXUH5") && row["WXJCSBXUH5"] != null)
 				{
 					model.WXJCSBXUH5=row["WXJCSBXUH5"].ToString();
 				}
-				if(row["WXJCSBMC5"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBMC5") && row["WXJCSBMC5"] != null)
 				{
 					model.WXJCSBMC5=row["WXJCSBMC5"].ToString();
 				}
-				if(row["WXJCSBXH5"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBXH5") && row["WXJCSBXH5"] != null)
 				{
 					model.WXJCSBXH5=row["WXJCSBXH5"].ToString();
 				}
-				if(row["WXJCSBSL5"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBSL5") && row["WXJCSBSL5"] != null)
 				{
 					model.WXJCSBSL5=row["WXJCSBSL5"].ToString();
 				}
-				if(row["WXJCSBBZ5"]!=null)
+                if (row.Table.Columns.Contains("WXJCSBBZ5") && row["WXJCSBBZ5"] != null)
 				{
 					model.WXJCSBBZ5=row["WXJCSBBZ5"].ToString();
 				}
@@ -1804,99 +1804,99 @@ namespace AM.DAL
 				{
 					model.GCYJBZ1=row["GCYJBZ1"].ToString();
 				}
-				if(row["GCYJXH2"]!=null)
+                if (row.Table.Columns.Contains("GCYJXH2") && row["GCYJXH2"] != null)
 				{
 					model.GCYJXH2=row["GCYJXH2"].ToString();
 				}
-				if(row["GCYJGCXMMC2"]!=null)
+                if (row.Table.Columns.Contains("GCYJGCXMMC2") && row["GCYJGCXMMC2"] != null)
 				{
 					model.GCYJGCXMMC2=row["GCYJGCXMMC2"].ToString();
 				}
-				if(row["GCYJZLDLTS2"]!=null)
+                if (row.Table.Columns.Contains("GCYJZLDLTS2") && row["GCYJZLDLTS2"] != null)
 				{
 					model.GCYJZLDLTS2=row["GCYJZLDLTS2"].ToString();
 				}
-				if(row["GCYJZJZE2"]!=null)
+                if (row.Table.Columns.Contains("GCYJZJZE2") && row["GCYJZJZE2"] != null)
 				{
 					model.GCYJZJZE2=row["GCYJZJZE2"].ToString();
 				}
-				if(row["GCYJKJGSJ2"]!=null)
+                if (row.Table.Columns.Contains("GCYJKJGSJ2") && row["GCYJKJGSJ2"] != null)
 				{
 					model.GCYJKJGSJ2=row["GCYJKJGSJ2"].ToString();
 				}
-				if(row["GCYJBZ2"]!=null)
+                if (row.Table.Columns.Contains("GCYJBZ2") && row["GCYJBZ2"] != null)
 				{
 					model.GCYJBZ2=row["GCYJBZ2"].ToString();
 				}
-				if(row["GCYJXH3"]!=null)
+                if (row.Table.Columns.Contains("GCYJXH3") && row["GCYJXH3"] != null)
 				{
 					model.GCYJXH3=row["GCYJXH3"].ToString();
 				}
-				if(row["GCYJGCXMMC3"]!=null)
+                if (row.Table.Columns.Contains("GCYJGCXMMC3") && row["GCYJGCXMMC3"] != null)
 				{
 					model.GCYJGCXMMC3=row["GCYJGCXMMC3"].ToString();
 				}
-				if(row["GCYJZLDLTS3"]!=null)
+                if (row.Table.Columns.Contains("GCYJZLDLTS3") && row["GCYJZLDLTS3"] != null)
 				{
 					model.GCYJZLDLTS3=row["GCYJZLDLTS3"].ToString();
 				}
-				if(row["GCYJZJZE3"]!=null)
+                if (row.Table.Columns.Contains("GCYJZJZE3") && row["GCYJZJZE3"] != null)
 				{
 					model.GCYJZJZE3=row["GCYJZJZE3"].ToString();
 				}
-				if(row["GCYJKJGSJ3"]!=null)
+                if (row.Table.Columns.Contains("GCYJKJGSJ3") && row["GCYJKJGSJ3"] != null)
 				{
 					model.GCYJKJGSJ3=row["GCYJKJGSJ3"].ToString();
 				}
-				if(row["GCYJBZ3"]!=null)
+                if (row.Table.Columns.Contains("GCYJBZ3") && row["GCYJBZ3"] != null)
 				{
 					model.GCYJBZ3=row["GCYJBZ3"].ToString();
 				}
-				if(row["GCYJXH4"]!=null)
+                if (row.Table.Columns.Contains("GCYJXH4") && row["GCYJXH4"] != null)
 				{
 					model.GCYJXH4=row["GCYJXH4"].ToString();
 				}
-				if(row["GCYJGCXMMC4"]!=null)
+                if (row.Table.Columns.Contains("GCYJGCXMMC4") && row["GCYJGCXMMC4"] != null)
 				{
 					model.GCYJGCXMMC4=row["GCYJGCXMMC4"].ToString();
 				}
-				if(row["GCYJZLDLTS4"]!=null)
+                if (row.Table.Columns.Contains("GCYJZLDLTS4") && row["GCYJZLDLTS4"] != null)
 				{
 					model.GCYJZLDLTS4=row["GCYJZLDLTS4"].ToString();
 				}
-				if(row["GCYJZJZE4"]!=null)
+                if (row.Table.Columns.Contains("GCYJZJZE4") && row["GCYJZJZE4"] != null)
 				{
 					model.GCYJZJZE4=row["GCYJZJZE4"].ToString();
 				}
-				if(row["GCYJKJGSJ4"]!=null)
+                if (row.Table.Columns.Contains("GCYJKJGSJ4") && row["GCYJKJGSJ4"] != null)
 				{
 					model.GCYJKJGSJ4=row["GCYJKJGSJ4"].ToString();
 				}
-				if(row["GCYJBZ4"]!=null)
+                if (row.Table.Columns.Contains("GCYJBZ4") && row["GCYJBZ4"] != null)
 				{
 					model.GCYJBZ4=row["GCYJBZ4"].ToString();
 				}
-				if(row["GCYJXH5"]!=null)
+                if (row.Table.Columns.Contains("GCYJXH5") && row["GCYJXH5"] != null)
 				{
 					model.GCYJXH5=row["GCYJXH5"].ToString();
 				}
-				if(row["GCYJGCXMMC5"]!=null)
+                if (row.Table.Columns.Contains("GCYJGCXMMC5") && row["GCYJGCXMMC5"] != null)
 				{
 					model.GCYJGCXMMC5=row["GCYJGCXMMC5"].ToString();
 				}
-				if(row["GCYJZLDLTS5"]!=null)
+                if (row.Table.Columns.Contains("GCYJZLDLTS5") && row["GCYJZLDLTS5"] != null)
 				{
 					model.GCYJZLDLTS5=row["GCYJZLDLTS5"].ToString();
 				}
-				if(row["GCYJZJZE5"]!=null)
+                if (row.Table.Columns.Contains("GCYJZJZE5") && row["GCYJZJZE5"] != null)
 				{
 					model.GCYJZJZE5=row["GCYJZJZE5"].ToString();
 				}
-				if(row["GCYJKJGSJ5"]!=null)
+                if (row.Table.Columns.Contains("GCYJKJGSJ5") && row["GCYJKJGSJ5"] != null)
 				{
 					model.GCYJKJGSJ5=row["GCYJKJGSJ5"].ToString();
 				}
-				if(row["GCYJBZ5"]!=null)
+                if (row.Table.Columns.Contains("GCYJBZ5") && row["GCYJBZ5"] != null)
 				{
 					model.GCYJBZ5=row["GCYJBZ5"].ToString();
 				}
@@ -1924,99 +1924,99 @@ namespace AM.DAL
 				{
 					model.CZDLSL1=row["CZDLSL1"].ToString();
 				}
-				if(row["CZDLXUH2"]!=null)
+                if (row.Table.Columns.Contains("CZDLXUH2") && row["CZDLXUH2"] != null)
 				{
 					model.CZDLXUH2=row["CZDLXUH2"].ToString();
 				}
-				if(row["CZDLXH2"]!=null)
+                if (row.Table.Columns.Contains("CZDLXH2") && row["CZDLXH2"] != null)
 				{
 					model.CZDLXH2=row["CZDLXH2"].ToString();
 				}
-				if(row["CZDLMC2"]!=null)
+                if (row.Table.Columns.Contains("CZDLMC2") && row["CZDLMC2"] != null)
 				{
 					model.CZDLMC2=row["CZDLMC2"].ToString();
 				}
-				if(row["CZDLCCRQ2"]!=null)
+                if (row.Table.Columns.Contains("CZDLCCRQ2") && row["CZDLCCRQ2"] != null)
 				{
 					model.CZDLCCRQ2=row["CZDLCCRQ2"].ToString();
 				}
-				if(row["CZDLDLZZCJ2"]!=null)
+                if (row.Table.Columns.Contains("CZDLDLZZCJ2") && row["CZDLDLZZCJ2"] != null)
 				{
 					model.CZDLDLZZCJ2=row["CZDLDLZZCJ2"].ToString();
 				}
-				if(row["CZDLSL2"]!=null)
+                if (row.Table.Columns.Contains("CZDLSL2") && row["CZDLSL2"] != null)
 				{
 					model.CZDLSL2=row["CZDLSL2"].ToString();
 				}
-				if(row["CZDLXUH3"]!=null)
+                if (row.Table.Columns.Contains("CZDLXUH3") && row["CZDLXUH3"] != null)
 				{
 					model.CZDLXUH3=row["CZDLXUH3"].ToString();
 				}
-				if(row["CZDLXH3"]!=null)
+                if (row.Table.Columns.Contains("CZDLXH3") && row["CZDLXH3"] != null)
 				{
 					model.CZDLXH3=row["CZDLXH3"].ToString();
 				}
-				if(row["CZDLMC3"]!=null)
+                if (row.Table.Columns.Contains("CZDLMC3") && row["CZDLMC3"] != null)
 				{
 					model.CZDLMC3=row["CZDLMC3"].ToString();
 				}
-				if(row["CZDLCCRQ3"]!=null)
+                if (row.Table.Columns.Contains("CZDLCCRQ3") && row["CZDLCCRQ3"] != null)
 				{
 					model.CZDLCCRQ3=row["CZDLCCRQ3"].ToString();
 				}
-				if(row["CZDLDLZZCJ3"]!=null)
+                if (row.Table.Columns.Contains("CZDLDLZZCJ3") && row["CZDLDLZZCJ3"] != null)
 				{
 					model.CZDLDLZZCJ3=row["CZDLDLZZCJ3"].ToString();
 				}
-				if(row["CZDLSL3"]!=null)
+                if (row.Table.Columns.Contains("CZDLSL3") && row["CZDLSL3"] != null)
 				{
 					model.CZDLSL3=row["CZDLSL3"].ToString();
 				}
-				if(row["CZDLXUH4"]!=null)
+                if (row.Table.Columns.Contains("CZDLXUH4") && row["CZDLXUH4"] != null)
 				{
 					model.CZDLXUH4=row["CZDLXUH4"].ToString();
 				}
-				if(row["CZDLXH4"]!=null)
+                if (row.Table.Columns.Contains("CZDLXH4") && row["CZDLXH4"] != null)
 				{
 					model.CZDLXH4=row["CZDLXH4"].ToString();
 				}
-				if(row["CZDLMC4"]!=null)
+                if (row.Table.Columns.Contains("CZDLMC4") && row["CZDLMC4"] != null)
 				{
 					model.CZDLMC4=row["CZDLMC4"].ToString();
 				}
-				if(row["CZDLCCRQ4"]!=null)
+                if (row.Table.Columns.Contains("CZDLCCRQ4") && row["CZDLCCRQ4"] != null)
 				{
 					model.CZDLCCRQ4=row["CZDLCCRQ4"].ToString();
 				}
-				if(row["CZDLDLZZCJ4"]!=null)
+                if (row.Table.Columns.Contains("CZDLDLZZCJ4") && row["CZDLDLZZCJ4"] != null)
 				{
 					model.CZDLDLZZCJ4=row["CZDLDLZZCJ4"].ToString();
 				}
-				if(row["CZDLSL4"]!=null)
+                if (row.Table.Columns.Contains("CZDLSL4") && row["CZDLSL4"] != null)
 				{
 					model.CZDLSL4=row["CZDLSL4"].ToString();
 				}
-				if(row["CZDLXUH5"]!=null)
+                if (row.Table.Columns.Contains("CZDLXUH5") && row["CZDLXUH5"] != null)
 				{
 					model.CZDLXUH5=row["CZDLXUH5"].ToString();
 				}
-				if(row["CZDLXH5"]!=null)
+                if (row.Table.Columns.Contains("CZDLXH5") && row["CZDLXH5"] != null)
 				{
 					model.CZDLXH5=row["CZDLXH5"].ToString();
 				}
-				if(row["CZDLMC5"]!=null)
+                if (row.Table.Columns.Contains("CZDLMC5") && row["CZDLMC5"] != null)
 				{
 					model.CZDLMC5=row["CZDLMC5"].ToString();
 				}
-				if(row["CZDLCCRQ5"]!=null)
+                if (row.Table.Columns.Contains("CZDLCCRQ5") && row["CZDLCCRQ5"] != null)
 				{
 					model.CZDLCCRQ5=row["CZDLCCRQ5"].ToString();
 				}
-				if(row["CZDLDLZZCJ5"]!=null)
+                if (row.Table.Columns.Contains("CZDLDLZZCJ5") && row["CZDLDLZZCJ5"] != null)
 				{
 					model.CZDLDLZZCJ5=row["CZDLDLZZCJ5"].ToString();
 				}
-				if(row["CZDLSL5"]!=null)
+                if (row.Table.Columns.Contains("CZDLSL5") && row["CZDLSL5"] != null)
 				{
 					model.CZDLSL5=row["CZDLSL5"].ToString();
 				}

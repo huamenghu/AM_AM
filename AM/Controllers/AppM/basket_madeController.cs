@@ -34,7 +34,7 @@ namespace AM.Controllers
                 var whereStr = string.Empty;
                 if (!string.IsNullOrEmpty(trainname))
                 {
-                    whereStr = " xm like '%"+trainname+"%' ";
+                    whereStr = " qymc like '%" + trainname + "%' ";
                 }
                 int count = 0;
                 var list = btBLL.GetListByPage(whereStr, string.Empty, (pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize, out count);

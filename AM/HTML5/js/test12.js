@@ -142,22 +142,22 @@ function add(){
 									var inputElement33=document.createElement("br")
 									var inputElement333=document.createElement("br")
 //									
-									nameinput.innerHTML+="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text' id='t1'  placeholder='仪器（工具）名称' onclick='ob()'>";
+									nameinput.innerHTML+="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='1' type='text' id='t1'  placeholder='仪器（工具）名称' onclick='ob()'>";
 									inputElement11.innerHTML="<br/>";
 									namelabel.innerHTML="<label>仪器（工具）名称</label>";
 									inputElement111.innerHTML="<br/>";
 									
-									typeinput.innerHTML="<input type='text' placeholder='型号'>";
+									typeinput.innerHTML = "<input  mtype='1'  type='text' placeholder='型号'>";
 									inputElement22.innerHTML="<br/>";
 									typelabel.innerHTML="<label>型号</label>";
 									inputElement222.innerHTML="<br/>";
 
-									codeinput.innerHTML="<input type='text' placeholder='编号'>"
+									codeinput.innerHTML = "<input mtype='1'  type='text' placeholder='编号'>"
 									inputElement33.innerHTML="<br/>";
 									codelabel.innerHTML="<label>编号</label>";
 									inputElement333.innerHTML="<br/>";
 									
-									stateinput.innerHTML="<input type='text' placeholder='状态'>"
+									stateinput.innerHTML = "<input  mtype='1' type='text' placeholder='状态'>"
 									inputElement33.innerHTML="<br/>";
 									statelabel.innerHTML="<label>状态</label>";
 									inputElement333.innerHTML="<br/>";

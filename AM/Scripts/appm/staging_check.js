@@ -1,55 +1,61 @@
 ﻿function test() {
-    if ($("#tes1").val() == "") {
-        $("#tes1")[0].focus();
-        alert("姓名不能为空");
+    var isok = false;
+    if ($("#gcname").val() == "") {
+        alert("工程名称不能为空");
+        $("#gcname").focus();
     } else {
-        if ($("#tes2").val() == "") {
-            $("#tes2")[0].focus();
-            alert("文化程度不能为空");
+        if ($("#sgaddress").val() == "") {
+            alert("施工地点不能为空");
+            $("#sgaddress").focus();
         } else {
-            if ($("#tes3").val() == "") {
-                $("#tes3")[0].focus();
-                alert("联系电话不能为空");
+            if ($("#sycompany").val() == "") {
+                alert("使用单位不能为空");
+                $("#sycompany").focus();
             } else {
-                if ($("#tes4").val() == "") {
-                    $("#tes4")[0].focus();
-                    alert("专业工龄不能为空");
+                if ($("#jlcompany").val() == "") {
+                    alert("监理单位不能为空");
+                    $("#jlcompany").focus();
                 } else {
-                    if ($("#tes5").val() == "") {
-                        $("#tes5")[0].focus();
-                        alert("身体状况不能为空");
+                    if ($("#sbname").val() == "") {
+                        alert("设备名称不能为空");
+                        $("#sbname").focus();
                     } else {
-                        if ($("#tes6").val() == "") {
-                            $("#tes6")[0].focus();
-                            alert("身份证号不能为空");
+                        if ($("#azcompany").val() == "") {
+                            alert("安装单位不能为空");
+                            $("#azcompany").focus();
                         } else {
-                            if ($("#tes7").val() == "") {
-                                $("#tes7")[0].focus();
-                                alert("工作单位不能为空");
+                            if ($("#type").val() == "") {
+                                alert("设备型号不能为空");
+                                $("#type").focus();
                             } else {
-                                if ($("#tes8").val() == "") {
-                                    $("#tes8")[0].focus();
-                                    alert("邮编不能为空");
+                                if ($("#sbcode").val() == "") {
+                                    alert("设备编号不能为空");
+                                    $("#sbcode").focus();
                                 } else {
-                                    if ($("#tes9").val() == "") {
-                                        $("#tes9")[0].focus();
-                                        alert("邮箱不能为空");
+                                    if ($("#scstore").val() == "") {
+                                        alert("生产厂家不能为空");
+                                        $("#scstore").focus();
                                     } else {
-                                        if ($("#tes10").val() == "") {
-                                            $("#tes10")[0].focus();
-                                            alert("本人签字不能为空");
+                                        if ($("#ccdate").val() == "") {
+                                            alert("出厂日期不能为空");
+                                            $("#ccdate").focus();
                                         } else {
-                                            var obj = document.getElementsByName("checkbox_name");//根据自己的多选框名称修改下
-                                            var b = false;
-                                            for (var i = 0; i < obj.length; i++) {
-                                                if (obj[i].checked) {
-                                                    b = true;
+                                            if ($("#xkz").val() == "") {
+                                                alert("特种设备生产制造许可证不能为空");
+                                                $("#xkz").focus();
+                                            } else {
+                                                if ($("#checkheight").val() == "") {
+                                                    alert("检验高度不能为空");
+                                                    $("#checkheight").focus();
+                                                } else {
+                                                    if ($("#checkheight").val() == "") {
+                                                        alert("检验高度不能为空");
+                                                        $("#checkheight").focus();
+                                                    } else
+                                                        isok = true;
                                                 }
+
                                             }
-                                            if (b == false) {
-                                                alert("选择培训点至少选择一个");//提示信息自己修改
-                                            }
-                                            return b;
                                         }
                                     }
                                 }
@@ -60,77 +66,72 @@
             }
         }
     }
-
+    return isok;
 }
+
 String.prototype.trim = function () {
 
     return this.replace(/(^\s*)|(\s*$)/g, '');
 }
 
 function submit() {
-    //var check = test();
-    //if (check)
-    //{
+    var check = test();
+    if (check)
+    {
     var userid = $("#userid").val();
-    var objArr = $("input[type=text]")
-    debugger;
-    var checkitem = $("input[name=checkbox_name]:checked");
-    var radios = $("input[name=sex]:checked");
-    var xb = $(radios[0]).next("label").text();
-    var textareas = $("textarea");
-    var pxd = "";
-    for (var i = 0; i < checkitem.length; i++) {
-        
-        pxd += $(checkitem[i]).parent("label").text().trim();
-        if (i < checkitem.length) {
-            pxd += ","
-        }
-    }
+    var objArr = $("input[type=text]");
+   
     var json = {
-        "basket_train": [{
+        "staging_check": [{
             "Guid": "",
             "CreateDate": "",
             "userid": userid,
-            "xm": $(objArr[0]).val(),
-            "xb": xb,
-            "whcd": $(objArr[1]).val(),
-            "lxdh": $(objArr[2]).val(),
-            "zygl": $(objArr[3]).val(),
-            "stzk": $(objArr[4]).val(),
-            "sfzh": $(objArr[5]).val(),
-            "gzdw": $(objArr[6]).val(),
-            "yb": $(objArr[7]).val(),
-            "yx": $(objArr[8]).val(),
-            "brqz": $(objArr[9]).val(),
-            "pxd": pxd,
-            "gzjl": $(textareas[0]).val(),
-            "szdwyj": $(textareas[1]).val()
+            "GCMC": $(objArr[0]).val(),
+            "SGDD" : $(objArr[1]).val(),
+            "SYDW": $(objArr[2]).val(),
+            "JLDW": $(objArr[3]).val(),
+            "SBMC": $(objArr[4]).val(),
+            "AZDW": $(objArr[5]).val(),
+            "SBXH": $(objArr[6]).val(),
+            "SBBH": $(objArr[7]).val(),
+            "SCCJ": $(objArr[8]).val(),
+            "CCRQ": $(objArr[9]).val(),
+            "ZZXKZ": $(objArr[10]).val(),
+            "JYGD": $(objArr[11]).val(),
+            "GXJWYBH": $(objArr[12]).val(),
+            "GXJWYZK": $(objArr[13]).val(),
+            "NJBSBH": $(objArr[14]).val(),
+            "NJBSZK": $(objArr[15]).val(),
+            "SZZOBBH": $(objArr[16]).val(),
+            "SZZOBZK": $(objArr[17]).val(),
+            "WSDJBH": $(objArr[18]).val(),
+            "WSDJZK": $(objArr[19]).val(),
+            "FSYBH": $(objArr[20]).val(),
+            "FSYZK": $(objArr[21]).val(),
+            "YBKCBH": $(objArr[22]).val(),
+            "YBKCZK": $(objArr[23]).val(),
+            "GJC30BH": $(objArr[24]).val(),
+            "GJC30ZK": $(objArr[25]).val(),
+            "GJC5BH": $(objArr[26]).val(),
+            "GJC5ZK": $(objArr[27]).val(),
+            "GZC1BH": $(objArr[28]).val(),
+            "GZC1ZK": $(objArr[29]).val(),
+            "GZC2BH": $(objArr[30]).val(),
+            "GZC2ZK": $(objArr[31]).val(),
+            "SCBH": $(objArr[32]).val(),
+            "SCZK": $(objArr[33]).val(),
+            "JYJG": $(objArr[34]).val()
         }]
     };
     $.ajax({
         type: "post",
-        url: "/AppM/addbasket_train",
+        url: "/AppM/addstaging_check",
         data: { obj: JSON.stringify(json) },
         success: function (data) {
             layer.msg("提交成功");
-            //alert("哈哈" + data);
-            //debugger;
-            //data = eval('(' + data + ')');
-
+            
         }
     })
-    //$.ajax({
-    //    type: "POST",     
-    //    contentType: "application/json; charset=utf-8",  
-    //    dataType: "json",   
-    //    url: "/AppM/addbasket_train",   
-    //    data: "RID:" + json,
-    //    success: function (data) {
-    //        alert(data.b);       
-    //    },
-    //    error: function (err) { //如果执行不成功，那么执行此方法
-    //        alert("err:" + err);
-    //    }
-    //});
-    //}
+   
+    }
 }

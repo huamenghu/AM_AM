@@ -117,7 +117,7 @@
 
 <div id="tb" style="padding: 3px 0px 3px 10px; height: auto">
     <div style="vertical-align: middle">
-        姓名：
+        委托单位：
         <input name="s_trainname" id="s_trainname" class="easyui-validatebox searchInput" />
         @*电话：
         <input name="s_traintel" id="s_traintel" class="easyui-validatebox searchInput" />
@@ -133,17 +133,17 @@
 
 @section scripts{
     <script>
-        var tableName = "basket_train";
+        var tableName = "qzj_check";
         var sortName = "Guid";
         var idField = "Guid";
         var sortOrder = "asc";
 
         var columns = [[
-                        { field: 'xm', title: '姓名', width: 100, sortable: true },
-                        { field: 'xb', title: '性别', width: 100, sortable: true },
-                        { field: 'whcd', title: '文化程度', width: 100, sortable: true },
-                        { field: 'lxdh', title: '联系电话', width: 100, sortable: true },
-                        { field: 'sfzh', title: '身份证号', width: 100, sortable: true },
+                        { field: 'WTDW', title: '委托单位', width: 100, sortable: true },
+                        { field: 'WTRQ', title: '委托日期', width: 100, sortable: true },
+                        { field: 'SYDW', title: '使用单位', width: 100, sortable: true },
+                        { field: 'WTLXRDH', title: '委托联系人电话', width: 100, sortable: true },
+                        { field: 'GCMC', title: '工程名称', width: 100, sortable: true },
 
         ]];
         function toExcel() {

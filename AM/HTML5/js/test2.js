@@ -37,37 +37,37 @@ function add(){
 									var inputElement77=document.createElement("br")
 									var inputElement777=document.createElement("br")
 									
-									inputElement1.innerHTML="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text' placeholder='序号' >";
+									inputElement1.innerHTML = "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='1'  type='text' placeholder='序号' >";
 									inputElement11.innerHTML="<br/>";
 									labelElement1.innerHTML="<label>序号</label>";
 									inputElement111.innerHTML="<br/>";
 									
-									inputElement2.innerHTML="<input type='text' placeholder='姓名'>";
+									inputElement2.innerHTML="<input mtype='1' type='text' placeholder='姓名'>";
 									inputElement22.innerHTML="<br/>";
 									labelElement2.innerHTML="<label>姓名</label>";
 									inputElement222.innerHTML="<br/>";
 									
-									inputElement3.innerHTML="<input type='text'  placeholder='职务'>"
+									inputElement3.innerHTML = "<input mtype='1' type='text'  placeholder='职务'>"
 									inputElement33.innerHTML="<br/>";
 									labelElement3.innerHTML="<label>职务</label>";
 									inputElement333.innerHTML="<br/>";
 									
-									inputElement4.innerHTML="<input type='text'  placeholder='职称'>"
+									inputElement4.innerHTML = "<input mtype='1' type='text'  placeholder='职称'>"
 									inputElement44.innerHTML="<br/>";
 									labelElement4.innerHTML="<label>职称</label>";
 									inputElement444.innerHTML="<br/>";
 									
-									inputElement5.innerHTML="<input type='text'  placeholder='发证机关'>"
+									inputElement5.innerHTML = "<input mtype='1' type='text'  placeholder='发证机关'>"
 									inputElement55.innerHTML="<br/>";
 									labelElement5.innerHTML="<label>发证机关</label>";
 									inputElement555.innerHTML="<br/>";
 									
-									inputElement6.innerHTML="<input type='text'  placeholder='学历'width='100%'>"
+									inputElement6.innerHTML = "<input mtype='1' type='text'  placeholder='学历'width='100%'>"
 									inputElement66.innerHTML="<br/>";
 									labelElement6.innerHTML="<label>学历</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									inputElement7.innerHTML="<input type='text' placeholder='专业'>"
+									inputElement7.innerHTML = "<input mtype='1' type='text' placeholder='专业'>"
 									inputElement77.innerHTML="<br/>";
 									labelElement7.innerHTML="<label>专业</label>";
 									inputElement777.innerHTML="<br/>";
@@ -130,17 +130,17 @@ function add2(){
 									var inputElement33=document.createElement("br")
 									var inputElement333=document.createElement("br")
 //									
-									xuhaoinput.innerHTML+="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text' id='t1'  placeholder='序号' onclick='ob()'>";
+									xuhaoinput.innerHTML += "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='2'  type='text' id='t1'  placeholder='序号' onclick='ob()'>";
 									inputElement11.innerHTML="<br/>";
 									xuhaolabel.innerHTML="<label>序号</label>";
 									inputElement111.innerHTML="<br/>";
 									
-									nameinput.innerHTML="<input type='text' placeholder='姓名'>";
+									nameinput.innerHTML = "<input mtype='2' type='text' placeholder='姓名'>";
 									inputElement22.innerHTML="<br/>";
 									namelabel.innerHTML="<label>姓名</label>";
 									inputElement222.innerHTML="<br/>";
 //									
-									gongzhonginput.innerHTML="<input type='text'placeholder='工种'>"
+									gongzhonginput.innerHTML = "<input mtype='2'  type='text'placeholder='工种'>"
 									inputElement33.innerHTML="<br/>";
 									gongzhonglabel.innerHTML="<label>工种</label>";
 									inputElement333.innerHTML="<br/>";
@@ -194,17 +194,17 @@ function add3(){
 									var inputElement66=document.createElement("br")
 									var inputElement666=document.createElement("br")
 									
-									jginput.innerHTML="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text'placeholder='发证机构'>"
+									jginput.innerHTML = "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='3'  type='text'placeholder='发证机构'>"
 									inputElement44.innerHTML="<br/>";
 									jglabel.innerHTML="<label>发证机构</label>";
 									inputElement444.innerHTML="<br/>";
 									
-									bhinput.innerHTML="<input type='text'placeholder='证书编号'>"
+									bhinput.innerHTML = "<input mtype='3'  type='text'placeholder='证书编号'>"
 									inputElement55.innerHTML="<br/>";
 									bhlabel.innerHTML="<label>证书编号</label>";
 									inputElement555.innerHTML="<br/>";
 									
-									yxqinput.innerHTML="<input type='text'placeholder='有效期'>"
+									yxqinput.innerHTML = "<input mtype='3'  type='text'placeholder='有效期'>"
 									inputElement66.innerHTML="<br/>";
 									yxqlabel.innerHTML="<label>有效期</label>";
 									inputElement666.innerHTML="<br/>";
@@ -258,27 +258,27 @@ function add4(){
 									var inputElement66=document.createElement("br")
 									var inputElement666=document.createElement("br")
 									
-									xhinput.innerHTML="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text'placeholder='序号'>"
+									xhinput.innerHTML = "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input mtype='4'  type='text'placeholder='序号'>"
 									inputElement44.innerHTML="<br/>";
 									xhlabel.innerHTML="<label>序号</label>";
 									inputElement444.innerHTML="<br/>";
 									
-									sbnameinput.innerHTML="<input type='text'placeholder='设备名称'>"
+									sbnameinput.innerHTML = "<input mtype='4'  type='text'placeholder='设备名称'>"
 									inputElement55.innerHTML="<br/>";
 									sbnamelabel.innerHTML="<label>设备名称</label>";
 									inputElement555.innerHTML="<br/>";
 									
-									gginput.innerHTML="<input type='text'placeholder='型号/规格'>"
+									gginput.innerHTML = "<input mtype='4'  type='text'placeholder='型号/规格'>"
 									inputElement66.innerHTML="<br/>";
 									gglabel.innerHTML="<label>型号/规格</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									numberinput.innerHTML="<input type='text'placeholder='数量（台）'>"
+									numberinput.innerHTML = "<input mtype='4'  type='text'placeholder='数量（台）'>"
 									inputElement66.innerHTML="<br/>";
 									numberlabel.innerHTML="<label>数量（台）</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									csinput.innerHTML="<input type='text'placeholder='制造厂商'>"
+									csinput.innerHTML = "<input mtype='4'  type='text'placeholder='制造厂商'>"
 									inputElement66.innerHTML="<br/>";
 									cslabel.innerHTML="<label>制造厂商</label>";
 									inputElement666.innerHTML="<br/>";
@@ -342,27 +342,27 @@ function add5(){
 									var inputElement66=document.createElement("br")
 									var inputElement666=document.createElement("br")
 									
-									xhinput.innerHTML="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text'placeholder='序号'>"
+									xhinput.innerHTML = "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='5'  type='text'placeholder='序号'>"
 									inputElement44.innerHTML="<br/>";
 									xhlabel.innerHTML="<label>序号</label>";
 									inputElement444.innerHTML="<br/>";
 									
-									sbnameinput.innerHTML="<input type='text'placeholder='名称'>"
+									sbnameinput.innerHTML = "<input  mtype='5'  type='text'placeholder='名称'>"
 									inputElement55.innerHTML="<br/>";
 									sbnamelabel.innerHTML="<label>名称</label>";
 									inputElement555.innerHTML="<br/>";
 									
-									gginput.innerHTML="<input type='text'placeholder='型号/规格'>"
+									gginput.innerHTML = "<inpu  mtype='5' t type='text'placeholder='型号/规格'>"
 									inputElement66.innerHTML="<br/>";
 									gglabel.innerHTML="<label>型号/规格</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									numberinput.innerHTML="<input type='text'placeholder='数量（台）'>"
+									numberinput.innerHTML = "<input  mtype='5'  type='text'placeholder='数量（台）'>"
 									inputElement66.innerHTML="<br/>";
 									numberlabel.innerHTML="<label>数量（台）</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									yxqinput.innerHTML="<input type='text'placeholder='有效期'>"
+									yxqinput.innerHTML = "<input  mtype='5'  type='text'placeholder='有效期'>"
 									inputElement66.innerHTML="<br/>";
 									yxqlabel.innerHTML="<label>有效期</label>";
 									inputElement666.innerHTML="<br/>";
@@ -431,32 +431,32 @@ function add6(){
 									var inputElement66=document.createElement("br")
 									var inputElement666=document.createElement("br")
 									
-									yearinput.innerHTML="<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input type='text'placeholder='年度'>"
+									yearinput.innerHTML = "<style>input{width:100%;min-height:34px;font-size:14px; padding-left:15px;color:#999999; padding-top:0px;padding-bottom:0px;margin-bottom:0;border-radius:5px;outline:none;border:1px solid #cccccc;}input:focus{border:1px solid #66AFE9;box-shadow: 0 0 10px #66AFE9}</style><input  mtype='6'  type='text'placeholder='年度'>"
 									inputElement44.innerHTML="<br/>";
 									yearlabel.innerHTML="<label>年度</label>";
 									inputElement444.innerHTML="<br/>";
 									
-									gginput.innerHTML="<input type='text'placeholder='规格型号'>"
+									gginput.innerHTML = "<input mtype='6'  type='text'placeholder='规格型号'>"
 									inputElement66.innerHTML="<br/>";
 									gglabel.innerHTML="<label>规格型号</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									clinput.innerHTML="<input type='text'placeholder='产量（台）'>"
+									clinput.innerHTML = "<input mtype='6'  type='text'placeholder='产量（台）'>"
 									inputElement55.innerHTML="<br/>";
 									cllabel.innerHTML="<label>产量（台）</label>";
 									inputElement555.innerHTML="<br/>";
 									
-									xlinput.innerHTML="<input type='text'placeholder='销量（台）'>"
+									xlinput.innerHTML = "<input mtype='6'  type='text'placeholder='销量（台）'>"
 									inputElement66.innerHTML="<br/>";
 									xllabel.innerHTML="<label>销量（台）</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									moneyinput.innerHTML="<input type='text'placeholder='销售收入（万元）'>"
+									moneyinput.innerHTML = "<input mtype='6'  type='text'placeholder='销售收入（万元）'>"
 									inputElement66.innerHTML="<br/>";
 									moneylabel.innerHTML="<label>销售收入（万元）</label>";
 									inputElement666.innerHTML="<br/>";
 									
-									bzinput.innerHTML="<input type='text'placeholder='备注'>"
+									bzinput.innerHTML = "<input mtype='6'  type='text'placeholder='备注'>"
 									inputElement66.innerHTML="<br/>";
 									bzlabel.innerHTML="<label>备注</label>";
 									inputElement666.innerHTML="<br/>";

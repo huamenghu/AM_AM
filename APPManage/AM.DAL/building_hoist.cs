@@ -519,83 +519,83 @@ namespace AM.DAL
 				{
 					model.JYLX=row["JYLX"].ToString();
 				}
-				if(row["YQMC1"]!=null)
+                if (row.Table.Columns.Contains("YQMC1") && row["YQMC1"] != null)
 				{
 					model.YQMC1=row["YQMC1"].ToString();
 				}
-				if(row["XH1"]!=null)
+                if (row.Table.Columns.Contains("XH1") && row["XH1"] != null)
 				{
 					model.XH1=row["XH1"].ToString();
 				}
-				if(row["BH1"]!=null)
+                if (row.Table.Columns.Contains("BH1") && row["BH1"] != null)
 				{
 					model.BH1=row["BH1"].ToString();
 				}
-				if(row["ZT1"]!=null)
+                if (row.Table.Columns.Contains("ZT1") && row["ZT1"] != null)
 				{
 					model.ZT1=row["ZT1"].ToString();
 				}
-				if(row["YQMC2"]!=null)
+                if (row.Table.Columns.Contains("YQMC2") && row["YQMC2"] != null)
 				{
 					model.YQMC2=row["YQMC2"].ToString();
 				}
-				if(row["XH2"]!=null)
+                if (row.Table.Columns.Contains("XH2") && row["XH2"] != null)
 				{
 					model.XH2=row["XH2"].ToString();
 				}
-				if(row["BH2"]!=null)
+                if (row.Table.Columns.Contains("BH2") && row["BH2"] != null)
 				{
 					model.BH2=row["BH2"].ToString();
 				}
-				if(row["ZT2"]!=null)
+                if (row.Table.Columns.Contains("ZT2") && row["ZT2"] != null)
 				{
 					model.ZT2=row["ZT2"].ToString();
 				}
-				if(row["YQMC3"]!=null)
+                if (row.Table.Columns.Contains("YQMC3") && row["YQMC3"] != null)
 				{
 					model.YQMC3=row["YQMC3"].ToString();
 				}
-				if(row["XH3"]!=null)
+                if (row.Table.Columns.Contains("XH3") && row["XH3"] != null)
 				{
 					model.XH3=row["XH3"].ToString();
 				}
-				if(row["BH3"]!=null)
+                if (row.Table.Columns.Contains("BH3") && row["BH3"] != null)
 				{
 					model.BH3=row["BH3"].ToString();
 				}
-				if(row["ZT3"]!=null)
+                if (row.Table.Columns.Contains("ZT3") && row["ZT3"] != null)
 				{
 					model.ZT3=row["ZT3"].ToString();
 				}
-				if(row["YQMC4"]!=null)
+                if (row.Table.Columns.Contains("YQMC4") && row["YQMC4"] != null)
 				{
 					model.YQMC4=row["YQMC4"].ToString();
 				}
-				if(row["XH4"]!=null)
+                if (row.Table.Columns.Contains("XH4") && row["XH4"] != null)
 				{
 					model.XH4=row["XH4"].ToString();
 				}
-				if(row["BH4"]!=null)
+                if (row.Table.Columns.Contains("BH4") && row["BH4"] != null)
 				{
 					model.BH4=row["BH4"].ToString();
 				}
-				if(row["ZT4"]!=null)
+                if (row.Table.Columns.Contains("ZT4") && row["ZT4"] != null)
 				{
 					model.ZT4=row["ZT4"].ToString();
 				}
-				if(row["YQMC5"]!=null)
+                if (row.Table.Columns.Contains("YQMC5") && row["YQMC5"] != null)
 				{
 					model.YQMC5=row["YQMC5"].ToString();
 				}
-				if(row["XH5"]!=null)
+                if (row.Table.Columns.Contains("XH5") && row["XH5"] != null)
 				{
 					model.XH5=row["XH5"].ToString();
 				}
-				if(row["BH5"]!=null)
+                if (row.Table.Columns.Contains("BH5") && row["BH5"] != null)
 				{
 					model.BH5=row["BH5"].ToString();
 				}
-				if(row["ZT5"]!=null)
+                if (row.Table.Columns.Contains("ZT5") && row["ZT5"] != null)
 				{
 					model.ZT5=row["ZT5"].ToString();
 				}
