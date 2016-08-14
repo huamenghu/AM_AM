@@ -15,7 +15,7 @@ namespace AM.Controllers
 {
     public class basket_keepController : BaseController
     {
-        basket_trainBLL btBLL = new basket_trainBLL();
+        basket_keepBLL btBLL = new basket_keepBLL();
  
         public JsonResult GetData()
         {
@@ -56,7 +56,7 @@ namespace AM.Controllers
         [HttpPost]
         public JsonResult Add(FormCollection form)
         {
-            var t = new basket_train();
+            var t = new basket_keep();
             MVCTools.SetValueFormToModel(t, form);
             t.Guid =Guid.NewGuid().ToString();
             t.userid = "admin";
@@ -96,19 +96,19 @@ namespace AM.Controllers
             List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
             if (result != null)
             {
-                list.Add(new KeyValuePair<string, string>("姓名", result.xm));
-                list.Add(new KeyValuePair<string, string>("性别", result.xb));
-                list.Add(new KeyValuePair<string, string>("文化程度", result.whcd));
-                list.Add(new KeyValuePair<string, string>("联系电话", result.lxdh));
-                list.Add(new KeyValuePair<string, string>("专业工龄", result.zygl));
-                list.Add(new KeyValuePair<string, string>("身体状况", result.stzk));
-                list.Add(new KeyValuePair<string, string>("身份证号", result.sfzh));
-                list.Add(new KeyValuePair<string, string>("工作单位", result.gzdw));
-                list.Add(new KeyValuePair<string, string>("邮政编码", result.yb));
-                list.Add(new KeyValuePair<string, string>("本人签字", result.brqz));
-                list.Add(new KeyValuePair<string, string>("培训点", result.pxd));
-                list.Add(new KeyValuePair<string, string>("工作经历", result.gzjl));
-                list.Add(new KeyValuePair<string, string>("所在单位意见", result.szdwyj));
+                //list.Add(new KeyValuePair<string, string>("姓名", result.xm));
+                //list.Add(new KeyValuePair<string, string>("性别", result.xb));
+                //list.Add(new KeyValuePair<string, string>("文化程度", result.whcd));
+                //list.Add(new KeyValuePair<string, string>("联系电话", result.lxdh));
+                //list.Add(new KeyValuePair<string, string>("专业工龄", result.zygl));
+                //list.Add(new KeyValuePair<string, string>("身体状况", result.stzk));
+                //list.Add(new KeyValuePair<string, string>("身份证号", result.sfzh));
+                //list.Add(new KeyValuePair<string, string>("工作单位", result.gzdw));
+                //list.Add(new KeyValuePair<string, string>("邮政编码", result.yb));
+                //list.Add(new KeyValuePair<string, string>("本人签字", result.brqz));
+                //list.Add(new KeyValuePair<string, string>("培训点", result.pxd));
+                //list.Add(new KeyValuePair<string, string>("工作经历", result.gzjl));
+                //list.Add(new KeyValuePair<string, string>("所在单位意见", result.szdwyj));
             }
             else
             {

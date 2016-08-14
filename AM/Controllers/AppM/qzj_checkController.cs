@@ -13,9 +13,9 @@ using System.IO;
 using AM.Common;
 namespace AM.Controllers
 {
-    public class basket_checkController : BaseController
+    public class qzj_checkController : BaseController
     {
-        basket_checkBLL btBLL = new basket_checkBLL();
+        qzj_checkBLL btBLL = new qzj_checkBLL();
  
         public JsonResult GetData()
         {
@@ -34,7 +34,7 @@ namespace AM.Controllers
                 var whereStr = string.Empty;
                 if (!string.IsNullOrEmpty(trainname))
                 {
-                    whereStr = " cpmc like '%"+trainname+"%' ";
+                    whereStr = " xm like '%"+trainname+"%' ";
                 }
                 int count = 0;
                 var list = btBLL.GetListByPage(whereStr, string.Empty, (pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize, out count);
@@ -56,7 +56,7 @@ namespace AM.Controllers
         [HttpPost]
         public JsonResult Add(FormCollection form)
         {
-            var t = new basket_check();
+            var t = new qzj_check();
             MVCTools.SetValueFormToModel(t, form);
             t.Guid =Guid.NewGuid().ToString();
             t.userid = "admin";

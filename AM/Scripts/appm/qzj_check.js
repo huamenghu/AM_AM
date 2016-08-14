@@ -68,9 +68,9 @@ String.prototype.trim = function () {
 }
 
 function submit() {
-    var check = test();
-    if (check)
-    {
+    //var check = test();
+    //if (check)
+    //{
     var userid = $("#userid").val();
     var objArr = $("input[type=text]")
     debugger;
@@ -132,5 +132,5 @@ function submit() {
     //        alert("err:" + err);
     //    }
     //});
-    }
+    //}
 }

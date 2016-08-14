@@ -236,7 +236,17 @@
     <Compile Include="Controllers\AppM\basket_installController.cs" />
     <Compile Include="Controllers\AppM\basket_keepController.cs" />
     <Compile Include="Controllers\AppM\basket_madeController.cs" />
+    <Compile Include="Controllers\AppM\basket_rentController.cs" />
     <Compile Include="Controllers\AppM\basket_trainController.cs" />
+    <Compile Include="Controllers\AppM\building_hoistController.cs" />
+    <Compile Include="Controllers\AppM\jsj_keepController.cs" />
+    <Compile Include="Controllers\AppM\qzj_checkController.cs" />
+    <Compile Include="Controllers\AppM\safe_lockController.cs" />
+    <Compile Include="Controllers\AppM\staging_checkController.cs" />
+    <Compile Include="Controllers\AppM\tower_craneController.cs" />
+    <Compile Include="Controllers\AppM\winow_checkController.cs" />
+    <Compile Include="Controllers\AppM\wt_checkController.cs" />
+    <Compile Include="Controllers\AppM\xsweit_checkController.cs" />
     <Compile Include="Controllers\ExpressController.cs" />
     <Compile Include="Controllers\gradeController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
@@ -1928,7 +1938,21 @@
     <Content Include="Scripts\analogparameter\index.js" />
     <Content Include="ExportXlsToDownLoad\说明.txt" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\appm\basket_check.js" />
+    <Content Include="Scripts\appm\basket_install.js" />
+    <Content Include="Scripts\appm\basket_keep.js" />
+    <Content Include="Scripts\appm\basket_made.js" />
+    <Content Include="Scripts\appm\basket_rent.js" />
     <Content Include="Scripts\appm\basket_train.js" />
+    <Content Include="Scripts\appm\building_hoist.js" />
+    <Content Include="Scripts\appm\jsj_keep.js" />
+    <Content Include="Scripts\appm\qzj_check.js" />
+    <Content Include="Scripts\appm\safe_lock.js" />
+    <Content Include="Scripts\appm\staging_check.js" />
+    <Content Include="Scripts\appm\tower_crane.js" />
+    <Content Include="Scripts\appm\winow_check.js" />
+    <Content Include="Scripts\appm\wt_check.js" />
+    <Content Include="Scripts\appm\xsweit_check.js" />
     <Content Include="Scripts\Layer\layer.js" />
     <Content Include="Scripts\Layer\mobile\layer.js" />
     <Content Include="Scripts\Layer\mobile\need\layer.css" />
@@ -2081,6 +2105,16 @@
     <Content Include="Views\AppM\basket_install.cshtml" />
     <Content Include="Views\AppM\basket_keep.cshtml" />
     <Content Include="Views\AppM\basket_made.cshtml" />
+    <Content Include="Views\AppM\basket_rent.cshtml" />
+    <Content Include="Views\AppM\jsj_keep.cshtml" />
+    <Content Include="Views\AppM\qzj_check.cshtml" />
+    <Content Include="Views\AppM\safe_lock.cshtml" />
+    <Content Include="Views\AppM\staging_check.cshtml" />
+    <Content Include="Views\AppM\tower_crane.cshtml" />
+    <Content Include="Views\AppM\winow_check.cshtml" />
+    <Content Include="Views\AppM\wt_check.cshtml" />
+    <Content Include="Views\AppM\xsweit_check.cshtml" />
+    <Content Include="Views\AppM\building_hoist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
