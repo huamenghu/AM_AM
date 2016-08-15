@@ -124,6 +124,9 @@ namespace AM.Controllers
             //row1.RowStyle.FillBackgroundColor = "";
             basket_trainBLL btraninBLL = new basket_trainBLL();
             Dictionary<string, string> dary = btraninBLL.GetColumnInfo(tableName);
+            dt.Columns.Remove("Guid");
+            dt.Columns.Remove("userid");
+            dt.Columns.Remove("CreateDate");
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 var columnName = dt.Columns[i].ColumnName;

@@ -19,137 +19,6 @@ namespace AM.Controllers
         string tableName = "basket_train";
         public JsonResult GetData()
         {
-          
-            var bcBLL1 = new basket_madeBLL();
-            var btraninBLL = new basket_trainBLL();
-            var dary = btraninBLL.GetColumnInfo("basket_made");
-            var ds = bcBLL1.GetAllList();
-            var a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL2 = new basket_rentBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("basket_rent");
-            ds = bcBLL2.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL3 = new building_hoistBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("building_hoist");
-            ds = bcBLL3.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-            var bcBLL4 = new jsj_keepBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("jsj_keep");
-            ds = bcBLL4.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-            var bcBLL5 = new qzj_checkBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("qzj_check");
-            ds = bcBLL5.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL6 = new safe_lockBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("safe_lock");
-            ds = bcBLL6.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL7 = new staging_checkBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("staging_check");
-            ds = bcBLL7.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL8 = new tower_craneBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("tower_crane");
-            ds = bcBLL8.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL9 = new winow_checkBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("winow_check");
-            ds = bcBLL9.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-            var bcBLL10 = new wt_checkBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("wt_check");
-            ds = bcBLL10.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-            var bcBLL11 = new xsweit_checkBLL();
-            btraninBLL = new basket_trainBLL();
-            dary = btraninBLL.GetColumnInfo("xsweit_check");
-            ds = bcBLL11.GetAllList();
-            a1 = string.Empty;
-            foreach (DataColumn item in ds.Tables[0].Columns)
-            {
-                if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
-                    a1 += "<tr> <td class=\"right\">" + dary[item.ColumnName] + "：</td><td><input type=\"text\" name=\"" + item.ColumnName + "\" class=\"easyui-validatebox editInput\" required='true' /></td></tr>\n";
-            }
-            Console.WriteLine();
-
-
             int total;  //记录总条数
             Dictionary<string, object> result = new Dictionary<string, object>();//键值对字典
             try
@@ -256,6 +125,9 @@ namespace AM.Controllers
             //row1.RowStyle.FillBackgroundColor = "";
             basket_trainBLL btraninBLL = new basket_trainBLL();
             Dictionary<string, string> dary = btraninBLL.GetColumnInfo(tableName);
+            dt.Columns.Remove("Guid");
+            dt.Columns.Remove("userid");
+            dt.Columns.Remove("CreateDate");
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 var columnName = dt.Columns[i].ColumnName;
