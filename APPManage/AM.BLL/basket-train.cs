@@ -198,6 +198,16 @@ namespace AM.BLL
         {
             return dal.DeleteList(Guidlist);
         }
+        public Dictionary<string, string> GetColumnInfo(string tableName)
+        {
+            Dictionary<string, string> dary = new Dictionary<string, string>();
+            DataSet ds  = dal.GetColumnInfo(tableName);
+            foreach (DataRow item in ds.Tables[0].Rows)
+	        {
+                dary.Add(item["COLUMN_NAME"].ToString(), item["COLUMN_COMMENT"].ToString());
+	        }
+            return dary;
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -449,6 +449,16 @@ namespace AM.DAL
             strSql.Append(";SELECT count(Guid) as count FROM basket_train TT  ");
             return DbHelperMySQL.Query(strSql.ToString());
         }
+        public DataSet GetColumnInfo(string tableName)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select COLUMN_NAME,COLUMN_COMMENT from INFORMATION_SCHEMA.Columns where table_name=@tableName and table_schema='am'");
+            MySqlParameter[] parameters = {
+					new MySqlParameter("@tableName", MySqlDbType.VarChar,255)			};
+            parameters[0].Value = tableName;
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+            return ds;
+        }
         #endregion  ExtensionMethod
 	}
 }

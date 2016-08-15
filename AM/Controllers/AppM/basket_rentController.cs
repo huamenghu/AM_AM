@@ -129,53 +129,12 @@ namespace AM.Controllers
             //给sheet1添加第一行的头部标题
             NPOI.SS.UserModel.IRow row1 = sheet1.CreateRow(0);
             //row1.RowStyle.FillBackgroundColor = "";
+            basket_trainBLL btraninBLL = new basket_trainBLL();
+            Dictionary<string, string> dary = btraninBLL.GetColumnInfo("basket_rent");
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 var columnName = dt.Columns[i].ColumnName;
-                switch (columnName)
-                {
-                    case "xm":
-                        columnName = "姓名";
-                        break;
-                    case "xb":
-                        columnName = "性别";
-                        break;
-                    case "whcd":
-                        columnName = "文化程度";
-                        break;
-                    case "lxdh":
-                        columnName = "联系电话";
-                        break;
-                    case "zygl":
-                        columnName = "专业工龄";
-                        break;
-                    case "stzk":
-                        columnName = "身体状况";
-                        break;
-                    case "gzdw":
-                        columnName = "工作单位";
-                        break;
-                    case "yb":
-                        columnName = "邮编";
-                        break;
-                    case "yx":
-                        columnName = "邮箱";
-                        break;
-                    case "brqz":
-                        columnName = "本人签字";
-                        break;
-                    case "pxd":
-                        columnName = "培训点";
-                        break;
-                    case "gzjl":
-                        columnName = "工作经历";
-                        break;
-                    case "szdwyj":
-                        columnName = "所在单位意见";
-                        break;
-                    default:
-                        break;
-                }
+                columnName = dary[columnName];
                 row1.CreateCell(i).SetCellValue(columnName);
             }
             //将数据逐步写入sheet1各个行
