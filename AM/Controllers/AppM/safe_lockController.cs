@@ -16,7 +16,7 @@ namespace AM.Controllers
     public class safe_lockController : BaseController
     {
         safe_lockBLL btBLL = new safe_lockBLL();
- 
+        string tableName = "safe_lock";
         public JsonResult GetData()
         {
             int total;  //记录总条数
@@ -92,23 +92,17 @@ namespace AM.Controllers
 
         public JsonResult ViewResult(string id)
         {
-            var result = btBLL.GetModel(id);
+            var resultdt = btBLL.GetModelDataTable(id);
             List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
-            if (result != null)
+            basket_trainBLL btraninBLL = new basket_trainBLL();
+            Dictionary<string, string> dary = btraninBLL.GetColumnInfo(tableName);
+            if (resultdt != null)
             {
-                //list.Add(new KeyValuePair<string, string>("姓名", result.xm));
-                //list.Add(new KeyValuePair<string, string>("性别", result.xb));
-                //list.Add(new KeyValuePair<string, string>("文化程度", result.whcd));
-                //list.Add(new KeyValuePair<string, string>("联系电话", result.lxdh));
-                //list.Add(new KeyValuePair<string, string>("专业工龄", result.zygl));
-                //list.Add(new KeyValuePair<string, string>("身体状况", result.stzk));
-                //list.Add(new KeyValuePair<string, string>("身份证号", result.sfzh));
-                //list.Add(new KeyValuePair<string, string>("工作单位", result.gzdw));
-                //list.Add(new KeyValuePair<string, string>("邮政编码", result.yb));
-                //list.Add(new KeyValuePair<string, string>("本人签字", result.brqz));
-                //list.Add(new KeyValuePair<string, string>("培训点", result.pxd));
-                //list.Add(new KeyValuePair<string, string>("工作经历", result.gzjl));
-                //list.Add(new KeyValuePair<string, string>("所在单位意见", result.szdwyj));
+                foreach (DataColumn item in resultdt.Columns)
+                {
+                    if (item.ColumnName != "Guid" && item.ColumnName != "userid" && item.ColumnName != "CreateDate")
+                        list.Add(new KeyValuePair<string, string>(dary[item.ColumnName], resultdt.Rows[0][item.ColumnName].ToString()));
+                }
             }
             else
             {
@@ -130,7 +124,7 @@ namespace AM.Controllers
             NPOI.SS.UserModel.IRow row1 = sheet1.CreateRow(0);
             //row1.RowStyle.FillBackgroundColor = "";
             basket_trainBLL btraninBLL = new basket_trainBLL();
-            Dictionary<string, string> dary = btraninBLL.GetColumnInfo("safe_lock");
+            Dictionary<string, string> dary = btraninBLL.GetColumnInfo(tableName);
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 var columnName = dt.Columns[i].ColumnName;

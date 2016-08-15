@@ -208,6 +208,10 @@ namespace AM.BLL
 	        }
             return dary;
         }
+        public DataTable GetModelDataTable(string guid)
+        {
+            return dal.GetModelDataTable(guid);
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -203,6 +203,10 @@ namespace AM.BLL
         {
             return dal.DeleteList(Guidlist);
         }
+        public DataTable GetModelDataTable(string guid)
+        {
+            return dal.GetModelDataTable(guid);
+        }
 		#endregion  ExtensionMethod
 	}
 }

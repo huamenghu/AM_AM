@@ -2135,7 +2135,6 @@
     <Folder Include="fileupload\tx\Thumbnail\" />
     <Folder Include="Other\" />
     <Folder Include="Scripts\train\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

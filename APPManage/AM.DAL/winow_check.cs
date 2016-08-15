@@ -586,6 +586,20 @@ namespace AM.DAL
             strSql.Append(";SELECT count(Guid) as count FROM winow_check TT  ");
             return DbHelperMySQL.Query(strSql.ToString());
         }
+        public DataTable GetModelDataTable(string Guid)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select * from winow_check ");
+            strSql.Append(" where Guid=@Guid ");
+            MySqlParameter[] parameters = {
+					new MySqlParameter("@Guid", MySqlDbType.VarChar,36)			};
+            parameters[0].Value = Guid;
+
+            AM.Model.basket_check model = new AM.Model.basket_check();
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+            return ds.Tables[0];
+        }
 		#endregion  ExtensionMethod
 	}
 }

@@ -202,6 +202,10 @@ namespace AM.BLL
         {
             return dal.GetDataByGuidList(Guidlist);
         }
+        public DataTable GetModelDataTable(string guid)
+        {
+            return dal.GetModelDataTable(guid);
+        }
 		#endregion  ExtensionMethod
 	}
 }
