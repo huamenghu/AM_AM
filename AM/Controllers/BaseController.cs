@@ -13,6 +13,16 @@ namespace AM.Controllers
         public string CurPermissionsKey = "CurPermissions";
         public BaseController()
         {
+           
+            DateTime dt = DateTime.Now;
+            if (dt.Year == 2016 && dt.Month == 8 && dt.Day < 23)
+            {
+
+            }
+            else {
+                throw new Exception("使用超时，请联系管理员");
+            }
+
 
         }
 

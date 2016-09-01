@@ -20,7 +20,7 @@ using System.Web.Mvc;
 
 namespace AM.Controllers
 {
-    public class AppMController : BaseController
+    public class AppMController : Controller
     { 
         public void addbasket_train(string obj)
         {
